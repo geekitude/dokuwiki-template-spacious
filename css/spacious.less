@@ -38,6 +38,13 @@ html {
 	/* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%;
 	/* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+    /* set 1rem (base font-size) to be equivalent to 10p */
+    font-size: .625em; /* fallback IE8+ */
+    font-size: calc(1em * .625); /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+}
+
+body {
+    font-size: 1.6em;
 }
 
 * {
@@ -140,7 +147,7 @@ input,
 select,
 textarea {
 	color: #666666;
-	font: 16px 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 	line-height: 20px;
 	word-wrap: break-word;
 }
