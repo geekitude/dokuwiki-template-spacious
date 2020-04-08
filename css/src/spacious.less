@@ -617,7 +617,7 @@ body {
 
 #dokuwiki__site {
 	max-width: @ini_site_width;
-	margin: 0 auto;
+	margin: 3rem auto;
 	background-color: #FFFFFF;
 	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -3125,9 +3125,14 @@ body.debug pre.dbg {
 }
 
 @media screen and (max-width: 1078px) {
+    /*
 	body {
 		padding: 15px 0;
 	}
+    */
+    #dokuwiki__site {
+        margin: 1.5rem auto;
+    }
 	#featured-slider .entry-container {
 		max-width: 60%;
 	}
