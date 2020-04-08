@@ -35,9 +35,8 @@ Since Dokuwiki's Starter template is too outdated for my development skill, main
 
 ## Conversion TODO
 
-* [ ] Start with Starter template
 * [ ] Basic HTML/PHP
-  * [ ] Meta elements
+  * [x] Meta elements
   * [ ] Site containers
   * [ ] Header
   * [ ] Content area
