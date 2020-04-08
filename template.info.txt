@@ -1,0 +1,7 @@
+base     spacious
+author   Simon Delage
+email    sdelage@gmail.com
+date     2020-04-02
+name     Spacious Template
+desc     Spacious Wordpress theme (https://themegrill.com/themes/spacious/) ported to DokuWiki
+url      http://www.dokuwiki.org/template:spacious
