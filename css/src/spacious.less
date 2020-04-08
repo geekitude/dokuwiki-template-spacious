@@ -601,13 +601,15 @@ img#wpstats {
 /*****************************************************************/
 /* =BODY
 ----------------------------------------------- */
+/*
 body {
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+*/
 
-#page {
-	max-width: 1268px;
+#dokuwiki__site {
+	max-width: @ini_site_width;
 	margin: 0 auto;
 	background-color: #FFFFFF;
 	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -624,15 +626,15 @@ body {
 	padding-bottom: 0;
 }
 
-.wide-1218 #page {
+.wide-1218 #dokuwiki__site {
 	max-width: 100%;
 }
 
-.narrow-978 #page {
+.narrow-978 #dokuwiki__site {
 	max-width: 1038px;
 }
 
-.wide-978 #page {
+.wide-978 #dokuwiki__site {
 	max-width: 100%;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -897,13 +899,13 @@ body {
 	padding: 0px 0px 30px;
 }
 
-#colophon .tg-one-third {
+#dokuwiki__footer .tg-one-third {
 	width: 31.7405583%;
 	margin-left: 0;
 	margin-right: 2.38916257%;
 }
 
-#colophon .tg-one-third.tg-after-two-blocks-clearfix {
+#dokuwiki__footer .tg-one-third.tg-after-two-blocks-clearfix {
 	margin-right: 0;
 	float: right;
 }
@@ -1652,7 +1654,7 @@ body {
 	padding: 5px 0;
 }
 
-#colophon .widget ul li {
+#dokuwiki__footer .widget ul li {
 	line-height: 1.5;
 	border-bottom: 1px solid #EAEAEA;
 	padding: 5px 0;
@@ -1660,12 +1662,12 @@ body {
 }
 
 #secondary .widget ul li li,
-#colophon .widget ul li li {
+#dokuwiki__footer .widget ul li li {
 	border-bottom: none;
 }
 
 #secondary .widget ul ul,
-#colophon .widget ul ul {
+#dokuwiki__footer .widget ul ul {
 	padding-left: 10px;
 }
 
@@ -1745,8 +1747,8 @@ body {
 	border: none;
 }
 
-#colophon #wp-calendar th,
-#colophon #wp-calendar td {
+#dokuwiki__footer #wp-calendar th,
+#dokuwiki__footer #wp-calendar td {
 	border: 1px solid #444444;
 	padding: 3px 2px 3px 8px;
 }
@@ -2184,7 +2186,7 @@ h3#site-title {
 
 /* =SEARCH WIDGET
 ----------------------------------------------- */
-#masthead .search-wrap input.s {
+#dokuwiki__header .search-wrap input.s {
 	width: 130px;
 }
 
@@ -2678,7 +2680,7 @@ li.default-menu {
 	cursor: pointer;
 }
 
-.site-header .menu-toggle {
+#dokuwiki__header .menu-toggle {
 	background: #3A3A3A;
 	color: #fff;
 	font-size: 20px;
@@ -2688,11 +2690,11 @@ li.default-menu {
 	text-align: center;
 }
 
-.site-header .menu-toggle:hover {
+#dokuwiki__header .menu-toggle:hover {
 	background: #0FBE7C;
 }
 
-.site-header .menu-toggle:before {
+#dokuwiki__header .menu-toggle:before {
 	content: '\2261';
 	margin-right: 10px;
 }
@@ -2929,21 +2931,21 @@ li.default-menu {
 	color: #0FBE7C !important;
 }
 
-#colophon {
+#dokuwiki__footer {
 	font-size: 14px;
 	line-height: 18px;
 }
 
-#colophon .widget {
+#dokuwiki__footer .widget {
 	padding-bottom: 25px;
 }
 
-#colophon .widget-title {
+#dokuwiki__footer .widget-title {
 	font-size: 22px;
 	line-height: 32px;
 }
 
-#colophon p {
+#dokuwiki__footer p {
 	font-size: 14px;
 	line-height: 18px;
 }
@@ -2979,21 +2981,21 @@ li.default-menu {
 	color: #0FBE7C;
 }
 
-#colophon {
+#dokuwiki__footer {
 	font-size: 14px;
 	line-height: 18px;
 }
 
-#colophon .widget {
+#dokuwiki__footer .widget {
 	padding-bottom: 25px;
 }
 
-#colophon .widget-title {
+#dokuwiki__footer .widget-title {
 	font-size: 22px;
 	line-height: 32px;
 }
 
-#colophon p {
+#dokuwiki__footer p {
 	font-size: 14px;
 	line-height: 18px;
 }
@@ -3104,10 +3106,10 @@ body.debug pre.dbg {
 }
 
 @media screen and (max-width: 1308px) {
-	#page {
+	#dokuwiki__site {
 		width: 97%;
 	}
-	.wide-1218 #page, .wide-978 #page {
+	.wide-1218 #dokuwiki__site, .wide-978 #dokuwiki__site {
 		width: 100%;
 	}
 	.inner-wrap {
@@ -3157,13 +3159,13 @@ body.debug pre.dbg {
 		float: left;
 		width: 46.7684729%;
 	}
-	#colophon .tg-one-third {
+	#dokuwiki__footer .tg-one-third {
 		float: left;
 		margin-right: 2.38916257%;
 		padding: 0 0 30px;
 		width: 31.7405583%;
 	}
-	#colophon .tg-one-third.tg-after-two-blocks-clearfix {
+	#dokuwiki__footer .tg-one-third.tg-after-two-blocks-clearfix {
 		clear: none;
 	}
 	.widget_service_block .tg-one-third {
@@ -3237,7 +3239,7 @@ body.debug pre.dbg {
 	#header-right-section #header-right-sidebar {
 		width: 100%;
 	}
-	.site-header .menu-toggle {
+	#dokuwiki__header .menu-toggle {
 		display: block;
 		text-align: left;
 		padding: 10px 20px;
@@ -3342,10 +3344,10 @@ body.debug pre.dbg {
 		line-height: 30px;
 		margin-left: 0;
 	}
-	.site-header.spacious-header-display-four .bottom-menu {
+	#dokuwiki__header.spacious-header-display-four .bottom-menu {
 		position: relative;
 	}
-	.site-header.spacious-header-display-four .bottom-menu .menu-toggle {
+	#dokuwiki__header.spacious-header-display-four .bottom-menu .menu-toggle {
 		position: absolute;
 		z-index: 9999;
 		right: 20px;
@@ -3388,7 +3390,7 @@ body.debug pre.dbg {
 	.better-responsive-menu #site-title a {
 		font-size: 28px;
 	}
-	.better-responsive-menu .site-header .menu-toggle {
+	.better-responsive-menu #dokuwiki__header .menu-toggle {
 		background: #3a3a3a none repeat scroll 0 0;
 		color: #fff;
 		font: 0px/0 a;
@@ -3405,7 +3407,7 @@ body.debug pre.dbg {
 	.better-responsive-menu #header-text-nav-wrap #header-right-section .widget {
 		padding: 0;
 	}
-	.better-responsive-menu .site-header .menu-toggle::before {
+	.better-responsive-menu #dokuwiki__header .menu-toggle::before {
 		font-size: 21px;
 		left: 50%;
 		line-height: 25px;
@@ -3470,18 +3472,18 @@ body.debug pre.dbg {
 	.related-posts {
 		margin: 0;
 	}
-	#colophon .tg-one-third {
+	#dokuwiki__footer .tg-one-third {
 		float: none;
 		width: 100%;
 		margin: 0;
 	}
-	#colophon .tg-one-third.tg-after-two-blocks-clearfix {
+	#dokuwiki__footer .tg-one-third.tg-after-two-blocks-clearfix {
 		clear: both;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	.site-header.spacious-header-display-four .bottom-menu .menu-toggle {
+	#dokuwiki__header.spacious-header-display-four .bottom-menu .menu-toggle {
 		position: relative;
 		right: 0;
 		top: 0;
@@ -3512,14 +3514,14 @@ body.debug pre.dbg {
 		float: none;
 		margin-top: 0;
 	}
-	.better-responsive-menu .site-header.spacious-header-display-four .bottom-menu .menu-toggle {
+	.better-responsive-menu #dokuwiki__header.spacious-header-display-four .bottom-menu .menu-toggle {
 		position: absolute;
 		right: auto;
 		top: -45px;
 		left: 15px;
 	}
-	.better-responsive-menu .site-header.spacious-header-display-four #header-left-section,
-	.better-responsive-menu .site-header.spacious-header-display-four #header-right-section {
+	.better-responsive-menu #dokuwiki__header.spacious-header-display-four #header-left-section,
+	.better-responsive-menu #dokuwiki__header.spacious-header-display-four #header-right-section {
 		float: none;
 	}
 	.main-navigation,
@@ -3621,7 +3623,7 @@ body.debug pre.dbg {
 }
 
 @media only screen and (max-width: 420px) {
-	#page {
+	#dokuwiki__site {
 		width: 97%;
 	}
 	.inner-wrap {

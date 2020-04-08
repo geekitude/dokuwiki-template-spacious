@@ -37,7 +37,7 @@ Since Dokuwiki's Starter template is too outdated for my development skill, main
 
 * [ ] Basic HTML/PHP
   * [x] Meta elements
-  * [ ] Site containers
+  * [x] Site containers
   * [ ] Header
   * [ ] Content area
   * [ ] Footer
