@@ -22,16 +22,45 @@ donationurl   : https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_butto
 ----
 -->
 
-Spacious Wordpress theme (https://themegrill.com/themes/spacious/) ported to DokuWiki
+Spacious Wordpress theme (https://themegrill.com/themes/spacious/) ported to DokuWiki using [this guide](https://www.dokuwiki.org/devel:wp_to_dw_template)
 
     See template.info.txt for template details
-    Spacious is distributed under the terms of the GNU GPL V2 (see LICENSE file or [this link](https://www.gnu.org/licenses/gpl-2.0.html) for details)
+    Spacious is distributed under the terms of the GNU GPL V3 (see LICENSE file or [this link](https://www.gnu.org/licenses/gpl-3.0.html) for details)
 
 The result is a "namespace-aware" and polymorphic template that can be as sleek and straightforward as it's original Wordpress parent or more modern with extratible sidebar and/or TOC and potentially sticky elements.
 
 *Version of Spacious Wordpress theme used as base for this project : 1.7.1 (2020-02-19)*
 
 Since Dokuwiki's Starter template is too outdated for my development skill, mainly [because of new menus](https://github.com/selfthinker/dokuwiki_template_starter/issues/14), I started with a lightened version of Dokuwiki's default template.
+
+## Conversion TODO
+
+* [ ] Start with Starter template
+* [ ] Basic HTML/PHP
+  * [ ] Meta elements
+  * [ ] Site containers
+  * [ ] Header
+  * [ ] Content area
+  * [ ] Footer
+  * [ ] Sidebar
+  * [ ] WP vs. DW functions
+* [ ] Basic CSS
+  * [ ] style.css
+  * [ ] rtl.css
+  * [ ] print.css
+  * [ ] Necessary changes
+* [ ] JS
+* [ ] Further HTML/PHP
+  * [ ] Other layouts
+  * [ ] Special DW elements
+  * [ ] Other actions
+* [ ] Further CSS
+  * [ ] style.ini
+  * [ ] WP vs. DW classes
+* [ ] Rename IDs
+* [ ] Support specific custom WP theme functionality
+  * [ ] Custom colours
+  * [ ] Custom background
 
 ## Credits
 
