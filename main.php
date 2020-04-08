@@ -22,6 +22,10 @@ if ((strpos($_SERVER["HTTP_REFERER"], DOKU_URL) !== false) and (strpos($_SERVER[
     $_SESSION["origID"] = $tmp[0];
 }
 
+global $spacious;
+$spacious = array();
+spacious_init();
+
 $hasSidebar = page_findnearest($conf['sidebar']);
 $showSidebar = $hasSidebar && ($ACT=='show');
 ?><!DOCTYPE html>
@@ -37,7 +41,10 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 </head>
 
 <body>
-<?php dbg($_SESSION["origID"]); ?>
+    <div id="spacious__skip" class="<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y') or ($_GET['debug'] == 'skip')) ? "" : "a11y " ?>group">
+        <a href="#dokuwiki__content"><?php print strtoupper($lang['skip_to_content']); ?></a>
+    </div>
+    <?php dbg($_SESSION["origID"]); ?>
     <div id="dokuwiki__site"><div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php
         echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
 
@@ -94,7 +101,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
         <?php include('tpl_footer.php') ?>
     </div></div><!-- /site -->
 
-    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+    <div id="spacious__housekeeper" class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
     <div id="screen__mode" class="no"></div><?php /* helper to detect CSS media query in script.js */ ?>
 </body>
 </html>

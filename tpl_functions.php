@@ -15,3 +15,52 @@
 
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
+
+/**
+ * INITALIZE
+ * 
+ * Load usefull informations and plugins' helpers.
+ */
+function spacious_init() {
+//    global $ID, $conf, $ACT, $auth, $INFO, $license, $JSINFO;
+    global $spacious;
+}/* /spacious_init */
+
+/**
+ * Returns body classes according to settings
+ */
+function spacious_bodyclasses() {
+    global $spacious;
+
+    $classes = array();
+
+    if ((tpl_getConf('bodyBg') == "pattern") and ($_GET['debug'] != 1)) {
+        $pattern = tpl_getMediaFile(array(':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
+        if ($pattern == "/lib/tpl/spacious/images/pattern.png") {
+            $bgClass = "tpl-pattern-bg";
+        } else {
+            $bgClass = "wiki-pattern-bg";
+        }
+    } else {
+        $bgClass = "color-bg";
+    }
+
+    $sidebar = "no-sidebar";
+    if ($spacious['showSidebar'] == 1) {
+        if (tpl_getConf('sidebarPos') == "left") {
+            $sidebar = "left-sidebar";
+        } else {
+            $sidebar = "right-sidebar";
+        }
+        if (strpos(tpl_getConf('stickies'), 'sidebar') !== false) {
+            $sidebar .= " sticky-sidebar";
+        }
+        if ((strpos(tpl_getConf('extractible'), 'sidebar') !== false) and (tpl_getConf('layout') == "boxed")) {
+            $sidebar .= " extractible-sidebar";
+        }
+    }
+
+    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and (tpl_getConf('layout') == "boxed")) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
+    /* TODO: better home detection than core */
+    return ' '.rtrim(join(' ', $classes));
+}/* /spacious_bodyclasses */

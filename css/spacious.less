@@ -4116,6 +4116,56 @@ li.default-menu {
 	top: 21px;
 }
 
+/* = MISCELLANEOUS
+-------------------------------------------------------------- */
+
+/* More obvious dbg() result */
+[dir] pre.dbg {
+    background-color: gold;
+}
+
+/* Move tpl_indexerWebBug() out of the way */
+#spacious__housekeeper {
+    position: absolute;
+    top: 0;
+}
+
+/* Fix overflowing pre.code and pre.file elements (by default the whole window gets an horzontal scrollbar */
+pre.code,
+pre.file {
+    overflow:auto;
+}
+
+/* Debug */
+pre.dbg {
+    display: none;
+}
+[dir] body.debug {
+    background-color: @ini_red_color;
+}
+body.debug pre.dbg {
+    display: initial;
+}
+
+/* Skip */
+#spacious__skip a {
+    display: block;
+    color: white;
+    font-size: 200%;
+    font-weight: bold;
+}
+[dir] #spacious__skip a {
+    padding: 1rem 0;
+    background-color: black;
+    text-align: center;
+}
+#spacious__skip a:hover {
+    color: black;
+}
+[dir] #spacious__skip a:hover {
+    background-color: white;
+}
+
 /* =RESPONSIVE STRUCTURE
 ----------------------------------------------- */
 @media screen and (min-width: 1500px) {
