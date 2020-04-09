@@ -40,7 +40,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php tpl_includeFile('meta.html') ?>
 </head>
 
-<body>
+<body class="<?php print spacious_bodyclasses(); ?>">
     <div id="spacious__skip" class="<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y') or ($_GET['debug'] == 'skip')) ? "" : "a11y " ?>group">
         <a href="#dokuwiki__content"><?php print strtoupper($lang['skip_to_content']); ?></a>
     </div><!-- /#spacious__skip -->

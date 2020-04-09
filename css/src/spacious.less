@@ -616,9 +616,13 @@ body {
 */
 
 #dokuwiki__site {
+	background-color: @ini_background;
+    color: @ini_text;
+}
+
+body.boxed-layout #dokuwiki__site {
 	max-width: @ini_site_width;
 	margin: 3rem auto;
-	background-color: #FFFFFF;
 	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
@@ -634,12 +638,12 @@ body {
 	padding-bottom: 0;
 }
 
-.wide-1218 {
+body.full-width-layout {
 	padding-top: 0;
 	padding-bottom: 0;
 }
 
-.wide-1218 #dokuwiki__site {
+body.full-width-layout #dokuwiki__site {
 	max-width: 100%;
 }
 
@@ -658,7 +662,7 @@ body {
 	max-width: 1218px;
 }
 
-.wide-1218 .inner-wrap {
+body.full-width-layout .inner-wrap {
 	max-width: 1218px;
 }
 
@@ -682,7 +686,7 @@ body {
 }
 
 .wide-978 #featured-slider .slider-cycle,
-.wide-1218 #featured-slider .slider-cycle {
+body.full-width-layout #featured-slider .slider-cycle {
 	max-width: 1600px;
 	margin: 0 auto;
 }
@@ -713,7 +717,7 @@ body {
 	left: 13.8%;
 }
 
-.wide-1218 #featured-slider .entry-container {
+body.full-width-layout #featured-slider .entry-container {
 	left: 4.9%;
 }
 
@@ -3104,7 +3108,7 @@ body.debug pre.dbg {
 	.wide-978 #featured-slider .entry-container {
 		left: 17.6%;
 	}
-	.wide-1218 #featured-slider .entry-container {
+	body.full-width-layout #featured-slider .entry-container {
 		left: 9.6%;
 	}
 }
@@ -3113,7 +3117,7 @@ body.debug pre.dbg {
 	.wide-978 #featured-slider .entry-container {
 		left: 19.45%;
 	}
-	.wide-1218 #featured-slider .entry-container {
+	body.full-width-layout #featured-slider .entry-container {
 		left: 11.9%;
 	}
 }
@@ -3122,7 +3126,7 @@ body.debug pre.dbg {
 	#dokuwiki__site {
 		width: 97%;
 	}
-	.wide-1218 #dokuwiki__site, .wide-978 #dokuwiki__site {
+	body.full-width-layout #dokuwiki__site, .wide-978 #dokuwiki__site {
 		width: 100%;
 	}
 	.inner-wrap {
@@ -3136,7 +3140,7 @@ body.debug pre.dbg {
 		padding: 15px 0;
 	}
     */
-    #dokuwiki__site {
+    body.boxed-layout #dokuwiki__site {
         margin: 1.5rem auto;
     }
 	#featured-slider .entry-container {
