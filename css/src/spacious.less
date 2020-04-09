@@ -3634,9 +3634,10 @@ body.debug pre.dbg {
 	}
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: @ini_phone_width) {
 	#dokuwiki__site {
-		width: 97%;
+		width: 100%;
+        margin: 0;
 	}
 	.inner-wrap {
 		width: 95%;
