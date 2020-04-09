@@ -44,7 +44,6 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <div id="spacious__skip" class="<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y') or ($_GET['debug'] == 'skip')) ? "" : "a11y " ?>group">
         <a href="#dokuwiki__content"><?php print strtoupper($lang['skip_to_content']); ?></a>
     </div><!-- /#spacious__skip -->
-    <?php dbg($_SESSION["origID"]); ?>
     <div id="dokuwiki__site">
         <div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
 

@@ -34,10 +34,15 @@ function spacious_bodyclasses() {
 
     $classes = array();
 
-    if ((tpl_getConf('bodyBg') == "pattern") and ($_GET['debug'] != 1)) {
-        $pattern = tpl_getMediaFile(array(':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
+    if ($_GET['debug'] == 1) {
+        $bgClass = "tpl-debug-bg";
+    //} elseif ((tpl_getConf('bodyBg') == "pattern") and ($_GET['debug'] != 1)) {
+    } elseif (tpl_getConf('bodyBg') == "pattern") {
+        $pattern = tpl_getMediaFile(array(':'.getNS($ID).':pattern.png', ':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
         if ($pattern == "/lib/tpl/spacious/images/pattern.png") {
             $bgClass = "tpl-pattern-bg";
+        } elseif (strpos($pattern, getNS($ID)) !== false) {
+            $bgClass = "ns-pattern-bg";
         } else {
             $bgClass = "wiki-pattern-bg";
         }

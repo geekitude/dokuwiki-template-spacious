@@ -140,7 +140,23 @@ textarea {
 }
 
 body {
-	background: #eaeaea;
+	background: @ini_background_site;
+}
+
+body.tpl-pattern-bg,
+body.wiki-pattern-bg {
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: left top;
+}
+
+body.tpl-pattern-bg {
+    background-image: url(images/pattern.png);
+}
+
+body.wiki-pattern-bg {
+    background-image: url(/lib/exe/fetch.php?media=wiki:pattern.png);
 }
 
 /* Headings */
