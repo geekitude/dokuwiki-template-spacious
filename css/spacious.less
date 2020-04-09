@@ -152,32 +152,6 @@ textarea {
 	word-wrap: break-word;
 }
 
-[dir] body {
-	background: @ini_background_site;
-}
-
-[dir] body.tpl-pattern-bg, [dir] body.wiki-pattern-bg {
-    background-size: auto;
-    background-repeat: repeat;
-    background-attachment: scroll;
-}
-
-[dir=ltr] body.tpl-pattern-bg, [dir=ltr] body.wiki-pattern-bg {
-	background-position: left top;
-}
-
-[dir=rtl] body.tpl-pattern-bg, [dir=rtl] body.wiki-pattern-bg {
-    background-position: right top;
-}
-
-[dir] body.tpl-pattern-bg {
-    background-image: url(images/pattern.png);
-}
-
-[dir] body.wiki-pattern-bg {
-    background-image: url(/lib/exe/fetch.php?media=wiki:pattern.png);
-}
-
 /* Headings */
 h1,
 h2,
@@ -754,6 +728,32 @@ body {
 	padding-bottom: 30px;
 }
 */
+
+[dir] body {
+	background: @ini_background_site;
+}
+
+[dir] body.tpl-pattern-bg, [dir] body.wiki-pattern-bg {
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+[dir=ltr] body.tpl-pattern-bg, [dir=ltr] body.wiki-pattern-bg {
+	background-position: left top;
+}
+
+[dir=rtl] body.tpl-pattern-bg, [dir=rtl] body.wiki-pattern-bg {
+    background-position: right top;
+}
+
+[dir] body.tpl-pattern-bg {
+    background-image: url(images/pattern.png);
+}
+
+[dir] body.wiki-pattern-bg {
+    background-image: url(/lib/exe/fetch.php?media=wiki:pattern.png);
+}
 
 #dokuwiki__site {
     color: @ini_text;
