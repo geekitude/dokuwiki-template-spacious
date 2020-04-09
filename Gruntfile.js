@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'css/spacious.dokuwiki.less': ['css/src/spacious.dokuwiki.less'],
+                    'css/spacious.dark.less': ['css/src/spacious.dark.less'],
                     'css/spacious.less': ['css/src/spacious.less'],
                     'css/spacious.plugins.less': ['css/src/spacious.plugins.less'],
                     'css/spacious.print.css': ['css/src/spacious.print.css'],
