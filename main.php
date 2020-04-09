@@ -45,6 +45,47 @@ $showSidebar = $hasSidebar && ($ACT=='show');
         <a href="#dokuwiki__content"><?php print strtoupper($lang['skip_to_content']); ?></a>
     </div><!-- /#spacious__skip -->
     <div id="dokuwiki__site">
+        <?php if ((strpos(tpl_getConf('topbar'), 'date') !== false) or (strpos(tpl_getConf('topbar'), 'newsticker') !== false) or (strpos(tpl_getConf('topbar'), 'socialnetworks') !== false)) : ?>
+            <div id="spacious__topbar-wrapper" class="group<?php print (strpos(tpl_getConf('neutralize'), 'topbar') !== false) ? " neu" : "" ?>">
+                    <div id="spacious__topbar" class="flex between smallest">
+                        <?php if ((strpos(tpl_getConf('topbar'), 'date') !== false) or (strpos(tpl_getConf('topbar'), 'newsticker') !== false)) : ?>
+                            <div class="flex row">
+                                <?php if (strpos(tpl_getConf('topbar'), 'date') !== false) : ?>
+                                    <span id="spacious__topbar-date" title="<?php //spacious_date(); ?>">*DATE*<?php //spacious_glyph('date'); ?><span><?php //spacious_date(); ?></span></span>
+                                <?php endif ?>
+                                *NEWSTICKER*
+                                <?php if ((strpos(tpl_getConf('topbar'), 'newsticker') !== false) and ($spacious['recents'] != null) and is_array($spacious['recents'])) : ?>
+                                    <span id="spacious__topbar-newsticker" class="breaking-news" title="<?php print $lang['btn_recent']; ?>">
+                                        <?php //spacious_glyph('news') ?><strong<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : ' class="a11y"' ?>><?php print $lang['btn_recent']; ?>:</strong>
+                                        <?php //spacious_newsticker(); ?>
+                                    </span>
+                                <?php endif ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if (strpos(tpl_getConf('topbar'), 'socialnetworks') !== false) : ?>
+                            <div>
+                                <span id="spacious__topbar-social">
+                                *SOCIAL*
+                                    <?php
+                                        //if (count($spacious['social']) > 0) {
+                                        //    spacious_glyph('social');
+                                        //    if ($_GET['debug'] == 1) {
+                                        //        print '<ul class="debug">';
+                                        //    } else {
+                                        //        print '<ul>';
+                                        //    }
+                                        //        foreach ($spacious['social'] as $key => $value) {
+                                        //            spacious_social_link($key);
+                                        //        }
+                                        //    print '</ul>';
+                                        //}
+                                    ?>
+                                </span>
+                            </div>
+                        <?php endif ?>
+                    </div><!-- /#spacious__topbar -->
+            </div><!-- /#spacious__topbar-wrapper -->
+        <?php endif ?>
         <div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
 
             <?php include('tpl_header.php') ?>
