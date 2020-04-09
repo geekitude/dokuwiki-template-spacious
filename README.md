@@ -100,8 +100,8 @@ The copyright notice at the very bottom of page shouldn't be removed.
 * [ ] Hidable sidebar
 * [ ] Stickable pageheader, sidebar and docinfo
 * [ ] Dynamic navigation button (current NS home, parent NS start, home or "back to article")
-* [ ] Dark color scheme
-* [ ] High number of HTML [this document](https://www.dokuwiki.org/include_hooks)
+* [x] Dark color scheme
+* [ ] High number of HTML [include hooks](https://www.dokuwiki.org/include_hooks)
 * [ ] A few HTML replace hooks that let you replace some elements with more fancy HTML code
 * [ ] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
 * [ ] Can add Namespace based CSS stylesheet
