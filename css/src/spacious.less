@@ -3124,7 +3124,7 @@ body.debug pre.dbg {
 	}
 }
 
-@media screen and (max-width: 1078px) {
+@media screen and (max-width: calc(@ini_site_width + 40px)) {
     /*
 	body {
 		padding: 15px 0;
@@ -3213,7 +3213,7 @@ body.debug pre.dbg {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: @ini_tablet_width) {
 	#primary, #secondary, .wide-978 #primary, .narrow-978 #primary {
 		float: none;
 		width: 100%;
@@ -3443,7 +3443,7 @@ body.debug pre.dbg {
 	}
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: calc(@ini_tablet_width - 1px)) {
 	.social-links {
 		float: none;
 		padding-right: 0;
