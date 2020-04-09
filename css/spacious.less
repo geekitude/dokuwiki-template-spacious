@@ -208,6 +208,14 @@ hr {
 	margin: 30px 0;
 }
 
+div.neu {
+    color: @ini_text_neu;
+}
+
+[dir] div.neu {
+    background-color: @ini_background_neu;
+}
+
 /* = TEXT ELEMENTS
 ----------------------------------------------- */
 p {
@@ -2965,15 +2973,21 @@ h3#site-title {
 	margin-bottom: 0;
 }
 
-/* = SOCIAL LINKS
+/* = TOPBAR
 ----------------------------------------------- */
+[dir] #spacious__topbar-wrapper {
+    border-bottom: 1px solid @ini_border;
+}
+
 .social-links {
 	max-width: 100%;
 }
+
 [dir=ltr] .social-links {
 	float: left;
 	padding-right: 15px;
 }
+
 [dir=rtl] .social-links {
 	float: right;
 	padding-left: 15px;

@@ -14,3 +14,4 @@ $conf['layout']             = 'boxed';
 $conf['dark']               = 0;
 $conf['bodyBg']             = 'color';
 $conf['topbar']             = '';
+$conf['neutralize']         = 'topbar,pageheader,toc,footersocket';
