@@ -2291,11 +2291,19 @@ body.mode_show.right-sidebar #spacious__article {
 }
 
 #dw__toc {
+    float: right;
     width: @ini_toc_width;
-    /*background-color: @ini_background;*/
-    /*color: inherit;*/
-    /*margin: 0 0 1.4rem 1.4rem;*/
-    margin: 0 0 1.4rem 1.4rem;/* not scaled margin because of extraction media queries */
+    margin: 0 0 1.4rem 1.4rem;
+    color: inherit;
+}
+
+.dokuwiki .toggle strong {
+    float: right;
+    margin: 0 .2em;
+}
+
+#dw__toc ul li {
+    list-style: none;
 }
 
 #dw__toc > h3,
