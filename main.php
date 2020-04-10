@@ -47,7 +47,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <div id="dokuwiki__site">
         <?php if ((strpos(tpl_getConf('topbar'), 'date') !== false) or (strpos(tpl_getConf('topbar'), 'newsticker') !== false) or (strpos(tpl_getConf('topbar'), 'socialnetworks') !== false)) : ?>
             <div id="spacious__topbar-wrapper" class="group<?php print (strpos(tpl_getConf('neutralize'), 'topbar') !== false) ? " neu" : "" ?>">
-                    <div id="spacious__topbar" class="flex between smallest">
+                    <div id="spacious__topbar" class="inner-wrap flex between smallest">
                         <?php if ((strpos(tpl_getConf('topbar'), 'date') !== false) or (strpos(tpl_getConf('topbar'), 'newsticker') !== false)) : ?>
                             <div class="flex row">
                                 <?php if (strpos(tpl_getConf('topbar'), 'date') !== false) : ?>
@@ -86,11 +86,11 @@ $showSidebar = $hasSidebar && ($ACT=='show');
                     </div><!-- /#spacious__topbar -->
             </div><!-- /#spacious__topbar-wrapper -->
         <?php endif ?>
-        <div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
+        <div id="dokuwiki__top" class="site  <?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
 
             <?php include('tpl_header.php') ?>
 
-            <div class="wrapper group">
+            <div class="inner-wrap group">
 
                 <?php if($showSidebar): ?>
                     <!-- ********** ASIDE ********** -->
@@ -143,9 +143,10 @@ $showSidebar = $hasSidebar && ($ACT=='show');
                     </div><!-- /.tools -->
                 </div><!-- /#dokuwiki__pagetools -->
             </div><!-- /.wrapper.group -->
-
-            <?php include('tpl_footer.php') ?>
         </div><!-- /#dokuwiki__top -->
+
+        <?php include('tpl_footer.php') ?>
+
     </div><!-- /#dokuwiki__site -->
 
     <div id="spacious__housekeeper" class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
