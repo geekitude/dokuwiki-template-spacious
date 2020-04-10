@@ -8,3 +8,117 @@
  * 
  * This file contains some plugins' CSS adaptation rules.
  */
+
+/* = DISCUSSION
+-------------------------------------------------------------- */
+
+#discussion__comment_subscribe {
+    vertical-align: text-top;
+}
+
+#discussion__comment_form .comment_subscribe,
+#discussion__comment_form .comment_subscribe label.block {
+    display: inline-block;
+}
+
+/* = IMAGEBOX
+-------------------------------------------------------------- */
+
+[dir] div.thumb2 .thumbinner {
+    padding: 3px 3px 0 3px;
+}
+
+[dir=ltr] .thumbcaption {
+    padding: 6px 0 0 5px;
+}
+
+[dir=rtl] .thumbcaption {
+    padding: 6px 5px 0 0;
+}
+
+
+/* = TAGALERTS
+-------------------------------------------------------------- */
+
+.dokuwiki div.tagerror,
+.dokuwiki div.taginfo,
+.dokuwiki div.tagsuccess,
+.dokuwiki div.tagnotify {
+    color: @ini_text;
+    width: 80%;
+}
+
+[dir] .dokuwiki div.tagerror, [dir] .dokuwiki div.taginfo, [dir] .dokuwiki div.tagsuccess, [dir] .dokuwiki div.tagnotify {
+    margin: .25rem auto;
+}
+
+[dir=ltr] .dokuwiki div.tagerror, [dir=ltr] .dokuwiki div.taginfo, [dir=ltr] .dokuwiki div.tagsuccess, [dir=ltr] .dokuwiki div.tagnotify {
+    padding: 0 10px 0 3.8rem;
+}
+
+[dir=rtl] .dokuwiki div.tagerror, [dir=rtl] .dokuwiki div.taginfo, [dir=rtl] .dokuwiki div.tagsuccess, [dir=rtl] .dokuwiki div.tagnotify {
+    padding: 0 3.8rem 0 10px;
+}
+.dokuwiki a.tagerror,
+.dokuwiki a.taginfo,
+.dokuwiki a.tagsuccess,
+.dokuwiki a.tagnotify {
+    color: #fff !important;
+}
+[dir=ltr] .dokuwiki a.tagerror, [dir=ltr] .dokuwiki a.taginfo, [dir=ltr] .dokuwiki a.tagsuccess, [dir=ltr] .dokuwiki a.tagnotify {
+    padding: 0 2px 0 1.9rem;
+}
+[dir=rtl] .dokuwiki a.tagerror, [dir=rtl] .dokuwiki a.taginfo, [dir=rtl] .dokuwiki a.tagsuccess, [dir=rtl] .dokuwiki a.tagnotify {
+    padding: 0 1.9rem 0 2px;
+}
+[dir] .dokuwiki .tagerror {
+    background-color: @ini_red_color !important;
+}
+[dir] .dokuwiki .taginfo {
+    background-color: @ini_blue_color !important;
+}
+[dir] .dokuwiki .tagsuccess {
+    background-color: @ini_green_color !important;
+}
+[dir] .dokuwiki .tagnotify {
+    background-color: @ini_yellow_color !important;
+}
+
+/* = TRANSLATION
+-------------------------------------------------------------- */
+
+/* Improve dropdown input invisibility */
+#translation__dropdown input {
+    display: none !important;
+}
+
+#translation__dropdown select {
+    /*background-color: fade(@ini_background, 70%);*/
+}
+
+[dir] #translation__dropdown select {
+    background-color: mix(@ini_background, @ini_theme_color, 60%);
+}
+
+/* = TWISTIENAV
+-------------------------------------------------------------- */
+
+[dir=ltr] h1.header-post-title-class a.twistienav_map.svg:before {
+    margin: 0 0 0 6px;
+}
+
+[dir=rtl] h1.header-post-title-class a.twistienav_map.svg:before {
+    margin: 0 6px 0 0;
+}
+
+h1.header-post-title-class a.twistienav_extratwistie.svg:before {
+    content: url(images/replacements/twistienav-h1map.svg);
+}
+
+h1.header-post-title-class a.twistienav_extratwistie.twistienav_down.svg:before {
+    content: url(images/replacements/twistienav-h1map-full.svg) !important;
+}
+
+div.pageId a.twistienav_extratwistie.svg::before {
+    vertical-align: -1px;
+}

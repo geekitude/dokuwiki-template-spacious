@@ -8,3 +8,91 @@
  * 
  * This file contains some plugins' CSS adaptation rules.
  */
+
+/* = DISCUSSION
+-------------------------------------------------------------- */
+
+#discussion__comment_subscribe {
+    vertical-align: text-top;
+}
+
+#discussion__comment_form .comment_subscribe,
+#discussion__comment_form .comment_subscribe label.block {
+    display: inline-block;
+}
+
+/* = IMAGEBOX
+-------------------------------------------------------------- */
+
+div.thumb2 .thumbinner {
+    padding: 3px 3px 0 3px;
+}
+
+.thumbcaption {
+    padding: 6px 0 0 5px;
+}
+
+
+/* = TAGALERTS
+-------------------------------------------------------------- */
+
+.dokuwiki div.tagerror,
+.dokuwiki div.taginfo,
+.dokuwiki div.tagsuccess,
+.dokuwiki div.tagnotify {
+    color: @ini_text;
+    width: 80%;
+    padding: 0 10px 0 3.8rem;
+    margin: .25rem auto;
+}
+.dokuwiki a.tagerror,
+.dokuwiki a.taginfo,
+.dokuwiki a.tagsuccess,
+.dokuwiki a.tagnotify {
+    padding: 0 2px 0 1.9rem;
+    color: #fff !important;
+}
+.dokuwiki .tagerror {
+    background-color: @ini_red_color !important;
+}
+.dokuwiki .taginfo {
+    background-color: @ini_blue_color !important;
+}
+.dokuwiki .tagsuccess {
+    background-color: @ini_green_color !important;
+}
+.dokuwiki .tagnotify {
+    background-color: @ini_yellow_color !important;
+}
+
+/* = TRANSLATION
+-------------------------------------------------------------- */
+
+/* Improve dropdown input invisibility */
+#translation__dropdown input {
+    display: none !important;
+}
+
+#translation__dropdown select {
+    /*background-color: fade(@ini_background, 70%);*/
+    background-color: mix(@ini_background, @ini_theme_color, 60%);
+}
+
+/* = TWISTIENAV
+-------------------------------------------------------------- */
+
+h1.header-post-title-class a.twistienav_map.svg:before {
+    margin: 0 0 0 6px;
+}
+
+h1.header-post-title-class a.twistienav_extratwistie.svg:before {
+    content: url(images/replacements/twistienav-h1map.svg);
+}
+
+h1.header-post-title-class a.twistienav_extratwistie.twistienav_down.svg:before {
+    content: url(images/replacements/twistienav-h1map-full.svg) !important;
+}
+
+div.pageId a.twistienav_extratwistie.svg::before {
+    vertical-align: -1px;
+}
