@@ -33,25 +33,25 @@ function tpl_dokuwiki_mobile(){
     jQuery('html').removeClass(device_classes).addClass(device_class);
 
     // handle some layout changes based on change in device
-    var $handle = jQuery('#dokuwiki__aside h3.toggle');
+    //var $handle = jQuery('#spacious__sidebar');
     var $toc = jQuery('#dw__toc h3');
 
     if (device_class == 'desktop') {
         // reset for desktop mode
-        if($handle.length) {
-            $handle[0].setState(1);
-            $handle.hide();
-        }
+        //if($handle.length) {
+        //    $handle[0].setState(1);
+        //    $handle.hide();
+        //}
         if($toc.length) {
             $toc[0].setState(1);
         }
     }
     if (device_class.match(/mobile/)){
         // toc and sidebar hiding
-        if($handle.length) {
-            $handle.show();
-            $handle[0].setState(-1);
-        }
+        //if($handle.length) {
+        //    $handle.show();
+        //    $handle[0].setState(-1);
+        //}
         if($toc.length) {
             $toc[0].setState(-1);
         }
@@ -60,7 +60,7 @@ function tpl_dokuwiki_mobile(){
 
 jQuery(function(){
     var resizeTimer;
-    dw_page.makeToggle('#dokuwiki__aside h3.toggle','#dokuwiki__aside div.content');
+    //dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
 
     tpl_dokuwiki_mobile();
     jQuery(window).on('resize',
@@ -71,14 +71,14 @@ jQuery(function(){
     );
 
     // increase sidebar length to match content (desktop mode only)
-    var sidebar_height = jQuery('.desktop #dokuwiki__aside').height();
+    var sidebar_height = jQuery('.desktop #spacious__sidebar').height();
     var pagetool_height = jQuery('.desktop #dokuwiki__pagetools ul:first').height();
     // pagetools div has no height; ul has a height
     var content_min = Math.max(sidebar_height || 0, pagetool_height || 0);
 
-    var content_height = jQuery('#dokuwiki__content div.page').height();
+    var content_height = jQuery('#spacious__content div.page').height();
     if(content_min && content_min > content_height) {
-        var $content = jQuery('#dokuwiki__content div.page');
+        var $content = jQuery('#spacious__content div.page');
         $content.css('min-height', content_min);
     }
 
@@ -87,3 +87,21 @@ jQuery(function(){
         this.blur();
     });
 });
+
+function js_spacious_sidebar_toggle(toggle) {
+    if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "none" || (typeof toggle !== "undefined" && toggle == "show")) {
+        jQuery('#spacious__sidebar').show(JSINFO.Animate);
+        jQuery('#spacious__main-subflex .vr').css('display', 'initial');
+        jQuery('#spacious__main-subflex .vr').css('border-width', '0 1px 0 0');
+        jQuery('#spacious__contools li.show').css('display', 'none');
+        jQuery('#spacious__contools li.hide').css('display', 'inline-block');
+        jQuery('#spacious__article').removeClass('hidden-sidebar');
+    } else if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "block" || (typeof toggle !== "undefined" && toggle == "hide")) {
+        jQuery('#spacious__sidebar').hide(JSINFO.Animate);
+        jQuery('#spacious__main-subflex .vr').css('display', 'none');
+        jQuery('#spacious__main-subflex .vr').css('border-width', '0');
+        jQuery('#spacious__contools li.hide').css('display', 'none');
+        jQuery('#spacious__contools li.show').css('display', 'inline-block');
+        jQuery('#spacious__article').addClass('hidden-sidebar');
+    }
+}

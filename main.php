@@ -183,11 +183,11 @@ spacious_init();
                         </ul>
                     <?php endif; ?>
                 </aside>
-                <div id="spacious__main-subflex" class="flex stretch">
+                <div id="spacious__main-subflex" class="flex">
                     <?php if($spacious['showSidebar']): ?>
                         <!-- ********** SIDEBAR ********** -->
 <?php //dbg(spacious_findnearest($conf['sidebar'])); ?>
-                        <aside id="spacious__sidebar" class="group smaller<?php print (strpos(tpl_getConf('neutralize'), 'sidebar') !== false) ? " neu" : "" ?>">
+                        <aside id="spacious__sidebar" class="self-stretch group smaller<?php print (strpos(tpl_getConf('neutralize'), 'sidebar') !== false) ? " neu" : "" ?>">
                             <?php spacious_include("sidebarheader"); ?>
                             <h6 class="toggle"><span class="label"><?php echo $lang['sidebar'] ?></span></h6>
                             <div class="content">

@@ -5272,7 +5272,10 @@ div.skip a {
 }
 
 .flex.stretch {
-    align-items: stretch;
+    align-items: stretch !important;
+}
+.flex .self-stretch {
+    align-self: stretch !important;
 }
 .flex.start {
     align-items: flex-start;
@@ -5284,15 +5287,15 @@ div.skip a {
 .flex.wrap {
     flex-wrap: wrap;
 }
-:*
+/*
 .flex.nowrap {
     flex-wrap: nowrap;
 }
-[dir] */
+*/
 
+/* Config Manager */
 
-
-#config__manager h1 {
+[dir] #config__manager h1 {
     padding: 0;
 }
 
