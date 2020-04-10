@@ -2332,7 +2332,7 @@ body.mode_show.right-sidebar #spacious__article {
 
 .dokuwiki .toggle strong {
     float: right;
-    margin: 0 .2em;
+    margin: .6rem .4em 0 0;
 }
 
 #dw__toc ul li {
@@ -2349,6 +2349,33 @@ body.mode_show.right-sidebar #spacious__article {
     font-size: 1.4rem;
 }
 */
+
+.toggle strong {
+    line-height: 1;
+    padding-top: 2px;
+}
+
+.toggle strong span {
+    display: none;
+}
+
+.toggle strong {
+    content: "";
+    display:block;
+    height:1.8rem;
+    width:1.8rem;
+    background-size: 1.8rem 1.8rem;
+    background-repeat: no-repeat;
+    opacity: .4;
+}
+
+.toggle.closed strong {
+    background-image: url(images/svg/expand.svg);
+}
+
+.toggle.open strong {
+    background-image: url(images/svg/collapse.svg);
+}
 
 body.right-sidebar #dw__toc {
     float: left;
