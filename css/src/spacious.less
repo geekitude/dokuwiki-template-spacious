@@ -739,6 +739,31 @@ a img:hover {
     box-shadow: #000 0 0 0;
 }
 
+.dokuwiki a.interwiki,
+.dokuwiki a.urlextern,
+.dokuwiki a.windows,
+.dokuwiki a.mail,
+.dokuwiki a.mediafile {
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    padding: 0 0 0 1.8rem;
+}
+
+/* external link */
+.dokuwiki a.urlextern {
+    background-image: url(../../images/external-link.png);
+}
+
+/* windows share */
+.dokuwiki a.windows {
+    background-image: url(../../images/unc.png);
+}
+
+/* email link */
+.dokuwiki a.mail {
+    background-image: url(../../images/email.png);
+}
+
 #dw__toc a {
     display: block;
     opacity: 0.5;
