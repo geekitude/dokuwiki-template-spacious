@@ -508,6 +508,14 @@ sub {
     top: .5ex;
 }
 
+sup a.fn_top {
+    margin: 0 .4rem 0 -.4rem;
+}
+
+sup a.fn_top:after {
+    content: " ";
+}
+
 dl {
     margin-bottom: 24px;
     /*font-size: 16px;*/
@@ -4037,6 +4045,24 @@ pre.dbg {
 
 div.mobileTools {
     /*display:none;*/
+}
+
+/* Footnotes inside the text */
+
+div.insitu-footnote {
+    min-width: 5rem;
+    padding: .3rem .5rem;
+    background-color: @ini_blue_color;
+}
+
+/* Footnotes at the bottom of the page */
+
+.dokuwiki div.footnotes {
+    padding: .6rem 0 0 0;
+}
+
+.dokuwiki div.footnotes .fn .content {
+    display: inline-block;
 }
 
 /* Header DW tools */
