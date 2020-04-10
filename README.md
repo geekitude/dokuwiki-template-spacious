@@ -22,44 +22,16 @@ donationurl   : https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_butto
 ----
 -->
 
-Spacious Wordpress theme (https://themegrill.com/themes/spacious/) ported to DokuWiki using [this guide](https://www.dokuwiki.org/devel:wp_to_dw_template)
+Porting [Spacious Wordpress theme](https://themegrill.com/themes/spacious/) by [ThemeGrill](https://themegrill.com/) to DokuWiki using [this guide](https://www.dokuwiki.org/devel:wp_to_dw_template).
 
     See template.info.txt for template details
     Spacious is distributed under the terms of the GNU GPL V3 (see LICENSE file or [this link](https://www.gnu.org/licenses/gpl-3.0.html) for details)
 
 The result is a "namespace-aware" and polymorphic template that can be as sleek and straightforward as it's original Wordpress parent or more modern with extratible sidebar and/or TOC and potentially sticky elements.
 
-*Version of Spacious Wordpress theme used as base for this project : 1.7.1 (2020-02-19)*
+*Version of Spacious Wordpress theme used as base for this project : 1.5.6 (2018-11-20)*
 
 Since Dokuwiki's Starter template is too outdated for my development skill, mainly [because of new menus](https://github.com/selfthinker/dokuwiki_template_starter/issues/14), I started with a lightened version of Dokuwiki's default template.
-
-## Conversion TODO
-
-* [ ] Basic HTML/PHP
-  * [x] Meta elements
-  * [x] Site containers
-  * [ ] Header
-  * [ ] Content area
-  * [ ] Footer
-  * [ ] Sidebar
-  * [ ] WP vs. DW functions
-* [ ] Basic CSS
-  * [ ] style.css
-  * [ ] rtl.css
-  * [ ] print.css
-  * [ ] Necessary changes
-* [ ] JS
-* [ ] Further HTML/PHP
-  * [ ] Other layouts
-  * [ ] Special DW elements
-  * [ ] Other actions
-* [ ] Further CSS
-  * [ ] style.ini
-  * [ ] WP vs. DW classes
-* [ ] Rename IDs
-* [ ] Support specific custom WP theme functionality
-  * [ ] Custom colours
-  * [ ] Custom background
 
 ## Credits
 
@@ -94,24 +66,159 @@ The copyright notice at the very bottom of page shouldn't be removed.
 
 ## Main features
 
-* [ ] Topbar with date, newsticker (based on current namespace and sub content) and social links
-* [ ] Easy to customize glyphs(*) (from [Material Design Icons](https://materialdesignicons.com/) like other DW's SVG glyphs or [IcoMoon](https://icomoon.io/) for social links)
-* [ ] Sidebar and ToC can be moved out of page content on wide screen (only works in boxed layout)
-* [ ] Hidable sidebar
-* [ ] Stickable pageheader, sidebar and docinfo
-* [ ] Dynamic navigation button (current NS home, parent NS start, home or "back to article")
+* [x] Topbar with date, newsticker (based on current namespace and sub content) and social links
+* [x] Easy to customize glyphs(*) (from [Material Design Icons](https://materialdesignicons.com/) like other DW's SVG glyphs or [IcoMoon](https://icomoon.io/) for social links)
+* [x] Sidebar and ToC can be moved out of page content on wide screen (only works in boxed layout)
+* [x] Hidable sidebar
+* [x] Stickable pageheader, sidebar and docinfo
+* [x] Dynamic navigation button (current NS home, parent NS start, home or "back to article")
 * [x] Dark color scheme
-* [ ] High number of HTML [include hooks](https://www.dokuwiki.org/include_hooks)
-* [ ] A few HTML replace hooks that let you replace some elements with more fancy HTML code
-* [ ] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
+* [x] High number of HTML [this document](https://www.dokuwiki.org/include_hooks)
+* [x] A few HTML replace hooks that let you replace some elements with more fancy HTML code
+* [x] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
 * [ ] Can add Namespace based CSS stylesheet
-* [ ] Expanded debug mode to show some specific elements (sample code or images)
-  * [ ] *a11y* (visual accessibility helpers)
-  * [ ] *alerts*
-  * [ ] *banner*
-  * [ ] *card* (sidebar namespace card image)
-  * [ ] *conlogo* (namespace logo within page header aka context logo)
-  * [ ] *images* (all UI images)
-  * [ ] *include* (HTML include hooks)
-  * [ ] *logo*
-  * [ ] *replace* (HTML replace hooks)
+* [x] Expanded debug mode to show some specific elements (sample code or images)
+  * [x] *a11y* (visual accessibility helpers)
+  * [x] *alerts*
+  * [x] *banner*
+  * [x] *card* (sidebar namespace card image)
+  * [x] *conlogo* (namespace logo within page header aka context logo)
+  * [x] *images* (all UI images)
+  * [x] *include* (HTML include hooks)
+  * [x] *logo*
+  * [x] *replace* (HTML replace hooks)
+
+(*) to replace a glyph by another, simply put desired SVG file (2kb max) in `conf/svg` folder (you will most likely need to create it) and name it after the following list of elements : about.svg, acl.svg, admin.svg, config.svg, discussion.svg, extensions.svg, from-playground.svg, help.svg, home.svg, menu.svg, namespace-start.svg, parent-namespace.svg, playground.svg, popularity.svg, private-page.svg, public-page.svg, recycle.svg, refresh.svg, revert.svg, search.svg, styling.svg, translation.svg, upgrade.svg, user.svg, usermanager.svg or unknown-user.svg (ellipsis is too specific and cannot be customized). Note that header menu icons can't be customized as they come from DokuWiki core code.
+
+:warning: POSSIBLE SVG NAMES LIST ABOVE NEEDS TO BE UPDATED :warning:
+
+## Context tools
+
+Here are the different possible glyphs and corresponding actions. How the "contect tools" name implies, their availability depends on context.
+
+### Parent
+
+* ![Namespace start](/images/svg/folder-home.svg) Namespace start : go to current namespace start page from any random (ie. *not start*) page
+* ![Parent namespace](/images/svg/reply-all.svg) Parent namespace : go to parent namespace start from any second or deeper level namespace start page
+* ![Translated Wiki Home](/images/svg/flag.svg) Translated Wiki Home : go to translated wiki home from any second level translated page (requires [Translation](https://imgbin.com/png/r454K96z) plugin)
+* ![Wiki home](/images/svg/home.svg) Wiki home : go to wiki home from any first level namespace start page
+* ![Back to article](/images/svg/skip-previous.svg) Previous page : go back to article after switching to *admin*, *index*, *media* or *recent* modes
+
+### Sidetoggle
+
+![Hide sidebar](/images/svg/eye-off.svg) Hide or ![Show sidebar](/images/svg/eye.svg) show sidebar.
+
+### Syntax
+
+![Syntax](/images/svg/lifebuoy.svg) Simple link to syntax page (only available in *edit* mode).
+
+### Playground
+
+![Go to playground](/images/svg/shovel.svg) Go to playground or ![Back from playground](/images/svg/shovel-off.svg) back to article from playground.
+
+### Savesettings
+
+![Save settings](/images/svg/floppy.svg) Save settings (only available on configuration manager page).
+
+## Topbar social links
+
+After enabling `socialnetworks` setting, copy `dokuwiki/lib/tpl/spacious/images/debug/social.local.conf` file to `dokuwiki/conf` folder and complete relevant urls. You can add new lines for social networks that are not in the list yet. Note that the name must be lower case and contain no special characters (spaces must be replaced by underscores). `my_network` is a valid example.
+
+As for other SVG glyphs, you can put your own SVG files in `conf/svg` folder as long as it is named exactly like corresponding target network in configuration file.
+
+:bulb: you can add `<title>` tag within your SVG files to add a custom tooltip on hover.
+
+## Footer links widget
+
+Create a page named `links` (or change name in Spacious settings) that contain a list of links that will be shown as a footer widget.
+
+Check [this page](https://www.dokuwiki.org/tips:topbar) on how to build that page.
+
+## HTML hooks
+
+Spacious can be customized using HTML files that will be displayed at one of the many available include or replace hooks. Include hooks add some content while replace hooks take place of standard content.
+To get started, copy the correspondig HTML file from `spacious/debug` folder to `spacious` folder and change it to your liking (don't forget to remove existing `*-hook-sample` class).
+
+You can add `noprint` class to avoid the content to be printed.
+
+### Include hooks
+
+* *meta.html* : just before `</head>` tag (use this to add additional styles or metaheaders)
+* *header.html* : right above everything (except [Skip to Content])
+* *brandingfooter.html* : just below site-logo/title/banner section
+* *bannerheader.html* : above banner
+* *bannerfooter.html* : below banner
+* *toolsheader.html* : above header tools area
+* *toolsfooter.html* : below header tools area
+* *headerfooter.html* : below site header (just before widebanner area)
+* *mainheader.html* : above main content area
+* *sidebarheader.html* : before sidebar content
+* *pageheader.html* : above actual DW page content
+* *sidebarfooter.html* : after sidebar content
+* *pagefooter.html* : right before site footer, below actual DW page content
+* *mainfooter.html* : below main content area
+* *footerheader.html* : at the very end of the page just before the `</body>` tag
+* *footerwidget.html* : included in footer widgets area (after other widgets)
+* *footer.html* : at the very end of the page just before the `</body>` tag
+
+### Replace hooks
+
+These specific HTML hooks let you change some template elements with fancier HTML code of your own
+* *sidebar.html* : replacement for sidebar page
+* *title.html* : replace wiki title string with HTML element
+* *tagline.html* : replace wiki description string with HTML element
+* *banner.html* : replaces potential banner image with HTML element
+* *widebanner.html* : replaces potential banner image with HTML element
+
+## Plugins integration
+
+### QRCode2
+
+Can automatically add a few usefull QRCodes in footer (there's a setting to enable or disable each) :
+* *editor_mailto* : mailto last editor in `docInfo` area
+* *locked_mailto* : mailto user currently locking current page in `docInfo` area
+* *license_link* : link to wiki's license's details page (only shows up when printing page)
+* *onlineversion_link* : reach page's online version (a special hidden footer widget that only shows up when printing page)
+
+### Translation
+
+Available translations list is shown in a breadcrumbs like format under `pageId` element
+
+### Twistienav
+
+Adds a breacrumbs like list of sibling pages (other pages in current namespace)
+
+### Userhomepage
+
+Simply used as it should to build user page(s) links
+
+### Other tested plugins
+
+Imagebox, 
+
+## About UI Images
+
+### Background pattern
+
+By default, the template uses `spacious/images/pattern.png` image as background pattern.
+To use another one, simply upload a `pattern.png` image inside `wiki` namespace.
+
+## About jQuery
+
+Here's the list of features that will not work on browsers without Javascript abilities :
+* Newsticker
+* Context logo Lightbox effect
+* Sidebar toggle
+* TOC auto-collapsing when reaching phone resolution
+* Inner links will scroll a bit too far if Page header is set to stick on top of page
+* Animated scrolling
+
+## Expanded debug mode
+
+Debug mode is meant to show usually hidden elements and add many ugly colors to test some of template's settings or features.
+
+To enable "full" debug mode, simply add `&debug=1` or `?debug=1` at the end of URL, depending of current wiki mode (ie use "&" if there's already a "?" in URL, else use "?").
+
+You can also use some specific keyword values instead of boolean to show only a given element category (e.g. `&debug=include`). Here's a complete list of possible keywords : 'a11y' (visual accessibility helpers), 'alerts', 'avatar', 'banner', 'card' (sidebar namespace card image), 'images' (all UI images), 'include' (HTML include hooks), 'logo' (namespace logo within page header), 'replace' (HTML replace hooks), 'sitelogo'.
+
+Note that HTML replace hooks are not shown in "full" debug mode but only if using `&debug=replace`.
