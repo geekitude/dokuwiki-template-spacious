@@ -51,7 +51,7 @@ spacious_init();
         <?php include('tpl_header.php') ?>
         <main role="main" id="spacious__main" class="group">
             <?php spacious_include("mainheader"); ?>
-            <header id="spacious__pageheader" class="group spacer<?php print (strpos(tpl_getConf('neutralize'), 'pageheader') !== false) ? " neu" : "" ?><?php print $ACT == "admin" ? " hidden" : "" ?>">
+            <header id="spacious__pageheader" class="group<?php print (strpos(tpl_getConf('neutralize'), 'pageheader') !== false) ? " neu" : "" ?><?php print $ACT == "admin" ? " hidden" : "" ?>">
                 <div class="inner-wrap">
                     <div id="spacious__pageheader-wrap" class="flex between wrap">
                         <div class="flex wrap">
@@ -102,7 +102,7 @@ spacious_init();
                 </div><!-- /.inner-wrap -->
             </header><!-- /#spacious__pageheader -->
 <?php //dbg($spacious['images']); ?>
-            <div id="spacious__main-flex" class="flex stretch spacer">
+            <div id="spacious__main-flex" class="flex stretch spacer top-spacer">
                 <!-- CONTEXTUAL TOOLS -->
                 <aside id="spacious__contools" class="tools">
                     <?php if (tpl_getConf('contools') != '') : ?>
