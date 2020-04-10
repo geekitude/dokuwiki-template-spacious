@@ -535,7 +535,7 @@ function spacious_bodyclasses() {
     array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and (tpl_getConf('layout') == "boxed")) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
 //dbg($classes);
     /* TODO: better home detection than core */
-    return ' '.rtrim(join(' ', $classes));
+    return ' '.rtrim(join(' ', array_filter($classes)));
 }/* /spacious_bodyclasses */
 
 /**
