@@ -84,14 +84,14 @@ dbg("vérifier ces liens");
                 <aside id="spacious__licensewidget" class="widget">
                     <h6 class="widget-title"><span class="label"><?php print tpl_getLang('license'); ?></span></h6>
                     <?php if ((isset($spacious['qrcode']['license'])) and ($spacious['qrcode']['license'] != null)) : ?>
-                        <img class="qrcode" src="<?php print $spacious['qrcode']['license']; ?>" alt="*qrcode*" />
+                        <img class="qrcode license" src="<?php print $spacious['qrcode']['license']; ?>" alt="*qrcode*" title="<?php print tpl_getLang('license'); ?>" />
                     <?php endif; ?>
                     <?php tpl_license(tpl_getConf('licenseVisual')) /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */ ?>
                 </aside>
                 <?php if ((isset($spacious['qrcode']['id'])) and ($spacious['qrcode']['id'] != null)) : ?>
                     <aside id="spacious__onlinewidget" class="widget">
                         <h6 class="widget-title"><span class="label"><?php print tpl_getLang('onlineversion'); ?></span></h6>
-                        <img class="" src="<?php print $spacious['qrcode']['id']; ?>" alt="*qrcode*" />
+                        <img class="qrcode url" src="<?php print $spacious['qrcode']['id']; ?>" alt="*qrcode*" title="<?php print tpl_getLang('onlineversion'); ?>" />
                     </aside>
                 <?php endif; ?>
             </div><!-- /#spacious__foot-widgets-wrap -->

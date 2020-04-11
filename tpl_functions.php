@@ -160,10 +160,11 @@ function spacious_init() {
         if (strpos(tpl_getConf('qrcodes'), 'license_link') !== false) {
             $spacious['qrcode']['license'] = $qrcode2Helper->get_img($license[$conf['license']]['url'], true);
         }
-//dbg(wl($ID,'', true));
+//dbg($license[$conf['license']]['url']);
         if (strpos(tpl_getConf('qrcodes'), 'onlineversion_link') !== false) {
             $spacious['qrcode']['id'] = $qrcode2Helper->get_img(wl($ID,'', true), true);
         }
+//dbg(wl($ID,'', true));
 //print "<img class='qrcode' src='".$spacious['qrcode']['id']."' alt='*this page*' />";
     }
     // Translation
@@ -1200,7 +1201,7 @@ function spacious_docinfo($ret = false) {
         if($INFO['editor']) {
             $out .= '<span title="'.tpl_getLang('lasteditor').'" class="editor">'.spacious_glyph('editor', true);
             if ((isset($spacious['qrcode']['editor'])) and ($spacious['qrcode']['editor'] != null)) {
-                $out .= "<img class='qrcode editor' src='".$spacious['qrcode']['editor']."' alt='*last editor*' title='Contact editor' />";
+                $out .= "<img class='qrcode editor' src='".$spacious['qrcode']['editor']."' alt='*qrcode*' title='".tpl_getLang('lasteditor')."' />";
             }
             $out .= '<bdi>'.ucfirst(editorinfo($INFO['editor'])).'</bdi>';
         } else {
@@ -1212,7 +1213,7 @@ function spacious_docinfo($ret = false) {
         if($INFO['locked']) {
             $out .= '<span title="'.$lang['lockedby'].'" class="locked">'.spacious_glyph('locked', true);
             if ((isset($spacious['qrcode']['locked'])) and ($spacious['qrcode']['locked'] != null)) {
-                $out .= "<img class='qrcode locked' src='".$spacious['qrcode']['locked']."' alt='*locked by*' title='Contact locker' />";
+                $out .= "<img class='qrcode locked' src='".$spacious['qrcode']['locked']."' alt='*qrcode*' title='".$lang['lockedby']."' />";
             }
             $out .= '<bdi>'.ucfirst(editorinfo($INFO['locked'])).'</bdi>';
             $out .= '</span>';
