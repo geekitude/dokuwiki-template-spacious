@@ -5598,7 +5598,7 @@ body.dark #dw__toc h3 {
     }
 }
 
-/* fix logo wrap height responsivity even if it means to have an index bounce effect problem, see issue #23 */
+/* fix logo wrap height responsivity even if it means to have an index bounce effect problem */
 @media all and (max-width: @ini_site_width) {
     #spacious__head-logo-wrap {
         display: contents;
@@ -6594,6 +6594,9 @@ body.dark #dw__toc h3 {
     body.extractible-toc .dw__toc div {
         font-size: 100%;
     }
+    [dir] body.extractible-toc .dw__toc {
+        background-color: @ini_background_neu;
+    }
 }
 
 /* Extract Sidebar if there's enough room (extra 51px are for a 10px margin on both sides of sidebar and both side of screen plus 1rem for previous inner margin and an extra pixel to go beyond) */
@@ -6668,5 +6671,8 @@ body.dark #dw__toc h3 {
     body.extractible-sidebar div.notvisibleifextracted,
     body.extractible-sidebar #spacious__sidebar hr {
         visibility: hidden;
+    }
+    [dir] body.extractible-sidebar #spacious__sidebar {
+        background-color: @ini_background_neu !important;
     }
 }
