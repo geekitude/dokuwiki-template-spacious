@@ -1202,7 +1202,7 @@ function spacious_docinfo($ret = false) {
             if ((isset($spacious['qrcode']['editor'])) and ($spacious['qrcode']['editor'] != null)) {
                 $out .= "<img class='qrcode editor' src='".$spacious['qrcode']['editor']."' alt='*last editor*' title='Contact editor' />";
             }
-            $out .= '<bdi>'.editorinfo($INFO['editor']).'</bdi>';
+            $out .= '<bdi>'.ucfirst(editorinfo($INFO['editor'])).'</bdi>';
         } else {
             $out .= '<span class="editor svgonly" title="'.ucfirst($lang['external_edit']).'">'.spacious_glyph('extedit', true);
             //$out .= '['.$lang['external_edit'].']';
@@ -1214,7 +1214,7 @@ function spacious_docinfo($ret = false) {
             if ((isset($spacious['qrcode']['locked'])) and ($spacious['qrcode']['locked'] != null)) {
                 $out .= "<img class='qrcode locked' src='".$spacious['qrcode']['locked']."' alt='*locked by*' title='Contact locker' />";
             }
-            $out .= '<bdi>'.editorinfo($INFO['locked']).'</bdi>';
+            $out .= '<bdi>'.ucfirst(editorinfo($INFO['locked'])).'</bdi>';
             $out .= '</span>';
         }
         $out .= '<span title="'.tpl_getLang('pagepath').'" class="path">'.spacious_glyph('pagepath', true);
