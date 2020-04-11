@@ -23,7 +23,7 @@ $meta['branding']           = array('multichoice','_choices' => array('logo_text
 $meta['stickies']           = array('multicheckbox','_choices' => array('pageheader','sidebar','docinfo'));
 $meta['bannerfile']         = array('string');
 $meta['widebannerfile']     = array('string');
-$meta['conlogofile']        = array('string');
+$meta['nslogofile']         = array('string');
 $meta['sidecardfile']       = array('string');
 $meta['sidecardstyle']      = array('multichoice', '_choices' => array('mediacenter','medialeft','mediaright','stretch')); /* sidecard styling class */
 $meta['headertoolsIcons']   = array('onoff'); /* enable or not site and user tools SVG icons */

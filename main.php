@@ -59,11 +59,11 @@ spacious_init();
                                 <?php
                                     //$link = null;
                                     $title = "ContextualLogo";
-                                    if ($spacious['images']['conlogo']['target'] != null) {
-                                        if ($spacious['images']['conlogo']['thumbnail'] != null) {
-                                            print '<a href="'.$spacious['images']['conlogo']['target'].'" data-lity data-lity-desc="description"><img id="spacious__conlogo" src="'.$spacious['images']['conlogo']['thumbnail'].'" title="'.tpl_getLang('enlarge').'" alt="*'.$title.'*" width="48px" height="100%" /></a>';
+                                    if ($spacious['images']['nslogo']['target'] != null) {
+                                        if ($spacious['images']['nslogo']['thumbnail'] != null) {
+                                            print '<a href="'.$spacious['images']['nslogo']['target'].'" data-lity data-lity-desc="description"><img id="spacious__nslogo" src="'.$spacious['images']['nslogo']['thumbnail'].'" title="'.tpl_getLang('enlarge').'" alt="*'.$title.'*" width="48px" height="100%" /></a>';
                                         } else {
-                                            print '<a href="'.$spacious['images']['conlogo']['target'].'" data-lity data-lity-desc="description"><img id="spacious__conlogo" src="'.$spacious['images']['conlogo']['target'].'" title="'.tpl_getLang('enlarge').'" alt="*'.$title.'*" width="48px" height="100%" /></a>';
+                                            print '<a href="'.$spacious['images']['nslogo']['target'].'" data-lity data-lity-desc="description"><img id="spacious__nslogo" src="'.$spacious['images']['nslogo']['target'].'" title="'.tpl_getLang('enlarge').'" alt="*'.$title.'*" width="48px" height="100%" /></a>';
                                         }
                                     }
                                 ?>

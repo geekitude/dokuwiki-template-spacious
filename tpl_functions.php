@@ -355,14 +355,14 @@ function spacious_init() {
             $spacious['images']['widebanner']['target'] = null;
         }
     }
-    if ((tpl_getConf('conlogofile') != null) or ($_GET['debug'] == 1) or ($_GET['debug'] == "images") or ($_GET['debug'] == "conlogo")) {
-        $spacious['images']['conlogo']['size'] = array();
+    if ((tpl_getConf('nslogofile') != null) or ($_GET['debug'] == 1) or ($_GET['debug'] == "images") or ($_GET['debug'] == "nslogo")) {
+        $spacious['images']['nslogo']['size'] = array();
         $ns = cleanID(getNS($ID));
-        $spacious['images']['conlogo']['target'] = tpl_getMediaFile(array(':'.$ID.'.png', ':'.$ID.'.jpg', ':'.$ns.':'.tpl_getConf('conlogofile').'.png', ':'.$ns.':'.tpl_getConf('conlogofile').'.jpg', 'debug/conlogo.png'), false, $spacious['images']['conlogo']['size']);
-        $spacious['images']['conlogo']['thumbnail'] = tpl_getMediaFile(array(':'.$ID.'-thumbnail.png', ':'.$ID.'-thumbnail.jpg', ':'.$ns.':'.tpl_getConf('conlogofile').'-thumbnail.png', ':'.$ns.':'.tpl_getConf('conlogofile').'-thumbnail.jpg', 'debug/conlogo-thumbnail.png'), false);
-        if ((strpos($spacious['images']['conlogo']['target'], "debug") !== false) and (($_GET['debug'] != 1) and ($_GET['debug'] != "images") and ($_GET['debug'] != "conlogo"))) {
-            $spacious['images']['conlogo']['target'] = null;
-            $spacious['images']['conlogo']['thumbnail'] = null;
+        $spacious['images']['nslogo']['target'] = tpl_getMediaFile(array(':'.$ID.'.png', ':'.$ID.'.jpg', ':'.$ns.':'.tpl_getConf('nslogofile').'.png', ':'.$ns.':'.tpl_getConf('nslogofile').'.jpg', 'debug/nslogo.png'), false, $spacious['images']['nslogo']['size']);
+        $spacious['images']['nslogo']['thumbnail'] = tpl_getMediaFile(array(':'.$ID.'-thumbnail.png', ':'.$ID.'-thumbnail.jpg', ':'.$ns.':'.tpl_getConf('nslogofile').'-thumbnail.png', ':'.$ns.':'.tpl_getConf('nslogofile').'-thumbnail.jpg', 'debug/nslogo-thumbnail.png'), false);
+        if ((strpos($spacious['images']['nslogo']['target'], "debug") !== false) and (($_GET['debug'] != 1) and ($_GET['debug'] != "images") and ($_GET['debug'] != "nslogo"))) {
+            $spacious['images']['nslogo']['target'] = null;
+            $spacious['images']['nslogo']['thumbnail'] = null;
         }
     }
     if ((tpl_getConf('sidecardfile') != null) or ($_GET['debug'] == 1) or ($_GET['debug'] == "images") or ($_GET['debug'] == "card")) {
@@ -395,7 +395,7 @@ function spacious_init() {
 //dbg($spacious['images']['avatar']);
 //dbg($spacious['images']['avatarsize']);
 //dbg($spacious['images']);
-//dbg(file_exists($spacious['images']['conlogo']['thumbnail']));
+//dbg(file_exists($spacious['images']['nslogo']['thumbnail']));
 
     // BUILD LAST CHANGES LIST
 //    if ((strpos(tpl_getConf('topbar'), 'newsticker') !== false) and ($ID != $conf['start'])) {
