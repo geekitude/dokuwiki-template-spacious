@@ -38,20 +38,20 @@ function tpl_dokuwiki_mobile(){
 
     if (device_class == 'desktop') {
         // reset for desktop mode
-        //if($handle.length) {
-        //    $handle[0].setState(1);
-        //    $handle.hide();
-        //}
+        if($handle.length) {
+            $handle[0].setState(1);
+            $handle.hide();
+        }
         if($toc.length) {
             $toc[0].setState(1);
         }
     }
     if (device_class.match(/mobile/)){
         // toc and sidebar hiding
-        //if($handle.length) {
-        //    $handle.show();
-        //    $handle[0].setState(-1);
-        //}
+        if($handle.length) {
+            $handle.show();
+            $handle[0].setState(-1);
+        }
         if($toc.length) {
             $toc[0].setState(-1);
         }
@@ -60,7 +60,7 @@ function tpl_dokuwiki_mobile(){
 
 jQuery(function(){
     var resizeTimer;
-    //dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
+    dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
 
     tpl_dokuwiki_mobile();
     jQuery(window).on('resize',
