@@ -183,7 +183,7 @@ spacious_init();
                         </ul>
                     <?php endif; ?>
                 </aside>
-                <div id="spacious__main-subflex" class="flex">
+                <div id="spacious__main-subflex" class="flex stretch">
                     <?php if($spacious['showSidebar']): ?>
                         <!-- ********** SIDEBAR ********** -->
 <?php //dbg(spacious_findnearest($conf['sidebar'])); ?>
