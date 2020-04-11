@@ -8,3 +8,203 @@
  * 
  * This file contains template's printing CSS rules.
  */
+
+/* paper page */
+/*@page { size: auto;  margin: 0mm; }*/
+@page { 
+    size: auto;
+}
+
+/* general */
+* { background: transparent !important; color: black !important; fill: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+*:not(#spacious__pageheader) { box-shadow:none !important; }
+body {
+    /*border: 2px black solid;*/
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+caption,
+legend {
+    clear: both;
+}
+/* prevent paragraphs (and contained images) from being cut between pages */ 
+p {
+    /*page-break-inside: avoid !important;*/
+    break-inside: avoid;
+}
+
+/* layout */
+#spacious__head,
+#spacious__foot-widgets-container {
+    border-width: 0;
+}
+#spacious__skip,
+div.vr,
+#spacious__topbar-wrapper,
+#spacious__head-tools-wrap .tools,
+#spacious__widebanner-wrap,
+#spacious__sidebar,
+.dokuwiki .breadcrumbs,
+#dw__toc,
+h3.toggle,
+#spacious__contools,
+#spacious__pagetools,
+#spacious__userwidget,
+#spacious__linkswidget,
+#spacious__helper,
+.noprint {
+    display: none !important;
+}
+#spacious__head-text-nav-wrap  {
+    padding: 0;
+}
+#spacious__page,
+#spacious__article {
+    margin: 0;
+}
+#spacious__head-text-nav-container .inner-wrap,
+#spacious__pageheader {
+    margin: 0 1px;
+}
+#spacious__head-text-nav-wrap > div {
+    width: 49.9%;
+}
+#spacious__head-logo-wrap img,
+#spacious__head-banner-wrap img {
+    /*height: 53px;*/
+    max-height: 15mm;
+}
+#spacious__site-title,
+#spacious__site-tagline {
+    line-height: 1.1;
+}
+#spacious__site-title a {
+    font-size: 2rem;
+}
+#spacious__site-tagline a {
+    font-size: 1rem;
+}
+#spacious__main-flex,
+#spacious__main-subflex {
+    display: initial;
+}
+#spacious__pageheader {
+    position: relative !important;
+    border: 1px solid black;
+}
+
+/* links */
+/*#spacious__article a:link,
+#spacious__article a:visited {*/
+a:link,
+a:visited {
+    text-decoration: none;
+    /*border-bottom: 1pt dotted;/*
+    /*color: #333;*/
+    /*background-color: inherit;*/
+    padding: 0 !important;
+}
+/* display href after link */
+/*body.printhrefs #spacious__article a.urlextern:after,
+body.printhrefs #spacious__article a.interwiki:after,
+body.printhrefs #spacious__article a.mail:after {*/
+body.printhrefs a.urlextern:after,
+body.printhrefs a.interwiki:after,
+body.printhrefs a.mail:after {
+    content: " [" attr(href) "]";
+    /*color: #ddd !important;*/
+    /*vertical-align: 6px !important;*/
+    font-size: 1.2rem;
+    height: 0;
+    line-height: 1;
+    position: relative;
+    vertical-align: baseline;
+    top: .5ex;
+}
+
+/* code blocks */
+pre {
+    font-family: monospace;
+    width: 100%;
+}
+dl.code dt,
+dl.file dt {
+    font-weight: bold;
+}
+mark {
+    font-weight: bold;
+}
+
+/* images */
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+img.media {
+    margin: .5rem 0;
+}
+img.medialeft {
+    margin: .5rem 1rem .5rem 0;
+}
+img.mediaright {
+    margin: .5rem 0 .5rem 1rem;
+}
+img.mediacenter {
+    margin: .5rem auto;
+}
+* svg {
+    fill: black !important;
+}
+
+/* footnotes */
+div.footnotes div.fn div.content {
+    display: inline;
+}
+
+/* docInfo */
+/*#spacious__content .docInfo img.qrcode.curid,
+#spacious__content .docInfo img.qrcode.curid,
+#spacious__content .docInfo span.path svg {
+    vertical-align: middle;
+}
+#spacious__content .docInfo img.qrcode.curid {
+    display: initial;
+}*/
+#spacious__content .docInfo span.editor img.qrcode,
+#spacious__content .docInfo span.locked img.qrcode {
+    display: none;
+}
+
+/* Footer widgets */
+#spacious__foot-widgets-wrap img.qrcode {
+    width: 123px;
+    height: 123px;
+}
+#spacious__foot-widgets-container {
+    margin: 0 0 0 -1.2rem;/* compensate License widget title margin*/
+}
+
+/* license */
+#spacious__licensewidget h6 {
+    margin: 0 0 0 1.2rem;/* match visual position of title compared to qrcode*/
+}
+#spacious__licensewidget img {
+    float: left;
+}
+#spacious__licensewidget img.qrcode {
+    display: initial;
+}
+#spacious__licensewidget div.license {
+    margin: .9rem 0 0 0;
+}
+
+/* online version */
+#spacious__onlinewidget h6 {
+    margin: 0 0 0 1.2rem;/* match visual position of title compared to qrcode*/
+}
+#spacious__onlinewidget {
+    display: initial;
+}
