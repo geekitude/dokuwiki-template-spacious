@@ -1342,7 +1342,7 @@ function spacious_newsticker($context = null) {
 
     $mediaPath = str_replace("/pages", "/media", $conf['datadir']);
     if (count($spacious['recents']) > 1) {
-        print '<ul class="newsticker">';
+        print '<ul class="js-lastchanges">';
     }
     $i = 0;
     foreach ($spacious['recents'] as $key => $value) {
