@@ -25,8 +25,13 @@ body {
 [dir] h1, [dir] h2, [dir] h3, [dir] h4, [dir] h5, [dir] caption, [dir] legend {
     clear: both;
 }
-/* prevent paragraphs (and contained images) from being cut between pages */ 
-p {
+/* prevent breaks directly after headings */
+h1, h2, h3, h4, h5 {
+  page-break-after: avoid;
+}
+
+/* prevent paragraphs (and contained images), figures and tables from being cut between pages */ 
+p, pre, table, figure {
     /*page-break-inside: avoid !important;*/
     -moz-column-break-inside: avoid;
          break-inside: avoid;
@@ -91,6 +96,11 @@ h3.toggle,
     border: 1px solid black;
 }
 
+/* edit buttons */
+div.secedit.editbutton_section {
+    display: none;
+}
+
 /* links */
 /*#spacious__article a:link,
 #spacious__article a:visited {*/
@@ -104,6 +114,7 @@ a:visited {
 [dir] a:link, [dir] a:visited {
     padding: 0 !important;
 }
+
 /* display href after link */
 /*body.printhrefs #spacious__article a.urlextern:after,
 body.printhrefs #spacious__article a.interwiki:after,
@@ -196,7 +207,6 @@ div.footnotes div.fn div.content {
 [dir=rtl] #spacious__foot-widgets-container {
     margin: 0 -1.2rem 0 0;
 }
-
 /* license */
 #spacious__licensewidget h6 {/* match visual position of title compared to qrcode*/
 }
@@ -218,7 +228,6 @@ div.footnotes div.fn div.content {
 [dir] #spacious__licensewidget div.license {
     margin: .9rem 0 0 0;
 }
-
 /* online version */
 #spacious__onlinewidget h6 {/* match visual position of title compared to qrcode*/
 }
@@ -230,4 +239,9 @@ div.footnotes div.fn div.content {
 }
 #spacious__onlinewidget {
     display: initial;
+}
+
+/* footer-socket-wrapper */
+div.footer-socket-wrapper {
+    display: none;
 }
