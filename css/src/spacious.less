@@ -5240,14 +5240,15 @@ body.dark #spacious__foot-widgets-container {
     }
     */
     #spacious__main-flex .tools {
-        width: calc(@ico-width - 2px);
-        max-width: calc(@ico-width - 2px);
-        min-width: calc(@ico-width - 2px);
+        width: @ico-width;
+        max-width: @ico-width;
+        min-width: @ico-width;
     }
     #spacious__main-flex .tools ul li a,
     #spacious__main-flex .tools ul li button,
-    #spacious__main-flex .tools ul li p {
-        padding: 0 1px;
+    #spacious__main-flex .tools ul li p,
+    #spacious__main-flex .tools ul:hover li.sidetoggle button {
+        padding: 0;
     }
     #spacious__main-flex .tools ul li svg {
         height: 22px;

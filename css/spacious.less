@@ -6446,12 +6446,12 @@ body.dark #dw__toc h3 {
     }
     */
     #spacious__main-flex .tools {
-        width: calc(@ico-width - 2px);
-        max-width: calc(@ico-width - 2px);
-        min-width: calc(@ico-width - 2px);
+        width: @ico-width;
+        max-width: @ico-width;
+        min-width: @ico-width;
     }
-    [dir] #spacious__main-flex .tools ul li a, [dir] #spacious__main-flex .tools ul li button, [dir] #spacious__main-flex .tools ul li p {
-        padding: 0 1px;
+    [dir] #spacious__main-flex .tools ul li a, [dir] #spacious__main-flex .tools ul li button, [dir] #spacious__main-flex .tools ul li p, [dir] #spacious__main-flex .tools ul:hover li.sidetoggle button {
+        padding: 0;
     }
     #spacious__main-flex .tools ul li svg {
         height: 22px;
