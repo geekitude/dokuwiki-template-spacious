@@ -76,7 +76,6 @@ The copyright notice at the very bottom of page shouldn't be removed.
 * [x] High number of HTML [this document](https://www.dokuwiki.org/include_hooks)
 * [x] A few HTML replace hooks that let you replace some elements with more fancy HTML code
 * [x] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
-* [ ] Can add Namespace based CSS stylesheet
 * [x] Expanded debug mode to show some specific elements (sample code or images)
   * [x] *a11y* (visual accessibility helpers)
   * [x] *alerts*
@@ -94,7 +93,7 @@ The copyright notice at the very bottom of page shouldn't be removed.
 
 ## Context tools
 
-Here are the different possible glyphs and corresponding actions. How the "contect tools" name implies, their availability depends on context.
+These tools appear on opposite side of page tools and here are the different possible glyphs and corresponding actions (how the "contect tools" name implies, the availability of each tools depends on context).
 
 ### Parent
 
