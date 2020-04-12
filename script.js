@@ -1,117 +1,135 @@
 if (JSINFO.LoadNewsTicker) {
     /* DOKUWIKI:include js/jquery.newsTicker-1.0.11.min.js */
 }
+
 /**
  *  We handle several device classes based on browser width.
  *
- *  - desktop:   > __tablet_width__ (as set in style.ini)
+ *  - desktop:   > 1201px
  *  - mobile:
- *    - tablet   <= __tablet_width__
- *    - phone    <= __phone_width__
+ *    - tablet   >= 544px
+ *    - phone    <= 543px
+ *  And a special state when ToC and/or Sidebar are "extracted"
  */
 var device_class = ''; // not yet known
-var device_classes = 'desktop mobile tablet phone';
+var device_classes = 'extracted-toc extracted-sidebar desktop mobile tablet phone';
+var screen_mode;
+//var pagenav_width = 0;
 
+function js_spacious_resize(){
 
-function tpl_dokuwiki_mobile(){
-
-    // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
-    var screen_mode = jQuery('#screen__mode').css('z-index') + '';
-
+    // the z-index of #mixture__helper div is (mis-)used on purpose for detecting the screen mode here
+    screen_mode = jQuery('#spacious__helper').css('z-index') + '';
+console.log(screen_mode);
     // determine our device pattern
-    // TODO: consider moving into dokuwiki core
     switch (screen_mode) {
-        case '1':
-            if (device_class.match(/tablet/)) return;
-            device_class = 'mobile tablet';
-            break;
-        case '2':
+        case '1001':
             if (device_class.match(/phone/)) return;
             device_class = 'mobile phone';
+//            jQuery('#js_lastchanges_container').hide();
+            break;
+        case '1002':
+            if (device_class.match(/tablet/)) return;
+            device_class = 'mobile tablet';
+//            jQuery('#js_lastchanges_container').show();
+            break;
+        case '2001':
+            if (device_class.match(/extracted-toc/)) return;
+            device_class = 'desktop extracted-toc';
+//            jQuery('#js_lastchanges_container').show();
+            break;
+        case '2002':
+            if (device_class.match(/extracted-sidebar/)) return;
+            device_class = 'desktop extracted-toc extracted-sidebar';
+//            jQuery('#js_lastchanges_container').show();
             break;
         default:
             if (device_class == 'desktop') return;
+//            jQuery('#js_lastchanges_container').show();
             device_class = 'desktop';
     }
 
     jQuery('html').removeClass(device_classes).addClass(device_class);
 
     // handle some layout changes based on change in device
-    //var $handle = jQuery('#spacious__sidebar');
+//    var $bannertools = jQuery('#mixture__classic_nav h3.toggle');
+    var $aside = jQuery('#spacious__sidebar h6.toggle');
     var $toc = jQuery('#dw__toc h3');
 
-    if (device_class == 'desktop') {
+    if (device_class.match(/desktop/)){
         // reset for desktop mode
-        if($handle.length) {
-            $handle[0].setState(1);
-            $handle.hide();
+//        if($bannertools.length) {
+//            $bannertools[0].setState(1);
+//        }
+        if($aside.length) {
+            $aside[0].setState(1);
         }
         if($toc.length) {
             $toc[0].setState(1);
         }
     }
+
     if (device_class.match(/mobile/)){
-        // toc and sidebar hiding
-        if($handle.length) {
-            $handle.show();
-            $handle[0].setState(-1);
+        // toc and sidebar collapsed (toggles with titles shown)
+//        if($bannertools.length) {
+//            $bannertools[0].setState(-1);
+//        }
+        if($aside.length) {
+            $aside.show();
+            $aside[0].setState(-1);
         }
         if($toc.length) {
             $toc[0].setState(-1);
         }
     }
+
 }
 
-function js_spacious_sidebar_toggle(toggle) {
-    if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "none" || (typeof toggle !== "undefined" && toggle == "show")) {
-        jQuery('#spacious__sidebar').show(JSINFO.Animate);
-        jQuery('#spacious__main-subflex .vr').css('display', 'initial');
-        jQuery('#spacious__main-subflex .vr').css('border-width', '0 1px 0 0');
-        jQuery('#spacious__contools li.show').css('display', 'none');
-        jQuery('#spacious__contools li.hide').css('display', 'inline-block');
-        jQuery('#spacious__article').removeClass('hidden-sidebar');
-    } else if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "block" || (typeof toggle !== "undefined" && toggle == "hide")) {
-        jQuery('#spacious__sidebar').hide(JSINFO.Animate);
-        jQuery('#spacious__main-subflex .vr').css('display', 'none');
-        jQuery('#spacious__main-subflex .vr').css('border-width', '0');
-        jQuery('#spacious__contools li.hide').css('display', 'none');
-        jQuery('#spacious__contools li.show').css('display', 'inline-block');
-        jQuery('#spacious__article').addClass('hidden-sidebar');
-    }
-}
+//function js_mixture_branding(){
+//    // fix wiki title and tagline horizontal alignment when window is so tiny they go under logo
+//    var brandingHeight = jQuery('#mixture__branding_start').height();
+//    var brandingLogoHeight = jQuery('#mixture__branding_logo').height();
+//    var brandingTextHeight = jQuery('#mixture__branding_text').height();
+//    if (brandingHeight > brandingLogoHeight + brandingTextHeight) {
+//        jQuery('#mixture__branding_text').css("text-align","center");
+//    }
+//    var brandingWidth = jQuery('#mixture__branding_start').width();
+//    var brandingLogoWidth = jQuery('#mixture__branding_logo').width();
+//    var brandingTextWidth = jQuery('#mixture__branding_text').width();
+//    if (brandingWidth > brandingLogoWidth + brandingTextWidth) {
+//        jQuery('#mixture__branding_text').css("text-align","initial");
+//    }
+//}
 
-jQuery(function(){
-    var resizeTimer;
-    dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
-
-    tpl_dokuwiki_mobile();
-    jQuery(window).on('resize',
-        function(){
-            if (resizeTimer) clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(tpl_dokuwiki_mobile,200);
-        }
-    );
-
-    // increase sidebar length to match content (desktop mode only)
-    var sidebar_height = jQuery('.desktop #spacious__sidebar').height();
-    var pagetool_height = jQuery('.desktop #dokuwiki__pagetools ul:first').height();
-    // pagetools div has no height; ul has a height
-    var content_min = Math.max(sidebar_height || 0, pagetool_height || 0);
-
-    var content_height = jQuery('#spacious__content div.page').height();
-    if(content_min && content_min > content_height) {
-        var $content = jQuery('#spacious__content div.page');
-        $content.css('min-height', content_min);
-    }
-
-    // blur when clicked
-    jQuery('#dokuwiki__pagetools div.tools>ul>li>a').on('click', function(){
-        this.blur();
-    });
-});
+//function js_mixture_pagenav(){
+//    var page_width = jQuery('#mixture__pagenav').width();
+//    var pageid_width = jQuery('#mixture__pagenav div.pageId').outerWidth(true);
+//    var pagetrs_width = 0;
+//    jQuery('#mixture__pagenav li.trs').each(function() {
+//        pagetrs_width += jQuery(this).outerWidth(true);
+//    });
+//    // 10 pixels substracted to add just a little security in the process
+//    var available = page_width - pageid_width - pagetrs_width - 50;
+//    if(pagenav_width > available){
+//        // pagenav has overflow
+//        jQuery('body').removeClass("inline-pagenav-dropdown");
+//    } else {
+//        // pagenav fits in page
+//        jQuery('body').addClass("inline-pagenav-dropdown");
+//    }
+//}
 
 jQuery(document).ready(function() {
-        // Prepare last changes ticker
+
+    // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
+    screen_mode = jQuery('#spacious__helper').css('z-index') + '';
+
+//    // Get current pagenav width
+//    jQuery('#mixture__pagenav li.tab').each(function() {
+//        pagenav_width += jQuery(this).outerWidth(true);
+//    });
+
+    // Prepare last changes ticker
     jQuery('.js-lastchanges').newsTicker({
         max_rows: 1,
         row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 4,
@@ -122,9 +140,35 @@ jQuery(document).ready(function() {
         pauseOnHover: 1
     });
 
-    // Show last changes ticker
-    //if (screen_mode != '1000') {
-        jQuery('#spacious__topbar-newsticker').show();
-    //}
+//    // Show last changes ticker
+//    if (screen_mode != '1000') {
+//        jQuery('#js_lastchanges_container').show();
+//    }
+
+    // Prepare resize watcher and proceed a resize function first run to adjust layout
+    jQuery(function(){
+        var resizeTimer;
+        dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
+//        dw_page.makeToggle('#mixture__classic_nav h3.toggle','#mixture__classic_nav div.content');
+
+        // Proceed first run of resize watcher functions
+        js_spacious_resize();
+//        js_mixture_pagenav();
+//        js_mixture_branding();
+//        // Show some hidden elements only after jQuery initialisation
+//        jQuery('#mixture__pagenav_nsindex').css("opacity","1");
+
+        // RESIZE WATCHER
+        jQuery(window).resize(function(){
+//            // PageNav needs a very fast reaction (switching it is not a heavy process)
+//            js_mixture_pagenav();
+//            // Branding text needs a fast reaction time but can occur after PageNav
+//            js_mixture_branding();
+            // Other resize actions (mainly asides' toggles) can be less reactive without harming user experience
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(js_spacious_resize,200);
+        });
+
+    });
 
 });

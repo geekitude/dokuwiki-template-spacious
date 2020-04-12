@@ -3060,8 +3060,8 @@ body.right-sidebar #spacious__sidebar {
     margin: 0;
 }
 
-body.no-sidebar #spacious__contools ul .sidetoggle,
-html.no-js #spacious__contools ul .sidetoggle,
+body.no-sidebar #spacious__contools ul .sidevision,
+html.no-js #spacious__contools ul .sidevision,
 html.no-js #spacious__topbar-newsticker {
     display: none;
 }
@@ -4277,7 +4277,7 @@ li.default-menu {
     background-color: transparent;
 }
 
-#spacious__contools ul .sidetoggle.show {
+#spacious__contools ul .sidevision.show {
     display: none;
 }
 
@@ -4378,14 +4378,14 @@ body.no-right-sidebar #spacious__pagetools ul li button {
     vertical-align: -8px;
 }
 
-[dir] #spacious__contools ul li.sidetoggle button {
+[dir] #spacious__contools ul li.sidevision button {
     cursor: ew-resize;
     text-align: start;
     padding: 0 4px;
 }
 
 /*
-#spacious__main-flex .tools ul li.sidetoggle button {
+#spacious__main-flex .tools ul li.sidevision button {
     padding: 0 4px;
 }
 */
@@ -4464,7 +4464,7 @@ body.right-sidebar #spacious__pagetools ul li a.fold_unfold_all_new {
 #spacious__main-flex .tools ul:hover li {
     max-width: 100%;
 }
-[dir] #spacious__main-flex .tools ul:hover li.sidetoggle button {
+[dir] #spacious__main-flex .tools ul:hover li.sidevision button {
     padding: 0 4px;
 }
 [dir] #spacious__main-flex .tools ul:hover li.label {
@@ -5413,7 +5413,7 @@ div.skip a {
 #spacious__helper {
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 1003;
     visibility: hidden;
     color: gold;
 }
@@ -5870,7 +5870,7 @@ body.dark #dw__toc h3 {
         flex-direction: column;
         /*padding-top: 1rem;*/
     }
-    /*#spacious__sidetoggle ul,*/
+    /*#spacious__sidevision ul,*/
     #spacious__main-subflex .vr {
         display: none;
     }
@@ -5908,7 +5908,7 @@ body.dark #dw__toc h3 {
         position: initial;
     }
     #spacious__helper {
-        z-index: 1001;
+        z-index: 1002;
     }
     #spacious__helper span::before {
         content: "tablet (>480px, <800px)";
@@ -6358,7 +6358,7 @@ body.dark #dw__toc h3 {
         display: none;
     }
     #spacious__helper {
-        z-index: 1002;
+        z-index: 1001;
     }
     #spacious__helper span::before {
         content: "phone (<480px)";
@@ -6456,7 +6456,7 @@ body.dark #dw__toc h3 {
         max-width: @ico-width;
         min-width: @ico-width;
     }
-    [dir] #spacious__main-flex .tools ul li a, [dir] #spacious__main-flex .tools ul li button, [dir] #spacious__main-flex .tools ul li p, [dir] #spacious__main-flex .tools ul:hover li.sidetoggle button {
+    [dir] #spacious__main-flex .tools ul li a, [dir] #spacious__main-flex .tools ul li button, [dir] #spacious__main-flex .tools ul li p, [dir] #spacious__main-flex .tools ul:hover li.sidevision button {
         padding: 0;
     }
     #spacious__main-flex .tools ul li svg {
@@ -6654,7 +6654,7 @@ body.dark #dw__toc h3 {
         margin: 0 calc(-1 * (@ini_sidebar_width + 10px)) 0 0;
     }
     */
-    body.extractible-sidebar #spacious__contools li.action.sidetoggle {
+    body.extractible-sidebar #spacious__contools li.action.sidevision {
         display: none;
     }
     /*
