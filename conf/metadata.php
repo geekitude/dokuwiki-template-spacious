@@ -11,7 +11,6 @@
  */
 
 $meta['layout']             = array('multichoice','_choices' => array('boxed','mix','full-width','box2full'));
-$meta['dark']               = array('onoff'); /* dark color scheme or not */
 $meta['bodyBg']             = array('multichoice','_choices' => array('pattern','color')); /* fill site background with pattern or color */
 $meta['topbar']             = array('multicheckbox','_choices' => array('date','newsticker','socialnetworks'));
 $meta['datelocale']         = array('string');

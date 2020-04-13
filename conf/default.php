@@ -11,7 +11,6 @@
  */
 
 $conf['layout']             = 'boxed';
-$conf['dark']               = 0;
 $conf['bodyBg']             = 'color';
 $conf['topbar']             = '';
 $conf['datelocale']         = 'fra';
