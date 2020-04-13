@@ -10,6 +10,48 @@
  */
 
 /* GLOBAL */
+#spacious__foot-widgets-container {
+    /*background-color: @ini_background_dark_color;*/
+    /*color: @ini_text_dark_color;*/
+}
+body.dark {
+    /*background-color: @ini_background_dark_color;*/
+    /*background-color: black;*/
+    /*color: @ini_text_dark_color;*/
+    color: #fff - @ini_text;
+}
+[dir] body.dark {
+    background-color: #fff - @ini_background_site;
+}
+#spacious__head-text-nav-container,
+body.dark #spacious__page {
+    /*background-color: @ini_background_dark_color;*/
+    /*color: @ini_text_dark_color;*/
+    color: #fff - @ini_text;
+}
+[dir] #spacious__head-text-nav-container, [dir] body.dark #spacious__page {
+    background-color: #fff - @ini_background;
+}
+/*
+#spacious__sidebar {
+    background-color: @ini_background_dark_color;
+}
+*/
+[dir] body.dark #spacious__pageheader {
+    background-color: mix(black, @ini_theme_color, 60%);
+    box-shadow: 0 0 30px mix(black, @ini_theme_color, 20%) inset;
+}
+body.dark #dw__toc {
+    /*background-color: @ini_background_dark_color !important;*/
+}
+body.dark #dw__toc a {
+    /*color: @ini_text_dark_color !important;*/
+    color: #fff - @ini_text;
+}
+body.dark #spacious__foot-widgets-container {
+    /*background-color: darken(@ini_background_dark_color, 10%);*/
+}
+
 [dir] body.dark #dokuwiki__site {
 	background-color: #292929;
 }
@@ -45,7 +87,7 @@ body.dark, body.dark input, body.dark textarea {
    border-bottom: #444444;
 }
 [dir=ltr] body.dark blockquote {
-	border-right: #444444;
+    border-right: #444444;
 }
 [dir=rtl] body.dark blockquote {
    border-left: #444444;
@@ -57,7 +99,7 @@ body.dark blockquote cite {
 	border: 1px solid #444444;
 }
 [dir=ltr] body.dark ins {
-	background: none repeat scroll 0 0 #3E3E3E;
+    background: none repeat scroll 0 0 #3E3E3E;
 }
 [dir=rtl] body.dark ins {
    background: none repeat scroll 100% 0 #3E3E3E;
@@ -126,7 +168,7 @@ body.dark .main-navigation a {
 	color: #BBBBBB;
 }
 [dir=ltr] body.dark .main-navigation ul li ul {
-	background: none repeat scroll 0 0 rgba(0, 0 ,0 , 0.7);
+    background: none repeat scroll 0 0 rgba(0, 0 ,0 , 0.7);
 }
 [dir=rtl] body.dark .main-navigation ul li ul {
 	background: none repeat scroll 100% 0 rgba(0, 0 ,0 , 0.7);
@@ -210,8 +252,8 @@ body.dark .widget-title a {
 	border-bottom: #444444;
 }
 [dir=ltr] body.dark .widget_testimonial .testimonial-post {
-	border-right: #444444;
-	border-left: #444444;
+    border-right: #444444;
+    border-left: #444444;
 }
 [dir=rtl] body.dark .widget_testimonial .testimonial-post {
 	border-left: #444444;
@@ -226,7 +268,7 @@ body.dark .widget_testimonial .testimonial-author span {
    border-bottom: #444444;
 }
 [dir=ltr] body.dark .call-to-action-content-wrapper {
-	border-right: #444444;
+    border-right: #444444;
 }
 [dir=rtl] body.dark .call-to-action-content-wrapper {
    border-left: #444444;

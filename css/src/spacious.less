@@ -4505,56 +4505,6 @@ div.notify {
     background-color: @ini_yellow_color;
 }
 
-/* =DARK COLORS
- ----------------------------------------------- */
-#spacious__foot-widgets-container {
-    background-color: @ini_background_dark_color;
-    color: @ini_text_dark_color;
-}
-body.dark {
-    /*background-color: @ini_background_dark_color;*/
-    background-color: black;
-    color: @ini_text_dark_color;
-}
-.dark .widget-title,
-.dark em {
-    color: @ini_em_dark_color;
-}
-body.dark #spacious__page {
-    background-color: @ini_background_dark_color;
-    color: @ini_text_dark_color;
-}
-/*
-#spacious__sidebar {
-    background-color: @ini_background_dark_color;
-}
-*/
-body.dark #spacious__pageheader {
-    background-color: mix(black, @ini_theme_color, 60%);
-    box-shadow: 0 0 30px mix(black, @ini_theme_color, 20%) inset;
-}
-body.dark #dw__toc {
-    background-color: @ini_background_dark_color !important;
-}
-body.dark #dw__toc a {
-    color: @ini_text_dark_color !important;
-}
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark h5,
-body.dark h6,
-body.dark #spacious__site-title a {
-    color: @ini_em_dark_color;
-}
-body.dark #dw__toc h3 {
-    color: @ini_em_dark_color !important;
-}
-body.dark #spacious__foot-widgets-container {
-    background-color: darken(@ini_background_dark_color, 10%);
-}
-
 /* =RESPONSIVE STRUCTURE
  ----------------------------------------------- */
 @media screen and (min-width: 1500px) {
@@ -5426,20 +5376,6 @@ body.dark #spacious__foot-widgets-container {
         opacity: 1;
     }
     */
-    /*
-    body.extractible-toc:not(.dark) #dw__toc {
-        background-color: fade(@ini_background, 60%) !important;
-    }
-    body.extractible-toc.dark #dw__toc {
-        background-color: fade(@ini_background_dark_color, 60%) !important;
-    }
-    body.extractible-toc:not(.dark) #dw__toc:hover {
-        background-color: @ini_background !important;
-    }
-    body.extractible-toc.dark #dw__toc:hover {
-        background-color: @ini_background_dark_color !important;
-    }
-    */
     body.extractible-toc .dw__toc div {
         font-size: 100%;
     }
@@ -5498,20 +5434,6 @@ body.dark #spacious__foot-widgets-container {
     }
     body.extractible-sidebar #spacious__sidebar:hover {
         opacity: 1;
-    }
-    */
-    /*
-    body.extractible-sidebar:not(.dark) #spacious__sidebar {
-        background-color: fade(@ini_background, 60%);
-    }
-    body.extractible-sidebar.dark #spacious__sidebar {
-        background-color: fade(@ini_background_dark_color, 60%);
-    }
-    body.extractible-sidebar:not(.dark) #spacious__sidebar:hover {
-        background-color: @ini_background !important;
-    }
-    body.extractible-sidebar.dark #spacious__sidebar:hover {
-        background-color: @ini_background_dark_color !important;
     }
     */
     body.extractible-sidebar div.notvisibleifextracted,

@@ -10,6 +10,44 @@
  */
 
 /* GLOBAL */
+#spacious__foot-widgets-container {
+    /*background-color: @ini_background_dark_color;*/
+    /*color: @ini_text_dark_color;*/
+}
+body.dark {
+    /*background-color: @ini_background_dark_color;*/
+    /*background-color: black;*/
+    background-color: #fff - @ini_background_site;
+    /*color: @ini_text_dark_color;*/
+    color: #fff - @ini_text;
+}
+#spacious__head-text-nav-container,
+body.dark #spacious__page {
+    /*background-color: @ini_background_dark_color;*/
+    background-color: #fff - @ini_background;
+    /*color: @ini_text_dark_color;*/
+    color: #fff - @ini_text;
+}
+/*
+#spacious__sidebar {
+    background-color: @ini_background_dark_color;
+}
+*/
+body.dark #spacious__pageheader {
+    background-color: mix(black, @ini_theme_color, 60%);
+    box-shadow: 0 0 30px mix(black, @ini_theme_color, 20%) inset;
+}
+body.dark #dw__toc {
+    /*background-color: @ini_background_dark_color !important;*/
+}
+body.dark #dw__toc a {
+    /*color: @ini_text_dark_color !important;*/
+    color: #fff - @ini_text;
+}
+body.dark #spacious__foot-widgets-container {
+    /*background-color: darken(@ini_background_dark_color, 10%);*/
+}
+
 body.dark #dokuwiki__site {
 	background-color: #292929;
 }
