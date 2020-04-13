@@ -332,7 +332,7 @@ div.vr.notvisibleifextracted {
 
 .neu,
 #spacious__content.neutoc #dw__toc {
-    background-color: @ini_background_neu;
+    background-color: @ini_background_neu !important;
 }
 
 .neu,
@@ -347,9 +347,11 @@ div.vr.notvisibleifextracted {
     color: @ini_text_neu;
 }
 
+/*
 .neu svg {
     fill: mix(@ini_blue_color, @ini_background_neu, 50%) !important;
 }
+*/
 
 /* =LISTS
 ----------------------------------------------- */
@@ -2545,6 +2547,7 @@ body.right-sidebar #spacious__sidebar .vr {
     /*display: flex;*/
     /*justify-content: space-evenly;*/
     padding: .2rem 0;
+    background-color: @ini_background;
 }
 
 #spacious__content .docInfo svg,
