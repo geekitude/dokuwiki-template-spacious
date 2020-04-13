@@ -1060,9 +1060,15 @@ body {
     /*-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);*/
     box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
-body.full-width-layout #spacious__page {
+body.full-width-layout #spacious__page,
+body.mix-layout #spacious__page {
     max-width: 100%;
+}
+body.full-width-layout #spacious__page {
     margin: 0;
+}
+body.mix-layout #spacious__page {
+    margin: 0 auto;
 }
 
 .wide-978 {
@@ -1093,6 +1099,20 @@ body.full-width-layout #spacious__page {
     /*margin: 0 auto;*/
     /*max-width: 1218px;*/
     margin: 0 3rem;
+}
+
+body.mix-layout .inner-wrap,
+body.mix-layout #spacious__main-flex {
+    max-width: @ini_site_width;
+}
+
+body.mix-layout .inner-wrap {
+    margin: 0 auto;
+}
+
+body.mix-layout #spacious__main-flex {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*
@@ -4676,6 +4696,9 @@ body.dark #spacious__foot-widgets-container {
     body.debug #spacious__content {
         background-color: yellow;
     }
+    body.box2full-layout #spacious__page {
+        margin: 0;
+    }
     #spacious__topbar {
         padding: .7rem 0;
         /*font-size: 90%;*/
@@ -4787,6 +4810,10 @@ body.dark #spacious__foot-widgets-container {
     #spacious__main-subflex {
         flex-direction: column;
         /*padding-top: 1rem;*/
+    }
+    #spacious__sidebar,
+    #dw__toc {
+        position: initial !important;
     }
     /*#spacious__sidevision ul,*/
     #spacious__main-subflex .vr {

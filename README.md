@@ -56,7 +56,7 @@ The copyright notice at the very bottom of page shouldn't be removed.
 
 ## Todo list
 
-* [ ] Namespace dependent CSS placeholders (for colors and fonts)
+* [ ] Namespace dependent CSS (for colors and fonts)
 * [ ] Namespace dependent UI images (background pattern, logo, banner, widebanner and a potential sidebar header)
 * [ ] Google Fonts : each of main text, headings, condensed text (mostly nav bar) and monospaced text (```code``` syntax) can use a different Google font (be warned that main text font should be kept very readable)
 * [ ] Can have a "scrollspy" ToC on wide screen
@@ -90,6 +90,46 @@ The copyright notice at the very bottom of page shouldn't be removed.
 (*) to replace a glyph by another, simply put desired SVG file (2kb max) in `conf/svg` folder (you will most likely need to create it) and name it after the following list of elements : about.svg, acl.svg, admin.svg, config.svg, discussion.svg, extensions.svg, from-playground.svg, help.svg, home.svg, menu.svg, namespace-start.svg, parent-namespace.svg, playground.svg, popularity.svg, private-page.svg, public-page.svg, recycle.svg, refresh.svg, revert.svg, search.svg, styling.svg, translation.svg, upgrade.svg, user.svg, usermanager.svg or unknown-user.svg (ellipsis is too specific and cannot be customized). Note that header menu icons can't be customized as they come from DokuWiki core code.
 
 :warning: POSSIBLE SVG NAMES LIST ABOVE NEEDS TO BE UPDATED :warning:
+
+## Settings and their default value
+
+Default value is always what will keep the look closer to original Wordpress theme. 
+
+* layout (*boxed*) : choose global site layout between `boxed` and `full-width` or a mix of both
+  * `boxed` layout wastes a little space around content on narrow screens
+  * `mix` aesthically ressembles `full-width` but is still limited to **style.ini** file's `site-width` value
+  * `full-width` layout is incompatible with "scrollspy" ToC and will override that setting
+  * `box2full` switches from `boxed` on large screens to `full-width` in lower resolutions 
+* [ ] dark
+* [ ] bodyBg
+* [ ] topbar
+* [ ] datelocale
+* [ ] longdatestring
+* [ ] shortdatestring
+* [ ] newsTicker
+* [ ] sidebarPos
+* [ ] branding
+* [ ] stickies
+* [ ] bannerfile
+* [ ] widebannerfile
+* [ ] nslogofile
+* [ ] sidecardfile
+* [ ] sidecardstyle
+* [ ] headertoolsIcons
+* [ ] pageheaderTitle
+* [ ] breadcrumbsStyle
+* [ ] breadcrumbsGlyphs
+* [ ] truncatebc
+* [ ] siblings
+* [ ] contools
+* [ ] avatars
+* [ ] links
+* [ ] licenseVisual
+* [ ] qrcodes
+* [ ] neutralize
+* [ ] extractible
+* [ ] animate
+* [ ] printhrefs
 
 ## Context tools
 
@@ -207,8 +247,8 @@ To use another one, simply upload a `pattern.png` image inside `wiki` namespace.
 Here's the list of features that will not work on browsers without Javascript abilities :
 * Newsticker
 * Context logo Lightbox effect
-* Sidebar toggle
-* TOC auto-collapsing when reaching phone resolution
+* Sidebar visibility context tool
+* Sidebar and TOC auto-collapsing when reaching tablet resolution
 * Inner links will scroll a bit too far if Page header is set to stick on top of page
 * Animated scrolling
 
