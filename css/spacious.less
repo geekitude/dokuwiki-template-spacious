@@ -2719,7 +2719,7 @@ ul.sub-menu {
 
 [dir] #spacious__foot .widget ul li {
     padding: 5px 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid mix(#fff - @ini_background, @ini_border, 50%);
 }
 
 [dir] #spacious__sidebar .widget ul li li, [dir] #spacious__foot .widget ul li li {
@@ -4830,7 +4830,11 @@ li.default-menu {
 
 /* =FOOTER WIDGET AREA
 ----------------------------------------------- */
+#spacious__foot-widgets-container {;
+    color: #fff - @ini_text;
+}
 [dir] #spacious__foot-widgets-container {
+    background-color: #fff - @ini_background_site;
     border-top: 1px solid @ini_border;
 }
 

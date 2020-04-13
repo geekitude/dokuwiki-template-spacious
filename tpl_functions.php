@@ -467,6 +467,7 @@ function spacious_init() {
  */
 function spacious_bodyclasses() {
     /*global $conf, $ACT;*/
+    global $ID;
     global $spacious;
 
     $classes = array();
@@ -500,11 +501,13 @@ function spacious_bodyclasses() {
     );*/
 
     if ((tpl_getConf('bodyBg') == "pattern") and ($_GET['debug'] != 1)) {
-        $pattern = tpl_getMediaFile(array(':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
-        if ($pattern == "/lib/tpl/spacious/images/pattern.png") {
+        $pattern = tpl_getMediaFile(array(':'.getNS($ID).':pattern.png', ':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
+        if (strpos($pattern, 'wiki') !== false) {
+            $bgClass = "wiki-pattern-bg";
+        } elseif ($pattern == "/lib/tpl/spacious/images/pattern.png") {
             $bgClass = "tpl-pattern-bg";
         } else {
-            $bgClass = "wiki-pattern-bg";
+            $bgClass = "ns-pattern-bg";
         }
     } else {
         $bgClass = "color-bg";

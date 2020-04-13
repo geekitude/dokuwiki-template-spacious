@@ -100,8 +100,9 @@ Default value is always what will keep the look closer to original Wordpress the
   * `mix` aesthically ressembles `full-width` but is still limited to **style.ini** file's `site-width` value
   * `full-width` is incompatible with "scrollspy" ToC and will override that setting
   * `box2full` switches from `boxed` on large screens to `full-width` in lower resolutions 
-* dark (*DISABLED*) : dark color theme is based on "negative" standard colors (using LESS `#fff - @color` method)
-* [ ] bodyBg
+* bodyBg (*color*) : select how HTML body background is filled
+  * `color` : `background_site` value from **style.ini** file
+  * `pattern` : `pattern.png` image from **tpl/spacious/images** folder or wiki namespace or current namespace (``must be correctly set through namespace CSS)
 * [ ] topbar
 * [ ] datelocale
 * [ ] longdatestring

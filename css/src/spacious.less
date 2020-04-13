@@ -2183,7 +2183,7 @@ ul.sub-menu {
     line-height: 1.5;
     /*border-bottom: 1px solid @ini_border;*/
     padding: 5px 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid mix(#fff - @ini_background, @ini_border, 50%);
 }
 
 #spacious__sidebar .widget ul li li,
@@ -3890,6 +3890,8 @@ li.default-menu {
 /* =FOOTER WIDGET AREA
 ----------------------------------------------- */
 #spacious__foot-widgets-container {
+    background-color: #fff - @ini_background_site;;
+    color: #fff - @ini_text;
     border-top: 1px solid @ini_border;
 }
 
