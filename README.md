@@ -103,7 +103,10 @@ Default value is always what will keep the look closer to original Wordpress the
 * bodyBg (*color*) : select how HTML body background is filled
   * `color` : `background_site` value from **style.ini** file
   * `pattern` : `pattern.png` image from **tpl/spacious/images** folder or wiki namespace or current namespace (``must be correctly set through namespace CSS)
-* [ ] topbar
+* topbar (*nothing*) : select topbar elements
+  * date : just the server's current date based on `datelocale` and `longdatestring` settings
+  * newsticker : dynamic list of last changes in current namespace and sub ones (elements listed depen on `newsTicker` setting)
+  * socialnetworks : list of social networks links (see `Topbar social links` below)
 * [ ] datelocale
 * [ ] longdatestring
 * [ ] shortdatestring
