@@ -1318,6 +1318,10 @@ body.mix-layout #spacious__main-flex {
 
 /* =NAMESPACE WIDEBANNER
 ----------------------------------------------- */
+#spacious__widebanner-wrap img {
+    position: relative;
+    z-index: 1;
+}
 [dir] #spacious__widebanner-wrap img {
     margin: 0;
 }
@@ -3645,6 +3649,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 #spacious__head-text-nav-container {
     /*border-bottom: 1px solid @ini_border;*/
     /*margin: 0 3rem;*/
+    position: relative;
+    z-index: 1;
+}
+
+[dir] #spacious__head-text-nav-container {
+    background-color: @ini_background;
 }
 
 #spacious__head-text-nav-wrap {
@@ -4934,6 +4944,15 @@ li.default-menu {
     padding: 1rem 0;
 }
 
+#spacious__topbar-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+[dir] #spacious__topbar-wrapper {
+    border-bottom: 1px solid @ini_border;
+}
+
 [dir=ltr] #spacious__topbar-date, [dir=ltr] #spacious__topbar-newsticker {
     margin: 0 1rem 0 0;
 }
@@ -4952,10 +4971,6 @@ li.default-menu {
 
 [dir] .footer-socket-wrapper {
     border-top: 1px solid @ini_border;
-}
-
-[dir] #spacious__topbar-wrapper {
-    border-bottom: 1px solid @ini_border;
 }
 
 /*
@@ -5094,7 +5109,7 @@ div.secedit.editbutton_section {
 /* Move tpl_indexerWebBug() out of the way */
 
 #spacious__housekeeper {
-    position: absolute;
+    position: fixed;
     top: 0;
 }
 
@@ -6607,6 +6622,9 @@ body.dark #dw__toc h3 {
     [dir=rtl] body.extractible-toc #dw__toc {
         right: 50%;
         margin-right: (@ini_site_width / 2) + 10px;
+    }
+    body.extractible-toc.mix-layout #dw__toc {
+        top: 4.5rem;
     }
     /*
     [dir=rtl] body.extractible-toc #dw__toc {

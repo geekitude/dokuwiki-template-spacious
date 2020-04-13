@@ -96,9 +96,9 @@ The copyright notice at the very bottom of page shouldn't be removed.
 Default value is always what will keep the look closer to original Wordpress theme. 
 
 * layout (*boxed*) : choose global site layout between `boxed` and `full-width` or a mix of both
-  * `boxed` layout wastes a little space around content on narrow screens
+  * `boxed` wastes a little space around content on narrow screens
   * `mix` aesthically ressembles `full-width` but is still limited to **style.ini** file's `site-width` value
-  * `full-width` layout is incompatible with "scrollspy" ToC and will override that setting
+  * `full-width` is incompatible with "scrollspy" ToC and will override that setting
   * `box2full` switches from `boxed` on large screens to `full-width` in lower resolutions 
 * [ ] dark
 * [ ] bodyBg
