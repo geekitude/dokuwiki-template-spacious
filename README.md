@@ -93,7 +93,7 @@ The copyright notice at the very bottom of page shouldn't be removed.
 
 ## Settings and their default value
 
-Default value is always what will keep the look closer to original Wordpress theme. 
+Default value is generally what will keep the look closer to original Wordpress theme. 
 
 * layout (*boxed*) : choose global site layout between `boxed` and `full-width` or a mix of both
   * `boxed` wastes a little space around content on narrow screens
@@ -131,7 +131,7 @@ Default value is always what will keep the look closer to original Wordpress the
 * nslogofile (*nslogo.jpg*) : name of file to look for as namespace logo that comes inside page header right befor page ID or title
 * sidecardfile (*banner.jpg*) : name of file to look for as sidebar header
 * sidecardstyle (*mediacenter*) : CSS alignment rule to apply to sidebar header image
-* [ ] headertoolsIcons
+* headertoolsIcons (*ON*) : use glyphs for header tools or not
 * [ ] pageheaderTitle
 * [ ] breadcrumbsStyle
 * [ ] breadcrumbsGlyphs
