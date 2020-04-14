@@ -132,7 +132,7 @@ jQuery(document).ready(function() {
     // Prepare last changes ticker
     jQuery('.js-lastchanges').newsTicker({
         max_rows: 1,
-        row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 4,
+        row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 5,
         speed: 600,
         direction: 'up',
         duration: 4000,
