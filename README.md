@@ -107,10 +107,19 @@ Default value is always what will keep the look closer to original Wordpress the
   * date : just the server's current date based on `datelocale` and `longdatestring` settings
   * newsticker : dynamic list of last changes in current namespace and sub ones (elements listed depen on `newsTicker` setting)
   * socialnetworks : list of social networks links (see `Topbar social links` below)
-* [ ] datelocale
-* [ ] longdatestring
-* [ ] shortdatestring
-* [ ] newsTicker
+* datelocale (*fra*) : language used for dates
+* longdatestring (*%A %d %B %Y*) : how long date strings are built (typically with full day of week, ...), [see this page](https://www.php.net/manual/fr/function.strftime.php)
+* shortdatestring (*%d/%m/%Y*) : how short and typically fully numeric dates are built, [see this page](https://www.php.net/manual/fr/function.strftime.php) too
+* newsTicker (*skip_minors,pages,media,5*): options use to built last changes list
+  * skip_deleted : ignore deleted items
+  * skip_minors : ignore minor updates
+  * skip_subspaces : only consider elements from current namespace, not sub-namespaces
+  * pages : show or ignore pages in list
+  * media : show or ignore media files
+* sidebarPos (*left*) : sidebar position
+  * left of page content
+  * right of page content (right sidebar is not extractible, see below)
+* [ ] flipTools : flip page and context tools positions
 * [ ] sidebarPos
 * [ ] branding
 * [ ] stickies

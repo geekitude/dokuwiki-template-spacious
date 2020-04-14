@@ -471,34 +471,6 @@ function spacious_bodyclasses() {
     global $spacious;
 
     $classes = array();
-    //$pattern = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
-    /*if (tpl_getConf('bodyBg') == "pattern") {
-        $pattern = tpl_getMediaFile(array(':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
-        if ($pattern == "/lib/tpl/spacious/images/pattern.png") {
-            $bgClass = "tpl-pattern-bg";
-        } else {
-            $bgClass = "wiki-pattern-bg";
-        }
-    } else {
-        $bgClass = "color-bg";
-    }*/
-    /*if (tpl_getConf('textWrap')) {
-        $textWrap = "wrap";
-    } else {
-        $textWrap = "";
-    }*/
-    /*
-    if ($ACT=='show') {
-        $sidebar = tpl_getConf('sidebarPos').'-sidebar';
-    } else {
-        $sidebar = 'no-sidebar';
-    }*/
-    /*$classes = array(
-        tpl_getConf('layout').'-layout',
-        $bgClass,
-        $textWrap,
-        $sidebar,
-    );*/
 
     if ((tpl_getConf('bodyBg') == "pattern") and ($_GET['debug'] != 1)) {
         $pattern = tpl_getMediaFile(array(':'.getNS($ID).':pattern.png', ':wiki:pattern.png', 'images/pattern.png'), false, $patternSize);
@@ -513,12 +485,6 @@ function spacious_bodyclasses() {
         $bgClass = "color-bg";
     }
 
-//    if ($spacious['showSidebar']) {
-//        $sidebar = tpl_getConf('sidebarPos')."-sidebar";
-//    } else {
-//        //$sidebar = "no-".tpl_getConf('sidebarPos')."-sidebar";
-//      $sidebar = "no-sidebar";
-//    }
     $sidebar = "no-sidebar";
     if ($spacious['showSidebar'] == 1) {
         if (tpl_getConf('sidebarPos') == "left") {
@@ -529,14 +495,12 @@ function spacious_bodyclasses() {
         if (strpos(tpl_getConf('stickies'), 'sidebar') !== false) {
             $sidebar .= " sticky-sidebar";
         }
-        if ((strpos(tpl_getConf('extractible'), 'sidebar') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) {
+        if ((strpos(tpl_getConf('extractible'), 'sidebar') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full")) and (tpl_getConf('sidebarPos') == "left")) {
             $sidebar .= " extractible-sidebar";
         }
     }
 
-//    array_push($classes, 'better-responsive-menu', tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'sidebar') !== false) ? 'sticky-sidebar' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and (tpl_getConf('layout') == "boxed")) ? 'extractible-toc' : '', ((strpos(tpl_getConf('extractible'), 'sidebar') !== false) and (tpl_getConf('layout') == "boxed")) ? 'extractible-sidebar' : '', ($_GET['debug']==1) ? 'debug' : '');
-//    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and (tpl_getConf('layout') == "boxed")) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
-    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
+    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('flipTools')) ? 'fliptools' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
 //dbg($classes);
     /* TODO: better home detection than core */
     return ' '.rtrim(join(' ', array_filter($classes)));

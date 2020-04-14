@@ -2400,9 +2400,11 @@ body.mode_show.right-sidebar #spacious__article {
     background-image: url(images/svg/collapse.svg);
 }
 
+/*
 body.right-sidebar #dw__toc {
     float: left;
 }
+*/
 
 /*
 #spacious__main-flex .tools {
@@ -2498,57 +2500,31 @@ body.sticky-sidebar.extractible-sidebar #spacious__sidebar {
     order: 2;
 }
 
-body.left-sidebar #spacious__contools {
+#spacious__contools {
     order: 1;
 }
-/*
-body.left-sidebar #spacious__main-subflex {
-    order: 2;
-}
-*/
-body.left-sidebar #spacious__pagetools {
+#spacious__pagetools {
     order: 3;
 }
 body.left-sidebar #spacious__sidebar {
     order: 1;
 }
-/*
-body.left-sidebar #spacious__main-flex .vr {
-    order: 2;
-}
-*/
 body.left-sidebar #spacious__article {
     order: 3;
 }
 
-body.right-sidebar #spacious__pagetools {
+body.fliptools #spacious__pagetools {
     order: 1;
 }
-/*
-body.right-sidebar #spacious__main-subflex {
-    order: 2;
-}
-*/
-body.right-sidebar #spacious__contools {
+body.fliptools #spacious__contools {
     order: 3;
 }
 body.right-sidebar #spacious__article {
     order: 1;
 }
-/*
-body.right-sidebar #spacious__main-flex .vr {
-    order: 2;
-}
-*/
 body.right-sidebar #spacious__sidebar {
     order: 3;
 }
-
-/*
-body.right-sidebar #spacious__sidebar .vr {
-    order: 1;
-}
-*/
 
 #spacious__contools li.show {
     display: none;
@@ -3454,17 +3430,7 @@ li.default-menu {
     display: none;
 }
 
-/*
-body.right-sidebar #spacious__main-flex .tools ul li a,
-body.right-sidebar #spacious__main-flex .tools ul li button {
-    display: flex;
-    flex-direction: row-reverse;
-    align-content: flex-start;
-}
-*/
-
-body.left-sidebar #spacious__contools ul li,
-body.no-sidebar #spacious__contools ul li {
+#spacious__contools ul li {
     display: flex;
     flex-direction: row;
     align-content: flex-start;
@@ -3488,30 +3454,27 @@ a.nsindex .is_page {
     text-transform: capitalize;
 }
 
-body.left-sidebar #spacious__pagetools ul li {
+#spacious__pagetools ul li {
     display: flex;
     flex-direction: row-reverse;
     align-content: flex-end;
     text-align: right;
 }
 
-body.right-sidebar #spacious__pagetools ul li {
-    display: flex;
+body.fliptools #spacious__pagetools ul li {
     flex-direction: row;
     align-content: flex-start;
     text-align: left;
 }
 
-body.right-sidebar #spacious__contools ul li a,
-body.right-sidebar #spacious__contools ul li button {
+body.fliptools #spacious__contools ul li a,
+body.fliptools #spacious__contools ul li button {
     display: flex;
     flex-direction: row-reverse;
 }
 
-body.right-sidebar #spacious__pagetools ul li a,
-body.no-right-sidebar #spacious__pagetools ul li a,
-body.right-sidebar #spacious__pagetools ul li button,
-body.no-right-sidebar #spacious__pagetools ul li button {
+body.fliptools #spacious__pagetools ul li a,
+body.fliptools #spacious__pagetools ul li button {
     display: flex;
     flex-direction: row-reverse;
 }
@@ -3553,7 +3516,7 @@ body.no-right-sidebar #spacious__pagetools ul li button {
     vertical-align: -12px;
 }
 
-body.right-sidebar #spacious__pagetools ul li a.fold_unfold_all_new {
+body.fliptools #spacious__pagetools ul li a.fold_unfold_all_new {
     align-items: end;
 }
 
@@ -3583,7 +3546,7 @@ body.right-sidebar #spacious__pagetools ul li a.fold_unfold_all_new {
     float: right;
 }
 
-body.right-sidebar #spacious__pagetools ul {
+body.fliptools #spacious__pagetools ul {
     float: left;
 }
 
@@ -3591,7 +3554,7 @@ body.right-sidebar #spacious__pagetools ul {
     float: left;
 }
 
-body.right-sidebar #spacious__contools ul {
+body.fliptools #spacious__contools ul {
     float: right;
 }
 
@@ -3622,8 +3585,8 @@ body.right-sidebar #spacious__contools ul {
 #spacious__contools ul:hover li button {
     text-align: start !important;
 }*/
-body.right-sidebar #spacious__pagetools ul:hover li a,
-body.right-sidebar #spacious__pagetools ul:hover li button {
+body.fliptools #spacious__pagetools ul:hover li a,
+body.fliptools #spacious__pagetools ul:hover li button {
     justify-content: flex-end;
 }
 #spacious__main-flex .tools ul:hover li a span,
@@ -4770,6 +4733,9 @@ div.notify {
         flex-direction: column;
         /*padding-top: 1rem;*/
     }
+    #spacious__sidebar {
+        order: 1 !important;
+    }
     #spacious__sidebar,
     #dw__toc {
         position: initial !important;
@@ -4783,6 +4749,7 @@ div.notify {
         /*margin-right: 0 !important;*/
         /*margin-left: 0 !important;*/
         padding: 0 !important;
+        margin: 0 !important;
     }
     #spacious__sidebar h6 strong {
         margin-right: 0 !important;
