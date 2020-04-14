@@ -122,7 +122,10 @@ Default value is always what will keep the look closer to original Wordpress the
   * `right` of page content (right sidebar is not extractible, see below)
 * flipTools (*OFF*) : flip page and context tools positions
 * headerLogo (*ON*) : enable header logo or not
-* [ ] stickies
+* stickies (*nothing*) : [stick](https://www.w3schools.com/howto/howto_css_sticky_element.asp) given element to top of screen (or bottom, depending on position) 
+  * `pageheader` : will keep page header in sight at any time when scrolling down
+  * `sidebar` : it will stick to top then start to scroll to match main content length (unless it's longer than content)
+  * `docInfo` : will stick to the bottom of page with it's opacity reduced untill the mouse hovers it
 * [ ] bannerfile
 * [ ] widebannerfile
 * [ ] nslogofile
