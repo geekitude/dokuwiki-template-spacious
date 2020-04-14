@@ -104,24 +104,24 @@ Default value is always what will keep the look closer to original Wordpress the
   * `color` : `background_site` value from **style.ini** file
   * `pattern` : `pattern.png` image from **tpl/spacious/images** folder or wiki namespace or current namespace (``must be correctly set through namespace CSS)
 * topbar (*nothing*) : select topbar elements
-  * date : just the server's current date based on `datelocale` and `longdatestring` settings
-  * newsticker : dynamic list of last changes in current namespace and sub ones (elements listed depen on `newsTicker` setting)
-  * socialnetworks : list of social networks links (see `Topbar social links` below)
+  * `date` : just the server's current date based on `datelocale` and `longdatestring` settings
+  * `newsticker` : dynamic list of last changes in current namespace and sub ones (elements listed depen on `newsTicker` setting)
+  * `socialnetworks` : list of social networks links (see `Topbar social links` below)
 * datelocale (*fra*) : language used for dates
 * longdatestring (*%A %d %B %Y*) : how long date strings are built (typically with full day of week, ...), [see this page](https://www.php.net/manual/fr/function.strftime.php)
 * shortdatestring (*%d/%m/%Y*) : how short and typically fully numeric dates are built, [see this page](https://www.php.net/manual/fr/function.strftime.php) too
 * newsTicker (*skip_minors,pages,media,5*): options use to built last changes list
-  * skip_deleted : ignore deleted items
-  * skip_minors : ignore minor updates
-  * skip_subspaces : only consider elements from current namespace, not sub-namespaces
-  * pages : show or ignore pages in list
-  * media : show or ignore media files
+  * `skip_deleted` : ignore deleted items
+  * `skip_minors` : ignore minor updates
+  * `skip_subspaces` : only consider elements from current namespace, not sub-namespaces
+  * `pages` : show or ignore pages in list
+  * `media` : show or ignore media files
+  * the number in text field is the number of elements to show (starting from most recent)
 * sidebarPos (*left*) : sidebar position
-  * left of page content
-  * right of page content (right sidebar is not extractible, see below)
-* flipTools : flip page and context tools positions
-* [ ] sidebarPos
-* [ ] branding
+  * `left` of page content
+  * `right` of page content (right sidebar is not extractible, see below)
+* flipTools (*OFF*) : flip page and context tools positions
+* headerLogo (*ON*) : enable header logo or not
 * [ ] stickies
 * [ ] bannerfile
 * [ ] widebannerfile

@@ -68,7 +68,7 @@ if (!defined('DOKU_INC')) die();
             <div id="spacious__head-text-nav-wrap" class="flex between stretch">
                 <div id="spacious__head-branding-wrap" class="flex column stretch">
                     <div id="spacious__head-branding" class="flex row start narrow-spacer">
-                        <?php if (strpos(tpl_getConf('branding'), 'logo') !== false) : ?>
+                        <?php if (tpl_getConf('headerLogo')) : ?>
                             <div id="spacious__head-logo-wrap" style="<?php print 'height:'.$spacious['images']['logo']['size'][1].'px"'; ?>>
                                 <?php
                                     // display logo as a link to the home page
@@ -80,13 +80,7 @@ if (!defined('DOKU_INC')) die();
                                 ?>
                             </div><!-- /#spacious__head-logo-wrap -->
                         <?php endif ?>
-                        <?php
-                            $screen_reader = '';
-                            if (!strpos(tpl_getConf('branding'), 'text') !== false) {
-                                $screen_reader = ' class="screen-reader-text"';
-                            }
-                        ?>
-                        <div id="spacious__head-text-wrap"<?php echo $screen_reader; ?>>
+                        <div id="spacious__head-text-wrap">
                             <h1 id="spacious__site-title">
                                 <?php
                                     //if (($_GET['debug'] == "replace") and (file_exists(tpl_incdir('spacious')."debug/title.html"))) {
