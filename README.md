@@ -119,7 +119,7 @@ Default value is always what will keep the look closer to original Wordpress the
 * sidebarPos (*left*) : sidebar position
   * left of page content
   * right of page content (right sidebar is not extractible, see below)
-* [ ] flipTools : flip page and context tools positions
+* flipTools : flip page and context tools positions
 * [ ] sidebarPos
 * [ ] branding
 * [ ] stickies

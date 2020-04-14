@@ -18,6 +18,7 @@ $meta['longdatestring']     = array('string');
 $meta['shortdatestring']    = array('string');
 $meta['newsTicker']         = array('multicheckbox', '_choices' => array('skip_deleted','skip_minors','skip_subspaces','pages','media')); /* 'other' field should contain a single integer, the number of last changes to show */
 $meta['sidebarPos']         = array('multichoice','_choices' => array('left','right')); /* left or right sidebar */
+$meta['flipTools']          = array('onoff');
 $meta['branding']           = array('multichoice','_choices' => array('logo_text','logo','text'));
 $meta['stickies']           = array('multicheckbox','_choices' => array('pageheader','sidebar','docinfo'));
 $meta['bannerfile']         = array('string');

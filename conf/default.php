@@ -18,6 +18,7 @@ $conf['longdatestring']     = '%A %d %B %Y';
 $conf['shortdatestring']    = '%d/%m/%Y';
 $conf['newsTicker']         = 'skip_minors,pages,media,5';
 $conf['sidebarPos']         = 'left';
+$conf['flipTools']          = 0;
 $conf['branding']           = 'logo_text';
 $conf['stickies']           = '';
 $conf['bannerfile']         = 'banner';
