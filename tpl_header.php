@@ -201,10 +201,10 @@ if (!defined('DOKU_INC')) die();
                     }
                     tpl_link(
                         $link['target'],
-                        '<img src="'.$spacious['images']['widebanner']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['widebanner']['size'][3].' />'
+                        '<img src="'.$spacious['images']['widebanner']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['widebanner']['size'][3].' class="mediastretch" />'
                     );
                 } else {
-                    print '<img src="'.$spacious['images']['widebanner']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['widebanner']['size'][3].' />';
+                    print '<img src="'.$spacious['images']['widebanner']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['widebanner']['size'][3].' class="mediastretch" />';
                 }
             }
         ?>

@@ -126,11 +126,11 @@ Default value is always what will keep the look closer to original Wordpress the
   * `pageheader` : will keep page header in sight at any time when scrolling down
   * `sidebar` : it will stick to top then start to scroll to match main content length (unless it's longer than content)
   * `docInfo` : will stick to the bottom of page with it's opacity reduced untill the mouse hovers it
-* [ ] bannerfile
-* [ ] widebannerfile
-* [ ] nslogofile
-* [ ] sidecardfile
-* [ ] sidecardstyle
+* bannerfile (*banner.jpg*) : name of file to look for as banner wich goes in top right of header)
+* widebannerfile (*widebanner.jpg*) : name of file to look for as widebanner that sits right above page header
+* nslogofile (*nslogo.jpg*) : name of file to look for as namespace logo that comes inside page header right befor page ID or title
+* sidecardfile (*banner.jpg*) : name of file to look for as sidebar header
+* sidecardstyle (*mediacenter*) : CSS alignment rule to apply to sidebar header image
 * [ ] headertoolsIcons
 * [ ] pageheaderTitle
 * [ ] breadcrumbsStyle

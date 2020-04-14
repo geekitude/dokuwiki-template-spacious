@@ -1065,8 +1065,8 @@ img {
 }
 
 /*img.size-full, img.size-large {*/
-img.stretch,
-#spacious__widebanner-wrap img {
+/*#spacious__widebanner-wrap img {*/
+img.mediastretch {
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -1079,9 +1079,11 @@ img.stretch,
     padding: 0;
 }
 
-[dir] img.alignleft, [dir] img.alignright, [dir] img.aligncenter {
+/*
+img.alignleft, img.alignright, img.aligncenter {
     margin-bottom: 1.625rem;
 }
+*/
 
 img#wpstats {
     display: none;
@@ -5092,6 +5094,33 @@ div.secedit.editbutton_section {
 
 div.mobileTools {
     /*display:none;*/
+}
+
+/* Images alignment */
+
+[dir=ltr] .medialeft {
+    float: left;
+}
+
+[dir=rtl] .medialeft {
+    float: right;
+}
+[dir=ltr] .mediaright {
+    float: right;
+}
+[dir=rtl] .mediaright {
+    float: left;
+}
+.mediacenter {
+    display: block;
+}
+[dir=ltr] .mediacenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+[dir=rtl] .mediacenter {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Footnotes inside the text */

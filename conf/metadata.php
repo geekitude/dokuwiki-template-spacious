@@ -11,13 +11,13 @@
  */
 
 $meta['layout']             = array('multichoice','_choices' => array('boxed','mix','full-width','box2full'));
-$meta['bodyBg']             = array('multichoice','_choices' => array('pattern','color')); /* fill site background with pattern or color */
+$meta['bodyBg']             = array('multichoice','_choices' => array('pattern','color'));
 $meta['topbar']             = array('multicheckbox','_choices' => array('date','newsticker','socialnetworks'));
 $meta['datelocale']         = array('string');
 $meta['longdatestring']     = array('string');
 $meta['shortdatestring']    = array('string');
-$meta['newsTicker']         = array('multicheckbox', '_choices' => array('skip_deleted','skip_minors','skip_subspaces','pages','media')); /* 'other' field should contain a single integer, the number of last changes to show */
-$meta['sidebarPos']         = array('multichoice','_choices' => array('left','right')); /* left or right sidebar */
+$meta['newsTicker']         = array('multicheckbox', '_choices' => array('skip_deleted','skip_minors','skip_subspaces','pages','media'));
+$meta['sidebarPos']         = array('multichoice','_choices' => array('left','right'));
 $meta['flipTools']          = array('onoff');
 $meta['headerLogo']         = array('onoff');
 $meta['stickies']           = array('multicheckbox','_choices' => array('pageheader','sidebar','docinfo'));
@@ -25,7 +25,7 @@ $meta['bannerfile']         = array('string');
 $meta['widebannerfile']     = array('string');
 $meta['nslogofile']         = array('string');
 $meta['sidecardfile']       = array('string');
-$meta['sidecardstyle']      = array('multichoice', '_choices' => array('mediacenter','medialeft','mediaright','stretch')); /* sidecard styling class */
+$meta['sidecardstyle']      = array('multichoice', '_choices' => array('mediacenter','medialeft','mediaright','mediastretch'));
 $meta['headertoolsIcons']   = array('onoff'); /* enable or not site and user tools SVG icons */
 $meta['pageheaderTitle']    = array('onoff'); /* enable or not page header's page title */
 $meta['breadcrumbsStyle']   = array('multichoice', '_choices' => array('classic','pills'));
