@@ -136,7 +136,8 @@ Default value is generally what will keep the look closer to original Wordpress 
 * [ ] breadcrumbsStyle
 * [ ] breadcrumbsGlyphs
 * [ ] truncatebc
-* [ ] siblings
+* siblings (*10*) : a new type of breadcrumbs that adds links to other pages of current namespace under other breadcrumbs (**requires [TwistieNav](https://www.dokuwiki.org/plugin:twistienav ) plugin**) up to a maximum of pages established by this setting (if there's more, a glyph will propose a link to site map
+  * `0` : choosing a value of 0 simply disables this featuredisables that feature
 * [ ] contools
 * [ ] avatars
 * [ ] links
