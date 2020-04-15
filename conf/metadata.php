@@ -35,7 +35,7 @@ $meta['siblings']           = array('numeric','_pattern' => '/^\d+$/'); /* add a
 $meta['contools']           = array('multicheckbox', '_choices' => array('parent','sidetoggle','playground','nsindex','savesettings','syntax'));
 $meta['avatars']            = array('string');
 $meta['links']              = array('string');
-$meta['licenseVisual']      = array('multichoice','_choices' => array('button','badge','none')); /* visual representation of wiki license */
+$meta['licenseVisual']      = array('multichoice','_choices' => array('badge','button','none')); /* visual representation of wiki license */
 $meta['qrcodes']            = array('multicheckbox', '_choices' => array('editor_mailto','locked_mailto','license_link','onlineversion_link')); /* mailto QRCodes will show up in docInfo while license and obline version ones only show up when page is printed*/
 $meta['neutralize']         = array('multicheckbox', '_choices' => array('topbar','pageheader','sidebar','toc','docinfo','footersocket')); /* use 'style.ini' "neu" colors */
 $meta['extractible']        = array('multicheckbox', '_choices' => array('sidebar','toc')); /* extract sidebar or toc if there's enough room */
