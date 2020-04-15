@@ -500,7 +500,8 @@ function spacious_bodyclasses() {
         }
     }
 
-    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('flipTools')) ? 'fliptools' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
+//    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('flipTools')) ? 'fliptools' : '', (tpl_getConf('printhrefs')) ? 'printhrefs' : '');
+    array_push($classes, tpl_getConf('layout').'-layout', tpl_getConf('breadcrumbsStyle').'-breadcrumbs', $bgClass, (tpl_getConf('dark')) ? 'dark' : '', $sidebar, (tpl_getConf('truncatebc')) ? 'truncatebc' : '', (strpos(tpl_getConf('stickies'), 'pageheader') !== false) ? 'sticky-pageheader' : '', (strpos(tpl_getConf('stickies'), 'docinfo') !== false) ? 'sticky-docinfo' : '', ((strpos(tpl_getConf('extractible'), 'toc') !== false) and ((tpl_getConf('layout') == "boxed") or (tpl_getConf('layout') == "mix") or (tpl_getConf('layout') == "box2full"))) ? 'extractible-toc' : '', ($_GET['debug']==1) ? 'debug' : '', (tpl_getConf('flipTools')) ? 'fliptools' : '', (strpos(tpl_getConf('print'), 'hrefs') !== false) ? 'printhrefs' : '');
 //dbg($classes);
     /* TODO: better home detection than core */
     return ' '.rtrim(join(' ', array_filter($classes)));
@@ -1195,6 +1196,9 @@ function spacious_docinfo($ret = false) {
             $classes = "docInfo flex evenly wrap smallest";
             if (strpos(tpl_getConf('neutralize'), 'docinfo') !== false) {
                 $classes .= " neu";
+            }
+            if (!(strpos(tpl_getConf('print'), 'docinfo') !== false)) {
+                $classes .= " noprint";
             }
             echo '<div class="'.$classes.'">';
             echo $out;

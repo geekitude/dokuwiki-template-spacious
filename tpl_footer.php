@@ -16,7 +16,7 @@ if (!defined('DOKU_INC')) die();
 
 <!-- ********** FOOTER ********** -->
 <!-- <footer id="colophon" class="group"> -->
-<footer id="spacious__foot" class="group">
+<footer id="spacious__foot" class="group<?php print (strpos(tpl_getConf('print'), 'sitefooter') !== false) ? '' : ' noprint' ?>">
     <div id="spacious__foot-widgets-container" class="group dark smaller">
         <?php spacious_include("footerheader"); ?>
         <div class="inner-wrap">
@@ -98,7 +98,7 @@ dbg("vérifier ces liens");
         </div><!-- /.inner-wrap -->
         <?php spacious_include("footer"); ?>
     </div><!-- /#spacious__foot-widgets-container -->
-    <div class="footer-socket-wrapper group smallest<?php print (strpos(tpl_getConf('neutralize'), 'footersocket') !== false) ? " neu" : "" ?>">
+    <div class="footer-socket-wrapper group smallest<?php print (strpos(tpl_getConf('neutralize'), 'footersocket') !== false) ? ' neu' : '' ?>">
         <div class="inner-wrap">
             <div class="footer-socket-area flex between">
                 <div class="copyright">

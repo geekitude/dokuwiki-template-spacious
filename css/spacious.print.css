@@ -67,6 +67,9 @@ h3.toggle,
 [dir] #spacious__head-text-nav-container .inner-wrap, [dir] #spacious__pageheader {
     margin: 0 1px;
 }
+[dir] #spacious__pageheader-wrap div.flex {
+    margin: 0 auto;
+}
 #spacious__head-text-nav-wrap > div {
     width: 49.9%;
 }
@@ -189,9 +192,24 @@ div.footnotes div.fn div.content {
 #spacious__content .docInfo img.qrcode.curid {
     display: initial;
 }*/
+/*
 #spacious__content .docInfo span.editor img.qrcode,
 #spacious__content .docInfo span.locked img.qrcode {
     display: none;
+    max-width: unset;
+}
+*/
+#spacious__content .docInfo span.editor img.qrcode,
+#spacious__content .docInfo span.locked img.qrcode {
+    max-width: unset;
+}
+#spacious__content .docInfo span.editor svg,
+#spacious__content .docInfo span.locked svg {
+    vertical-align: 50px !important;
+}
+#spacious__content .docInfo span.editor bdi,
+#spacious__content .docInfo span.locked bdi {
+    vertical-align: 53px !important;
 }
 
 /* Footer widgets */

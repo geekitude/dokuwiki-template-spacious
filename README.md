@@ -140,7 +140,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * `contools` (*parent,sidetoggle,playground,nsindex,savesettings,syntax*) : choose wich context tools are shown on the opposite side of page tools (see [next section](https://github.com/geekitude/dokuwiki-template-spacious#context-tools) for details)
 * avatars (*wiki:avatars*) : namespace where users should store their avatar (filename should be *username*.jpg, png or gif)
 * [ ] links
-* `licenseVisual` (*badge*) : image shown in footer licence widget
+* licenseVisual (*badge*) : image shown in footer licence widget
   * `badge` : largest available image
   * `button` : small image of same size as small buttons at very bottom of page
   * `none` : obviously no image
@@ -150,11 +150,12 @@ Default value is generally what will keep the look closer to original Wordpress 
   * `locked_mailto` : a mailto user currently locking page link in "docInfo" area (small untill hover)
   * `license_link` : link to current wiki license (only shown when printing page)
   * `onlineversion_link` : link to current page (only shown when printing page)
-* neutralize (*topbar,pageheader,toc,footersocket*) : use **style.ini** neutral colors for selected elements (neutral colors will however be applied to extracted ToC and sidebar in *boxed* and *box2full* layouts)
-* [ ] extractible
-  * sidebar (right sidebar is not extractible even if it is selected here)
-* [ ] animate
-* [ ] printhrefs
+* neutralize (*topbar,pageheader,footersocket*) : use **style.ini** neutral colors for selected elements (neutral colors will however be applied to extracted ToC and sidebar in *boxed* and *box2full* layouts)
+* extractible (*nothing*) : extract those elements from main content to the sides when there's enough room
+  * `sidebar` (right sidebar is not extractible even if it is selected here)
+  * `toc` (extracted ToC can be given [scrollspy](https://www.jqueryscript.net/demo/fixed-table-contents-scrollspy/) super-powers)
+* animate (*500*) : duration in ms of any animation 
+* print (*siteheader,docinfo,sitefooter,hrefs*) : print selected elements or not (selecting "hrefs" prints links' URL as subscript)
 
 ## Context tools
 

@@ -26,18 +26,18 @@ $meta['widebannerfile']     = array('string');
 $meta['nslogofile']         = array('string');
 $meta['sidecardfile']       = array('string');
 $meta['sidecardstyle']      = array('multichoice', '_choices' => array('mediacenter','medialeft','mediaright','mediastretch'));
-$meta['headertoolsIcons']   = array('onoff'); /* enable or not site and user tools SVG icons */
+$meta['headertoolsIcons']   = array('onoff');
 $meta['pageheaderTitle']    = array('onoff'); /* enable or not page header's page title */
 $meta['breadcrumbsStyle']   = array('multichoice', '_choices' => array('classic','pills'));
 $meta['breadcrumbsGlyphs']  = array('onoff'); /* add glyphs to breadcrumbs to distinguish home, user public page, user home private ns, translated pages (note there will allways be a glyph for home in hierarchical trace) */
 $meta['truncatebc']         = array('onoff'); /* truncate bradcrumbs links or not (see __breadcrumb_maxwidth__ in 'style.ini' file) */
-$meta['siblings']           = array('numeric','_pattern' => '/^\d+$/'); /* add a breadcrumbs-like list of other pages in same namespace (number maxed by this value) */
+$meta['siblings']           = array('numeric','_pattern' => '/^\d+$/');
 $meta['contools']           = array('multicheckbox', '_choices' => array('parent','sidetoggle','playground','nsindex','savesettings','syntax'));
 $meta['avatars']            = array('string');
 $meta['links']              = array('string');
-$meta['licenseVisual']      = array('multichoice','_choices' => array('badge','button','none')); /* visual representation of wiki license */
+$meta['licenseVisual']      = array('multichoice','_choices' => array('badge','button','none'));
 $meta['qrcodes']            = array('multicheckbox', '_choices' => array('editor_mailto','locked_mailto','license_link','onlineversion_link')); /* mailto QRCodes will show up in docInfo while license and obline version ones only show up when page is printed*/
 $meta['neutralize']         = array('multicheckbox', '_choices' => array('topbar','pageheader','sidebar','toc','docinfo','footersocket')); /* use 'style.ini' "neu" colors */
 $meta['extractible']        = array('multicheckbox', '_choices' => array('sidebar','toc')); /* extract sidebar or toc if there's enough room */
 $meta['animate']            = array('numeric','_pattern' => '/^[0-9]\d*$/');
-$meta['printhrefs']         = array('onoff'); /* print href attribute after links or not */
+$meta['print']              = array('multicheckbox', '_choices' => array('siteheader','docinfo','sitefooter','hrefs'));

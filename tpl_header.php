@@ -63,7 +63,7 @@ if (!defined('DOKU_INC')) die();
             </div><!-- /.inner-wrap -->
         </div><!-- /#spacious__topbar-wrapper -->
     <?php endif ?>
-    <div id="spacious__head-text-nav-container">
+    <div id="spacious__head-text-nav-container"<?php print (strpos(tpl_getConf('print'), 'siteheader') !== false) ? '' : 'class="noprint"' ?>>
         <div class="inner-wrap">
             <div id="spacious__head-text-nav-wrap" class="flex between stretch">
                 <div id="spacious__head-branding-wrap" class="flex column stretch">
