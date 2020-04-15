@@ -1,6 +1,9 @@
 if (JSINFO.LoadNewsTicker) {
     /* DOKUWIKI:include js/jquery.newsTicker-1.0.11.min.js */
 }
+if (JSINFO.LoadGumshoe) {
+    /* DOKUWIKI:include js/gumshoe.min.js */
+}
 
 /**
  *  We handle several device classes based on browser width.
@@ -121,6 +124,8 @@ console.log(screen_mode);
 
 jQuery(document).ready(function() {
 
+	var spy = new Gumshoe('#dw__toc a');
+
     // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
     screen_mode = jQuery('#spacious__helper').css('z-index') + '';
 
@@ -132,7 +137,7 @@ jQuery(document).ready(function() {
     // Prepare last changes ticker
     jQuery('.js-lastchanges').newsTicker({
         max_rows: 1,
-        row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 5,
+        row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 4,
         speed: 600,
         direction: 'up',
         duration: 4000,

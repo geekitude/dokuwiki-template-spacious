@@ -36,8 +36,9 @@ $meta['contools']           = array('multicheckbox', '_choices' => array('parent
 $meta['avatars']            = array('string');
 $meta['links']              = array('string');
 $meta['licenseVisual']      = array('multichoice','_choices' => array('badge','button','none'));
-$meta['qrcodes']            = array('multicheckbox', '_choices' => array('editor_mailto','locked_mailto','license_link','onlineversion_link')); /* mailto QRCodes will show up in docInfo while license and obline version ones only show up when page is printed*/
-$meta['neutralize']         = array('multicheckbox', '_choices' => array('topbar','pageheader','sidebar','toc','docinfo','footersocket')); /* use 'style.ini' "neu" colors */
-$meta['extractible']        = array('multicheckbox', '_choices' => array('sidebar','toc')); /* extract sidebar or toc if there's enough room */
+$meta['qrcodes']            = array('multicheckbox', '_choices' => array('editor_mailto','locked_mailto','license_link','onlineversion_link'));
+$meta['neutralize']         = array('multicheckbox', '_choices' => array('topbar','pageheader','sidebar','toc','docinfo','footersocket'));
+$meta['extractible']        = array('multicheckbox', '_choices' => array('sidebar','toc'));
+$meta['scrollspyToC']       = array('onoff');
 $meta['animate']            = array('numeric','_pattern' => '/^[0-9]\d*$/');
 $meta['print']              = array('multicheckbox', '_choices' => array('siteheader','docinfo','sitefooter','hrefs'));

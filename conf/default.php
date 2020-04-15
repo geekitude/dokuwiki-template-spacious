@@ -39,5 +39,6 @@ $conf['licenseVisual']      = 'badge';
 $conf['qrcodes']            = 'editor_mailto,locked_mailto,license_link,onlineversion_link';
 $conf['neutralize']         = 'topbar,pageheader,footersocket';
 $conf['extractible']        = '';
+$conf['scrollspyToC']       = 1;
 $conf['animate']            = 500;
 $conf['print']              = 'siteheader,docinfo,sitefooter,hrefs';

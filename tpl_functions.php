@@ -447,6 +447,11 @@ function spacious_init() {
     //} else {
     //    $JSINFO['NewsTickerOffset'] = 5;
     //}
+    if (tpl_getConf('scrollspyToC') !== false) {
+        $JSINFO['LoadGumshoe'] = true;
+    } else {
+        $JSINFO['LoadGumshoe'] = false;
+    }
     $JSINFO['Animate'] = tpl_getConf('animate');
 //$JSINFO['ScrollspyToc'] = tpl_getConf('scrollspyToc');
 //dbg($JSINFO);
