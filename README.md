@@ -73,7 +73,7 @@ The copyright notice at the very bottom of page shouldn't be removed.
 * [x] Stickable pageheader, sidebar and docinfo
 * [x] Dynamic navigation button (current NS home, parent NS start, home or "back to article")
 * [x] Dark color scheme
-* [x] High number of HTML [this document](https://www.dokuwiki.org/include_hooks)
+* [x] High number of HTML hooks (based on [this document](https://www.dokuwiki.org/include_hooks))
 * [x] A few HTML replace hooks that let you replace some elements with more fancy HTML code
 * [x] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
 * [x] Expanded debug mode to show some specific elements (sample code or images)
@@ -106,7 +106,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * topbar (*nothing*) : select topbar elements
   * `date` : just the server's current date based on `datelocale` and `longdatestring` settings
   * `newsticker` : dynamic list of last changes in current namespace and sub ones (elements listed depen on `newsTicker` setting)
-  * `socialnetworks` : list of social networks links (see `Topbar social links` below)
+  * `socialnetworks` : list of social networks links (see [Topbar social links](https://github.com/geekitude/dokuwiki-template-spacious#topbar-social-links) below)
 * datelocale (*fra*) : language used for dates
 * longdatestring (*%A %d %B %Y*) : how long date strings are built (typically with full day of week, ...), [see this page](https://www.php.net/manual/fr/function.strftime.php)
 * shortdatestring (*%d/%m/%Y*) : how short and typically fully numeric dates are built, [see this page](https://www.php.net/manual/fr/function.strftime.php) too
@@ -118,8 +118,6 @@ Default value is generally what will keep the look closer to original Wordpress 
   * `media` : show or ignore media files
   * the number in text field is the number of elements to show (starting from most recent)
 * sidebarPos (*left*) : sidebar position
-  * `left` of page content
-  * `right` of page content (right sidebar is not extractible, see below)
 * flipTools (*OFF*) : flip page and context tools positions
 * headerLogo (*ON*) : enable header logo or not
 * stickies (*nothing*) : [stick](https://www.w3schools.com/howto/howto_css_sticky_element.asp) given element to top of screen (or bottom, depending on position) 
@@ -136,15 +134,25 @@ Default value is generally what will keep the look closer to original Wordpress 
 * [ ] breadcrumbsStyle
 * [ ] breadcrumbsGlyphs
 * [ ] truncatebc
-* siblings (*10*) : a new type of breadcrumbs that adds links to other pages of current namespace under other breadcrumbs (**requires [TwistieNav](https://www.dokuwiki.org/plugin:twistienav ) plugin**) up to a maximum of pages established by this setting (if there's more, a glyph will propose a link to site map
+* siblings (*10*) : a new type of breadcrumbs that adds links to other pages of current namespace under other breadcrumbs (**requires [TwistieNav](https://www.dokuwiki.org/plugin:twistienav ) plugin**)
   * `0` : choosing a value of 0 simply disables this featuredisables that feature
-* [ ] contools
-* [ ] avatars
+  * `any other integer` : set the maximum number of links to show (if there's more, a glyph will propose a link to site map)
+* `contools` (*parent,sidetoggle,playground,nsindex,savesettings,syntax*) : choose wich context tools are shown on the opposite side of page tools (see [next section](https://github.com/geekitude/dokuwiki-template-spacious#context-tools) for details)
+* avatars (*wiki:avatars*) : namespace where users should store their avatar (filename should be *username*.jpg, png or gif)
 * [ ] links
-* [ ] licenseVisual
-* [ ] qrcodes
-* [ ] neutralize
+* `licenseVisual` (*badge*) : image shown in footer licence widget
+  * `badge` : largest available image
+  * `button` : small image of same size as small buttons at very bottom of page
+  * `none` : obviously no image
+* qrcodes (*editor_mailto,locked_mailto,license_link,onlineversion_link*) : select wich QRCodes to show (requires [QRCode2](https://www.dokuwiki.org/plugin:qrcode2) plugin)
+  * `editor_mailto` : a mailto last editor link in "docInfo" area (small untill hover)
+  * `locked_mailto` : a mailto user currently locking page link in "docInfo" area (small untill hover)
+  * `locked_mailto` : a mailto user currently locking page link in "docInfo" area (small untill hover)
+  * `license_link` : link to current wiki license (only shown when printing page)
+  * `onlineversion_link` : link to current page (only shown when printing page)
+* neutralize (*topbar,pageheader,toc,footersocket*) : use **style.ini** neutral colors for selected elements (neutral colors will however be applied to extracted ToC and sidebar in *boxed* and *box2full* layouts)
 * [ ] extractible
+  * sidebar (right sidebar is not extractible even if it is selected here)
 * [ ] animate
 * [ ] printhrefs
 
@@ -156,7 +164,7 @@ These tools appear on opposite side of page tools and here are the different pos
 
 * ![Namespace start](/images/svg/folder-home.svg) Namespace start : go to current namespace start page from any random (ie. *not start*) page
 * ![Parent namespace](/images/svg/reply-all.svg) Parent namespace : go to parent namespace start from any second or deeper level namespace start page
-* ![Translated Wiki Home](/images/svg/flag.svg) Translated Wiki Home : go to translated wiki home from any second level translated page (requires [Translation](https://imgbin.com/png/r454K96z) plugin)
+* ![Translated Wiki Home](/images/svg/flag.svg) Translated Wiki Home : go to translated wiki home from any second level translated page (requires [Translation](https://www.dokuwiki.org/plugin:translation) plugin)
 * ![Wiki home](/images/svg/home.svg) Wiki home : go to wiki home from any first level namespace start page
 * ![Back to article](/images/svg/skip-previous.svg) Previous page : go back to article after switching to *admin*, *index*, *media* or *recent* modes
 
