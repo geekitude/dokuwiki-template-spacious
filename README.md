@@ -155,6 +155,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * extractible (*nothing*) : extract those elements from main content to the sides when there's enough room
   * `sidebar` (right sidebar is not extractible even if it is selected here)
   * `toc` (extracted ToC can be given [scrollspy](https://www.jqueryscript.net/demo/fixed-table-contents-scrollspy/) super-powers)
+* scrollspyToC (*ON*) : enable scrollspy ToC
 * animate (*500*) : duration in ms of any animation 
 * print (*siteheader,docinfo,sitefooter,hrefs*) : print selected elements or not (selecting "hrefs" prints links' URL as subscript)
 
@@ -278,6 +279,7 @@ Here's the list of features that will not work on browsers without Javascript ab
 * Sidebar and TOC auto-collapsing when reaching tablet resolution
 * Inner links will scroll a bit too far if Page header is set to stick on top of page
 * Animated scrolling
+* Scrollspy ToC
 
 ## Expanded debug mode
 

@@ -447,7 +447,7 @@ function spacious_init() {
     //} else {
     //    $JSINFO['NewsTickerOffset'] = 5;
     //}
-    if (tpl_getConf('scrollspyToC') !== false) {
+    if (tpl_getConf('scrollspyToC')) {
         $JSINFO['LoadGumshoe'] = true;
     } else {
         $JSINFO['LoadGumshoe'] = false;

@@ -23,7 +23,8 @@ function js_spacious_resize(){
 
     // the z-index of #mixture__helper div is (mis-)used on purpose for detecting the screen mode here
     screen_mode = jQuery('#spacious__helper').css('z-index') + '';
-console.log(screen_mode);
+//console.log(screen_mode);
+
     // determine our device pattern
     switch (screen_mode) {
         case '1001':
@@ -124,7 +125,9 @@ console.log(screen_mode);
 
 jQuery(document).ready(function() {
 
-	var spy = new Gumshoe('#dw__toc a');
+    if (JSINFO.LoadGumshoe) {
+        var spy = new Gumshoe('#dw__toc a');
+    }
 
     // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
     screen_mode = jQuery('#spacious__helper').css('z-index') + '';
@@ -135,15 +138,17 @@ jQuery(document).ready(function() {
 //    });
 
     // Prepare last changes ticker
-    jQuery('.js-lastchanges').newsTicker({
-        max_rows: 1,
-        row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 4,
-        speed: 600,
-        direction: 'up',
-        duration: 4000,
-        autostart: 1,
-        pauseOnHover: 1
-    });
+    if (JSINFO.LoadNewsTicker) {
+        jQuery('.js-lastchanges').newsTicker({
+            max_rows: 1,
+            row_height: parseFloat(jQuery("#spacious__topbar-newsticker").css("font-size")) + 4,
+            speed: 600,
+            direction: 'up',
+            duration: 4000,
+            autostart: 1,
+            pauseOnHover: 1
+        });
+    }
 
 //    // Show last changes ticker
 //    if (screen_mode != '1000') {
