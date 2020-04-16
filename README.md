@@ -154,7 +154,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * neutralize (*topbar,pageheader,footersocket*) : use **style.ini** neutral colors for selected elements (neutral colors will however be applied to extracted ToC and sidebar in *boxed* and *box2full* layouts)
 * extractible (*nothing*) : extract those elements from main content to the sides when there's enough room
   * `sidebar` (right sidebar is not extractible even if it is selected here)
-  * `toc` (extracted ToC is always "sticky" and can be given [scrollspy](https://www.jqueryscript.net/demo/fixed-table-contents-scrollspy/) super-powers)
+  * `toc` (extracted ToC can be given [scrollspy](https://www.jqueryscript.net/demo/fixed-table-contents-scrollspy/) super-powers)
 * scrollspyToC (*ON*) : enable scrollspy ToC
 * animate (*500*) : duration in ms of any animation 
 * print (*siteheader,docinfo,sitefooter,hrefs*) : print selected elements or not (selecting "hrefs" prints links' URL as subscript)
