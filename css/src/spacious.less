@@ -5346,7 +5346,7 @@ div.notify {
 }
 
 /* Extract ToC if there's enough room (extra 51px are for a 10px margin on both sides of toc and both side of screen plus 1.4rem for previous inner-margin and an extra pixel to go beyond) */
-@media all and (min-width: @ini_site_width + (2 * @ini_toc_width) + 55px) {
+@media all and (min-width: @ini_site_width + (2 * @ini_toc_width) + 70px) {
     body.debug.extractible-toc #spacious__content {
         background-color: goldenrod;
     }
@@ -5370,8 +5370,13 @@ div.notify {
         top: 9rem;
         left: 100%;
     }
-    html.extracted-toc body.mix-layout.extractible-toc #spacious__article {
+    html.extracted-toc body.mix-layout.extractible-toc:not(.left-sidebar) #spacious__article,
+    html.extracted-toc body.mix-layout.extractible-toc:not(.right-sidebar) #spacious__article {
         width: calc(@ini_site_width - (2 * @ico-width) - (4 * @ico-margin));
+    }
+    html.extracted-toc body.mix-layout.extractible-toc.left-sidebar #spacious__article,
+    html.extracted-toc body.mix-layout.extractible-toc.right-sidebar #spacious__article {
+        width: calc(@ini_site_width - (2 * @ico-width) - (4 * @ico-margin) - @ini_sidebar_width - 19px);
     }
     body.extractible-toc.mix-layout #dw__toc {
         top: 4.5rem;
@@ -5414,7 +5419,7 @@ div.notify {
 }
 
 /* Extract Sidebar if there's enough room (extra 51px are for a 10px margin on both sides of sidebar and both side of screen plus 1rem for previous inner margin and an extra pixel to go beyond) */
-@media all and (min-width: @ini_site_width + (2 * @ini_sidebar_width) + 51px) {
+@media all and (min-width: @ini_site_width + (2 * @ini_sidebar_width) + 70px) {
     body.debug.extractible-toc #spacious__content {
         background-color: chocolate;
     }
@@ -5435,6 +5440,9 @@ div.notify {
         transform: translate((@ini_sidebar_width + @ico-width + @ico-margin + @ico-margin + 20px), 0);
         /*background-color: fade(@ini_background, 60%) !important;*/
         box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+    }
+    html.extracted-toc.extracted-sidebar body.mix-layout.extractible-toc #spacious__article {
+        width: calc(@ini_site_width - (2 * @ico-width) - (4 * @ico-margin));
     }
     body.extractible-sidebar:not(.sticky-sidebar) #spacious__sidebar {
         position: absolute;
