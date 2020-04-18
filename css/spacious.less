@@ -6586,7 +6586,7 @@ div.notify a {
 }
 
 /* Extract ToC if there's enough room (extra 51px are for a 10px margin on both sides of toc and both side of screen plus 1.4rem for previous inner-margin and an extra pixel to go beyond) */
-@media all and (min-width: @ini_site_width + (2 * @ini_toc_width) + 70px) {
+@media all and (min-width: @ini_site_width + (2 * @ini_toc_width) + 75px) {
     [dir] body.debug.extractible-toc #spacious__content {
         background-color: goldenrod;
     }
@@ -6607,11 +6607,11 @@ div.notify a {
     }
     [dir=ltr] body.extractible-toc:not(.mix-layout) #dw__toc {
         left: 50%;
-        margin-left: (@ini_site_width / 2) + 10px;
+        margin-left: (@ini_site_width / 2) + 15px;
     }
     [dir=rtl] body.extractible-toc:not(.mix-layout) #dw__toc {
         right: 50%;
-        margin-right: (@ini_site_width / 2) + 10px;
+        margin-right: (@ini_site_width / 2) + 15px;
     }
     html.extracted-toc body.mix-layout.extractible-toc #dw__toc {
         position: -webkit-sticky;
@@ -6675,7 +6675,7 @@ div.notify a {
 }
 
 /* Extract Sidebar if there's enough room (extra 51px are for a 10px margin on both sides of sidebar and both side of screen plus 1rem for previous inner margin and an extra pixel to go beyond) */
-@media all and (min-width: @ini_site_width + (2 * @ini_sidebar_width) + 70px) {
+@media all and (min-width: @ini_site_width + (2 * @ini_sidebar_width) + 75px) {
     [dir] body.debug.extractible-toc #spacious__content {
         background-color: chocolate;
     }
@@ -6690,7 +6690,7 @@ div.notify a {
         /*background-color: fade(@ini_background, 60%) !important;*/
     }
     [dir] body.extractible-sidebar #spacious__sidebar {
-        transform: translate((-1 * (@ini_sidebar_width + @ico-width + @ico-margin + @ico-margin + 10px)), 0);
+        transform: translate((-1 * (@ini_sidebar_width + @ico-width + @ico-margin + @ico-margin + 15px)), 0);
         padding-top: .5rem;
         padding-bottom: .5rem;
     }

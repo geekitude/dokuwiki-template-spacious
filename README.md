@@ -60,20 +60,20 @@ The copyright notice at the very bottom of page shouldn't be removed.
 * [ ] Namespace dependent CSS (for colors and fonts)
 * [ ] Namespace dependent UI images (background pattern, logo, banner, widebanner and a potential sidebar header)
 * [ ] Google Fonts : each of main text, headings, condensed text (mostly nav bar) and monospaced text (```code``` syntax) can use a different Google font (be warned that main text font should be kept very readable)
-* [ ] Can have a "scrollspy" ToC on wide screen
 * [ ] Wide banner slider with latest changes at wiki home?
 * [ ] Sub namespaces list based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin?
 * [ ] Test most common plugins
+* [ ] Dark color scheme (maybe)
 
 ## Main features
 
 * [x] Topbar with date, newsticker (based on current namespace and sub content) and social links
 * [x] Easy to customize glyphs(*) (from [Material Design Icons](https://materialdesignicons.com/) like other DW's SVG glyphs or [IcoMoon](https://icomoon.io/) for social links)
 * [x] Sidebar and ToC can be moved out of page content on wide screen (only works in boxed layout)
+* [x] Extracted ToC can be given [scrollspy](https://codepen.io/latifur/pen/qLKXpj) superpowers
 * [x] Hidable sidebar
 * [x] Stickable pageheader, sidebar and docinfo
 * [x] Dynamic navigation button (current NS home, parent NS start, home or "back to article")
-* [x] Dark color scheme
 * [x] High number of HTML hooks (based on [this document](https://www.dokuwiki.org/include_hooks))
 * [x] A few HTML replace hooks that let you replace some elements with more fancy HTML code
 * [x] Siblings based on [Twistienav](https://www.dokuwiki.org/plugin:twistienav) plugin (a breadcrumbs like list of other pages in current namespace)
@@ -154,8 +154,8 @@ Default value is generally what will keep the look closer to original Wordpress 
 * neutralize (*topbar,pageheader,footersocket*) : use **style.ini** neutral colors for selected elements (neutral colors will however be applied to extracted ToC and sidebar in *boxed* and *box2full* layouts)
 * extractible (*nothing*) : extract those elements from main content to the sides when there's enough room
   * `sidebar` (right sidebar is not extractible even if it is selected here)
-  * `toc` (extracted ToC can be given [scrollspy](https://www.jqueryscript.net/demo/fixed-table-contents-scrollspy/) super-powers)
-* scrollspyToC (*ON*) : enable scrollspy ToC
+  * `toc` (extracting ToC in "mix" layout requires Javascript enabled browser)
+* scrollspyToC (*ON*) : enable [scrollspy](https://codepen.io/latifur/pen/qLKXpj) ToC (only works when extracted)
 * animate (*500*) : duration in ms of any animation 
 * print (*siteheader,docinfo,sitefooter,hrefs*) : print selected elements or not (selecting "hrefs" prints links' URL as subscript)
 
@@ -279,6 +279,7 @@ Here's the list of features that will not work on browsers without Javascript ab
 * Sidebar and TOC auto-collapsing when reaching tablet resolution
 * Inner links will scroll a bit too far if Page header is set to stick on top of page
 * Animated scrolling
+* ToC extraction in "mix" layout
 * Scrollspy ToC
 
 ## Expanded debug mode
