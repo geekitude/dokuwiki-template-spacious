@@ -72,10 +72,14 @@ function js_spacious_resize(){
         if($toc.length) {
             $toc[0].setState(1);
         }
-        if (device_class.match(/extracted-toc/)){
-            jQuery("#dw__toc").prependTo("#spacious__toc-placeholder");
-        } else {
-            jQuery("#dw__toc").prependTo("div.page");
+        if (jQuery("body").hasClass("mix-layout")) {
+            if (device_class.match(/extracted-toc/)){
+                jQuery("#dw__toc").prependTo("#spacious__toc-placeholder");
+                //console.log("prepend to placeholder");
+            } else {
+                jQuery("#dw__toc").prependTo("div.page");
+                //console.log("prepend back");
+            }
         }
     }
 
