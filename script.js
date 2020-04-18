@@ -43,7 +43,7 @@ function js_spacious_resize(){
             device_class = 'desktop extracted-toc';
 //            jQuery('#js_lastchanges_container').show();
             break;
-        case '2002':
+        case '3001':
             if (device_class.match(/extracted-sidebar/)) return;
             device_class = 'desktop extracted-toc extracted-sidebar';
 //            jQuery('#js_lastchanges_container').show();
