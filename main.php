@@ -49,7 +49,7 @@ spacious_init();
             <span><a href="#spacious__main"><?php print $lang['skip_to_content'] ?></a></span>
         </div>
         <?php include('tpl_header.php') ?>
-        <main role="main" id="spacious__main" class="group">
+        <main role="main" id="spacious__main" class="group<?php print (strpos(tpl_getConf('neutralize'), 'toc') !== false) ? " neutoc" : "" ?>">
             <?php spacious_include("mainheader"); ?>
             <header id="spacious__pageheader" class="group<?php print (strpos(tpl_getConf('neutralize'), 'pageheader') !== false) ? " neu" : "" ?><?php print $ACT == "admin" ? " hidden" : "" ?>">
                 <div class="inner-wrap">
@@ -226,7 +226,7 @@ spacious_init();
                         <div class="vr<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? " notvisibleifextracted" : " a11y" ?>"></div>
                     <?php endif; ?>
                     <article id="spacious__article">
-                        <div id="spacious__content" class="group<?php print (strpos(tpl_getConf('neutralize'), 'toc') !== false) ? " neutoc" : "" ?>">
+                        <div id="spacious__content" class="group">
                             <div class="page group spacer">
                                 <?php tpl_flush() ?>
                                 <?php spacious_include("pageheader"); ?>
@@ -250,6 +250,10 @@ spacious_init();
                         <?php print (new \dokuwiki\Menu\PageMenu())->getListItems(); ?>
                     </ul>
                 </nav>
+                <div id="spacious__toc-placeholder">
+                    <!-- Us tiniest possible image as a placeholder to avoid empty div (http://probablyprogramming.com/2009/03/15/the-tiniest-gif-ever) -->
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" width="0" height="0" alt="" />
+                </div><!-- /#spacious__toc-placeholder -->
             </div><!-- /#spacious__main-flex -->
             <?php spacious_include("mainfooter"); ?>
         </main><!-- #spacious__main -->

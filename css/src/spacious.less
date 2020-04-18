@@ -335,19 +335,19 @@ div.vr.notvisibleifextracted {
 }
 
 .neu,
-#spacious__content.neutoc #dw__toc {
+#spacious__main.neutoc #dw__toc {
     background-color: @ini_background_neu !important;
 }
 
 .neu,
 .neu h6,
-#spacious__content.neutoc #dw__toc,
-#spacious__content.neutoc #dw__toc h3 {
+#spacious__main.neutoc #dw__toc,
+#spacious__main.neutoc #dw__toc h3 {
     color: @ini_text_neu;
 }
 
 .neu a,
-#spacious__content.neutoc #dw__toc a {
+#spacious__main.neutoc #dw__toc a {
     color: @ini_text_neu;
 }
 
@@ -2632,6 +2632,10 @@ body.sticky-docinfo #spacious__content .docInfo {
 
 body.sticky-docinfo #spacious__content .docInfo:hover {
     opacity: 1;
+}
+
+#spacious__toc-placeholder {
+    order:4;
 }
 
 /* =LEFT SIDEBAR CONTENT LAYOUT
@@ -5352,7 +5356,7 @@ div.notify {
     body.extractible-toc #spacious__helper span::after {
         content: "(ToC extracted)";
     }
-    body.extractible-toc #dw__toc {
+    body.extractible-toc:not(.mix-layout) #dw__toc {
         position: fixed;
         top: 3rem;
         left: 50%;
@@ -5360,6 +5364,14 @@ div.notify {
         margin-left: (@ini_site_width / 2) + 10px;
         padding-top: .5rem;
         padding-bottom: .5rem;
+    }
+    html.extracted-toc body.mix-layout.extractible-toc #dw__toc {
+        position: sticky;
+        top: 9rem;
+        left: 100%;
+    }
+    html.extracted-toc body.mix-layout.extractible-toc #spacious__article {
+        width: calc(@ini_site_width - (2 * @ico-width) - (4 * @ico-margin));
     }
     body.extractible-toc.mix-layout #dw__toc {
         top: 4.5rem;

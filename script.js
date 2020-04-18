@@ -5,6 +5,7 @@ if (JSINFO.LoadGumshoe) {
     /* DOKUWIKI:include js/gumshoe.min.js */
 }
 
+
 /**
  *  We handle several device classes based on browser width.
  *
@@ -70,6 +71,11 @@ function js_spacious_resize(){
         }
         if($toc.length) {
             $toc[0].setState(1);
+        }
+        if (device_class.match(/extracted-toc/)){
+            jQuery("#dw__toc").prependTo("#spacious__toc-placeholder");
+        } else {
+            jQuery("#dw__toc").prependTo("div.page");
         }
     }
 
@@ -154,7 +160,7 @@ jQuery(document).ready(function() {
 //    if (screen_mode != '1000') {
 //        jQuery('#js_lastchanges_container').show();
 //    }
-
+ 
     // Prepare resize watcher and proceed a resize function first run to adjust layout
     jQuery(function(){
         var resizeTimer;
