@@ -1291,7 +1291,17 @@ body.mix-layout #spacious__page {
     margin: 0 3rem;
 }
 
+/*
 body.mix-layout .inner-wrap,
+body.mix-layout #spacious__main-flex {
+    max-width: @ini_site_width;
+}
+*/
+
+body.mix-layout .inner-wrap {
+    width: @ini_site_width;
+    max-width: 95%;
+}
 body.mix-layout #spacious__main-flex {
     max-width: @ini_site_width;
 }
