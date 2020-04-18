@@ -135,7 +135,7 @@ spacious_init();
                             ?>
                             <?php if ((strpos(tpl_getConf('contools'), 'sidevision') !== false) and ($ACT != "edit") and ($ACT != "admin")) : ?>
                                 <li class="action sidevision hide"><button onclick="js_spacious_sidevision()" title="<?php print tpl_getLang('sidebar_hide'); ?>"><?php spacious_glyph('hide'); ?><span><?php print tpl_getLang('sidebar_hide'); ?></span></button></li>
-                                <li class="action sidevision show"><button onclick="js_spacious_sidebarvision()" title="<?php print tpl_getLang('sidebar_show'); ?>"><?php spacious_glyph('show'); ?><span><?php print tpl_getLang('sidebar_show'); ?></span></a></li>
+                                <li class="action sidevision show"><button onclick="js_spacious_sidevision()" title="<?php print tpl_getLang('sidebar_show'); ?>"><?php spacious_glyph('show'); ?><span><?php print tpl_getLang('sidebar_show'); ?></span></a></li>
                             <?php endif; ?>
                             <?php if ((strpos(tpl_getConf('contools'), 'syntax') !== false) and ($ACT == "edit")) : ?>
                                 <li class="action syntax"><a href="/doku.php?id=wiki:syntax" title="wiki:syntax"><?php spacious_glyph('help'); ?><span><?php print tpl_getLang('syntax'); ?></span></a></li>

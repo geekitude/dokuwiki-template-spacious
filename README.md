@@ -138,7 +138,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * siblings (*10*) : a new type of breadcrumbs that adds links to other pages of current namespace under other breadcrumbs (**requires [TwistieNav](https://www.dokuwiki.org/plugin:twistienav ) plugin**)
   * `0` : choosing a value of 0 simply disables this featuredisables that feature
   * `any other integer` : set the maximum number of links to show (if there's more, a glyph will propose a link to site map)
-* `contools` (*parent,sidetoggle,playground,nsindex,savesettings,syntax*) : choose wich context tools are shown on the opposite side of page tools (see [next section](https://github.com/geekitude/dokuwiki-template-spacious#context-tools) for details)
+* `contools` (*parent,sidevision,playground,nsindex,savesettings,syntax*) : choose wich context tools are shown on the opposite side of page tools (see [next section](https://github.com/geekitude/dokuwiki-template-spacious#context-tools) for details)
 * avatars (*wiki:avatars*) : namespace where users should store their avatar (filename should be *username*.jpg, png or gif)
 * [ ] links
 * licenseVisual (*badge*) : image shown in footer licence widget
@@ -171,7 +171,7 @@ These tools appear on opposite side of page tools and here are the different pos
 * ![Wiki home](/images/svg/home.svg) Wiki home : go to wiki home from any first level namespace start page
 * ![Back to article](/images/svg/skip-previous.svg) Previous page : go back to article after switching to *admin*, *index*, *media* or *recent* modes
 
-### Sidetoggle
+### Sidevision
 
 ![Hide sidebar](/images/svg/eye-off.svg) Hide or ![Show sidebar](/images/svg/eye.svg) show sidebar.
 

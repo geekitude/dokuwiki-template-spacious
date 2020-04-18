@@ -99,6 +99,24 @@ function js_spacious_resize(){
 
 }
 
+function js_spacious_sidevision(toggle) {
+    if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "none" || (typeof toggle !== "undefined" && toggle == "show")) {
+        jQuery('#spacious__sidebar').show(JSINFO.Animate);
+        jQuery('#spacious__main-subflex .vr').css('display', 'initial');
+        jQuery('#spacious__main-subflex .vr').css('border-width', '0 1px 0 0');
+        jQuery('#spacious__contools li.show').css('display', 'none');
+        jQuery('#spacious__contools li.hide').css('display', 'inline-block');
+        jQuery('#spacious__article').removeClass('hidden-sidebar');
+    } else if (typeof toggle === "undefined" && jQuery('#spacious__sidebar').css('display') === "block" || (typeof toggle !== "undefined" && toggle == "hide")) {
+        jQuery('#spacious__sidebar').hide(JSINFO.Animate);
+        jQuery('#spacious__main-subflex .vr').css('display', 'none');
+        jQuery('#spacious__main-subflex .vr').css('border-width', '0');
+        jQuery('#spacious__contools li.hide').css('display', 'none');
+        jQuery('#spacious__contools li.show').css('display', 'inline-block');
+        jQuery('#spacious__article').addClass('hidden-sidebar');
+    }
+}
+
 //function js_mixture_branding(){
 //    // fix wiki title and tagline horizontal alignment when window is so tiny they go under logo
 //    var brandingHeight = jQuery('#mixture__branding_start').height();

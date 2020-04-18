@@ -32,7 +32,7 @@ $meta['breadcrumbsStyle']   = array('multichoice', '_choices' => array('classic'
 $meta['breadcrumbsGlyphs']  = array('onoff'); /* add glyphs to breadcrumbs to distinguish home, user public page, user home private ns, translated pages (note there will allways be a glyph for home in hierarchical trace) */
 $meta['truncatebc']         = array('onoff'); /* truncate bradcrumbs links or not (see __breadcrumb_maxwidth__ in 'style.ini' file) */
 $meta['siblings']           = array('numeric','_pattern' => '/^\d+$/');
-$meta['contools']           = array('multicheckbox', '_choices' => array('parent','sidetoggle','playground','nsindex','savesettings','syntax'));
+$meta['contools']           = array('multicheckbox', '_choices' => array('parent','sidevision','playground','nsindex','savesettings','syntax'));
 $meta['avatars']            = array('string');
 $meta['links']              = array('string');
 $meta['licenseVisual']      = array('multichoice','_choices' => array('badge','button','none'));
