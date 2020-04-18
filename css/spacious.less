@@ -912,7 +912,7 @@ a img:hover {
     opacity: 1;
 }
 [dir] #dw__toc ul.toc a:hover {
-    border-color: @ini_yellow_color;
+    border-color: @ini_link;
 }
 
 a:focus,
@@ -2986,8 +2986,12 @@ html.extracted-toc #dw__toc ul li.active {
 }
 */
 
+html.extracted-toc #dw__toc ul li.active a {
+    opacity: 1;
+}
+
 html[dir].extracted-toc #dw__toc ul li.active a {
-    border-color: @ini_yellow_color;
+    border-color: @ini_link;
 }
 
 [dir] #dw__toc > h3, [dir] #dw__toc > div {
