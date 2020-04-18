@@ -228,13 +228,17 @@ h6 span.label,
     display: unset;
 }
 
+/*
 #dw__toc h3 {
     margin: 0 5px;
 }
+*/
 
+/*
 #dw__toc h3 strong {
     margin-bottom: .5rem;
 }
+*/
 
 /*
 h6 strong {
@@ -2377,7 +2381,7 @@ body.mode_show.right-sidebar #spacious__article {
 
 .dokuwiki .toggle strong {
     float: right;
-    margin: .6rem .4em 0 0;
+    margin: 1rem .4em 0 0;
 }
 
 #dw__toc ul li {
@@ -2399,10 +2403,12 @@ html.extracted-toc #dw__toc ul li.active ul a {
     opacity: .5;
 }
 
+/*
 #dw__toc > h3,
 #dw__toc > div {
     padding: .2rem .5rem;
 }
+*/
 
 /*
 #dw__toc > div {
@@ -2412,7 +2418,7 @@ html.extracted-toc #dw__toc ul li.active ul a {
 
 .toggle strong {
     line-height: 1;
-    padding-top: 2px;
+    /*padding-top: 2px;*/
 }
 
 .toggle strong span {
@@ -2510,8 +2516,10 @@ html.no-js #spacious__topbar-newsticker {
 }
 
 #spacious__sidebar.neu,
-body.extractible-sidebar #spacious__sidebar {
-    padding: 0 .5rem;
+body.extractible-sidebar #spacious__sidebar,
+#spacious__main.neutoc #dw__toc,
+body.extractible-toc #spacious__main.neutoc #dw__toc {
+    padding: 0 .5rem .5rem .5rem;
 }
 
 body.sticky-sidebar #spacious__sidebar {
@@ -4814,7 +4822,7 @@ div.notify {
         min-width: 100%;
         /*margin-right: 0 !important;*/
         /*margin-left: 0 !important;*/
-        padding: 0 !important;
+        /*padding: 0 !important;*/
         margin: 0 !important;
     }
     #spacious__sidebar h6 strong {

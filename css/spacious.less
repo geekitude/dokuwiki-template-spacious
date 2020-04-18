@@ -250,13 +250,17 @@ h6 span.label,
     padding: 0 0 3px 0 !important;
 }
 
-[dir] #dw__toc h3 {
+/*
+#dw__toc h3 {
     margin: 0 5px;
 }
+*/
 
-[dir] #dw__toc h3 strong {
+/*
+#dw__toc h3 strong {
     margin-bottom: .5rem;
 }
+*/
 
 /*
 h6 strong {
@@ -2978,12 +2982,12 @@ body.mode_show.right-sidebar #spacious__article {
 
 [dir=ltr] .dokuwiki .toggle strong {
     float: right;
-    margin: .6rem .4em 0 0;
+    margin: 1rem .4em 0 0;
 }
 
 [dir=rtl] .dokuwiki .toggle strong {
     float: left;
-    margin: .6rem 0 0 .4em;
+    margin: 1rem 0 0 .4em;
 }
 
 #dw__toc ul li {
@@ -3010,9 +3014,12 @@ html[dir].extracted-toc #dw__toc ul li.active ul a {
     border-color: transparent;
 }
 
-[dir] #dw__toc > h3, [dir] #dw__toc > div {
+/*
+#dw__toc > h3,
+#dw__toc > div {
     padding: .2rem .5rem;
 }
+*/
 
 /*
 #dw__toc > div {
@@ -3022,10 +3029,7 @@ html[dir].extracted-toc #dw__toc ul li.active ul a {
 
 .toggle strong {
     line-height: 1;
-}
-
-[dir] .toggle strong {
-    padding-top: 2px;
+    /*padding-top: 2px;*/
 }
 
 .toggle strong span {
@@ -3138,8 +3142,8 @@ html.no-js #spacious__topbar-newsticker {
     display: none;
 }
 
-[dir] #spacious__sidebar.neu, [dir] body.extractible-sidebar #spacious__sidebar {
-    padding: 0 .5rem;
+[dir] #spacious__sidebar.neu, [dir] body.extractible-sidebar #spacious__sidebar, [dir] #spacious__main.neutoc #dw__toc, [dir] body.extractible-toc #spacious__main.neutoc #dw__toc {
+    padding: 0 .5rem .5rem .5rem;
 }
 
 body.sticky-sidebar #spacious__sidebar {
@@ -5923,9 +5927,9 @@ div.notify a {
         min-width: 100%;
         /*margin-right: 0 !important;*/
         /*margin-left: 0 !important;*/
+        /*padding: 0 !important;*/
     }
     [dir] #spacious__sidebar {
-        padding: 0 !important;
         margin: 0 !important;
     }
     [dir=ltr] #spacious__sidebar h6 strong {
