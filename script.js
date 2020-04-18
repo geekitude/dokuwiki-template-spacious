@@ -136,7 +136,10 @@ function js_spacious_resize(){
 jQuery(document).ready(function() {
 
     if (JSINFO.LoadGumshoe) {
-        var spy = new Gumshoe('#dw__toc a');
+        //var spy = new Gumshoe('#dw__toc a');
+        const spy = new Gumshoe('#dw__toc a',{
+	      offset: 150
+        });
     }
 
     // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
