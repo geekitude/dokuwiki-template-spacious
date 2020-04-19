@@ -185,6 +185,34 @@ jQuery(document).ready(function() {
 //    if (screen_mode != '1000') {
 //        jQuery('#js_lastchanges_container').show();
 //    }
+
+    // CLICK WATCHER
+//    jQuery('a[href*="#"]:not([href="#logoLinkImage"]):not([href="#sidebarLinkImage"]):not([href="#_fake_href"])').click(function() {
+    jQuery('a[href*="#"]:not([href="#spacious__main"])').click(function() {
+        // adjust scroll height if sticky Pageheader
+        if (JSINFO.StickyPageheader) {
+            // add Pageheader height and a little something for more visual space
+            var $delta = jQuery('#spacious__pageheader').outerHeight();
+        } else {
+            // or nothing
+            var $delta = 0;
+        }
+        var $target = jQuery(this.hash);
+//console.log($delta);
+//console.log($target);
+//console.log(this.hash.substr(1));
+//console.log(this.hash);
+        //if ($target.length == 0) target = jQuery('a[name="' + this.hash.substr(1) + '"]');
+        if ($target.length == 0) $target = jQuery('html');
+        // Move to intended target
+        //if ($delta == 0) {
+        //    jQuery('html, body').animate({ scrollTop: $target.offset().top }, 500);
+        //} else {
+        //    jQuery('html, body').animate({ scrollTop: $target.offset().top-calcTopOffset($delta) }, 500);
+        //}
+        jQuery('html, body').animate({ scrollTop: $target.offset().top-$delta }, JSINFO.Animate);
+        return false;
+    });
  
     // Prepare resize watcher and proceed a resize function first run to adjust layout
     jQuery(function(){

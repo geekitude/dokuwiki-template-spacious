@@ -430,7 +430,6 @@ function spacious_init() {
     //    $JSINFO['user'] = true;
     //}
     // Store options into $JSINFO for later use
-    //$JSINFO['ScrollDelay'] = tpl_getConf('scrollDelay');
     //if ((strpos(tpl_getConf('topbar'), 'newsticker') !== false) and (count($spacious['recents']) > 0)) {
     if (strpos(tpl_getConf('topbar'), 'newsticker') !== false) {
         $JSINFO['LoadNewsTicker'] = true;
@@ -442,15 +441,15 @@ function spacious_init() {
     } else {
         $JSINFO['StickyPageheader'] = false;
     }
-    //if (tpl_getConf('smallNewsBar') == true) {
-    //    $JSINFO['NewsTickerOffset'] = 3;
-    //} else {
-    //    $JSINFO['NewsTickerOffset'] = 5;
-    //}
     if (tpl_getConf('scrollspyToC')) {
         $JSINFO['LoadGumshoe'] = true;
     } else {
         $JSINFO['LoadGumshoe'] = false;
+    }
+    if (strpos(tpl_getConf('stickies'), 'pageheader') !== false) {
+        $JSINFO['StickyPageheader'] = true;
+    } else {
+        $JSINFO['StickyPageheader'] = false;
     }
     $JSINFO['Animate'] = tpl_getConf('animate');
 //$JSINFO['ScrollspyToc'] = tpl_getConf('scrollspyToc');
