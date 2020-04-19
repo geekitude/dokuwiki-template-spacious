@@ -68,7 +68,7 @@ if (!defined('DOKU_INC')) die();
             <div id="spacious__head-text-nav-wrap" class="flex between stretch">
                 <div id="spacious__head-branding-wrap" class="flex column stretch">
                     <div id="spacious__head-branding" class="flex row start narrow-bottom-spacer">
-                        <?php if (tpl_getConf('headerLogo')) : ?>
+                        <?php if (tpl_getConf('logoMaxWidth') != 0) : ?>
                             <div id="spacious__head-logo-wrap">
                                 <?php
                                     // display logo as a link to the home page

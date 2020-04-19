@@ -120,7 +120,6 @@ Default value is generally what will keep the look closer to original Wordpress 
   * the number in text field is the number of elements to show (starting from most recent)
 * sidebarPos (*left*) : sidebar position
 * flipTools (*OFF*) : flip page and context tools positions
-* headerLogo (*ON*) : enable header logo or not
 * logoMaxWidth (*100*)
   * `0` : choosing a value of 0 simply disables logo
   * `any other integer` : desktop logo max width in pixels
