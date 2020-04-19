@@ -121,6 +121,9 @@ Default value is generally what will keep the look closer to original Wordpress 
 * sidebarPos (*left*) : sidebar position
 * flipTools (*OFF*) : flip page and context tools positions
 * headerLogo (*ON*) : enable header logo or not
+* logoMaxWidth (*100*)
+  * `0` : choosing a value of 0 simply disables logo
+  * `any other integer` : desktop logo max width in pixels
 * stickies (*nothing*) : [stick](https://www.w3schools.com/howto/howto_css_sticky_element.asp) given element to top of screen (or bottom, depending on position) 
   * `pageheader` : will keep page header in sight at any time when scrolling down
   * `sidebar` : it will stick to top then start to scroll to match main content length (unless it's longer than content)
@@ -136,7 +139,7 @@ Default value is generally what will keep the look closer to original Wordpress 
 * [ ] breadcrumbsGlyphs
 * [ ] truncatebc
 * siblings (*10*) : a new type of breadcrumbs that adds links to other pages of current namespace under other breadcrumbs (**requires [TwistieNav](https://www.dokuwiki.org/plugin:twistienav ) plugin**)
-  * `0` : choosing a value of 0 simply disables this featuredisables that feature
+  * `0` : choosing a value of 0 simply disables this feature
   * `any other integer` : set the maximum number of links to show (if there's more, a glyph will propose a link to site map)
 * `contools` (*parent,sidevision,playground,nsindex,savesettings,syntax*) : choose wich context tools are shown on the opposite side of page tools (see [next section](https://github.com/geekitude/dokuwiki-template-spacious#context-tools) for details)
 * avatars (*wiki:avatars*) : namespace where users should store their avatar (filename should be *username*.jpg, png or gif)

@@ -69,12 +69,12 @@ if (!defined('DOKU_INC')) die();
                 <div id="spacious__head-branding-wrap" class="flex column stretch">
                     <div id="spacious__head-branding" class="flex row start narrow-bottom-spacer">
                         <?php if (tpl_getConf('headerLogo')) : ?>
-                            <div id="spacious__head-logo-wrap" style="<?php print 'height:'.$spacious['images']['logo']['size'][1].'px"'; ?>>
+                            <div id="spacious__head-logo-wrap">
                                 <?php
                                     // display logo as a link to the home page
                                     tpl_link(
                                         wl(),
-                                        '<img src="'.$spacious['images']['logo']['target'].'" width="100%" height="'.$spacious['images']['logo']['size'][1].'" alt="" />',
+                                        '<img src="'.$spacious['images']['logo']['target'].'" width="'.min(tpl_getConf('logoMaxWidth'), $spacious['images']['logo']['size'][1]).'" height="100%" alt="" />',
                                         'accesskey="h" title="'.tpl_getLang('wikihome').' [H]"'
                                     );
                                 ?>

@@ -20,6 +20,7 @@ $conf['newsTicker']         = 'skip_minors,pages,media,5';
 $conf['sidebarPos']         = 'left';
 $conf['flipTools']          = 0;
 $conf['headerLogo']         = 1;
+$conf['logoMaxWidth']       = 100;
 $conf['stickies']           = '';
 $conf['bannerfile']         = 'banner';
 $conf['widebannerfile']     = 'widebanner';

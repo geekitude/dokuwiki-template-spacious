@@ -20,6 +20,7 @@ $meta['newsTicker']         = array('multicheckbox', '_choices' => array('skip_d
 $meta['sidebarPos']         = array('multichoice','_choices' => array('left','right'));
 $meta['flipTools']          = array('onoff');
 $meta['headerLogo']         = array('onoff');
+$meta['logoMaxWidth']       = array('numeric','_pattern' => '/^\d+$/');
 $meta['stickies']           = array('multicheckbox','_choices' => array('pageheader','sidebar','docinfo'));
 $meta['bannerfile']         = array('string');
 $meta['widebannerfile']     = array('string');
