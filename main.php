@@ -102,7 +102,7 @@ spacious_init();
                 </div><!-- /.inner-wrap -->
             </header><!-- /#spacious__pageheader -->
 <?php //dbg($spacious['images']); ?>
-            <div id="spacious__main-flex" class="flex stretch spacer top-spacer">
+            <div id="spacious__main-flex" class="flex stretch top-spacer bottom-spacer">
                 <!-- CONTEXTUAL TOOLS -->
                 <aside id="spacious__contools" class="tools">
                     <?php if (tpl_getConf('contools') != '') : ?>
@@ -220,7 +220,7 @@ spacious_init();
                                 </div>
                                 <?php spacious_include("sidebarfooter"); ?>
                             </div><!-- /#spacious__sidebar -->
-                            <hr class="top-spacer spacer<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : " a11y" ?>" />
+                            <hr class="top-spacer bottom-spacer<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : " a11y" ?>" />
                         </aside><!-- /#spacious__sidebar-container -->
                     <?php endif; ?>
                     <?php if($ACT=='show' && $spacious['showSidebar']): ?>
@@ -228,7 +228,7 @@ spacious_init();
                     <?php endif; ?>
                     <article id="spacious__article">
                         <div id="spacious__content" class="group">
-                            <div class="page group spacer">
+                            <div class="page group bottom-spacer">
                                 <?php tpl_flush() ?>
                                 <?php spacious_include("pageheader"); ?>
                                 <!-- wikipage start -->
@@ -236,7 +236,7 @@ spacious_init();
                                 <!-- wikipage stop -->
                                 <?php spacious_include("pagefooter"); ?>
                             </div>
-                            <hr class="spacer<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : " a11y" ?>" />
+                            <hr class="bottom-spacer<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : " a11y" ?>" />
                             <?php if (($ACT == "show") or ($ACT == "edit")) { spacious_docinfo(); } ?>
                             <?php tpl_flush() ?>
                         </div><!-- #spacious__content -->

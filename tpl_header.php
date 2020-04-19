@@ -67,7 +67,7 @@ if (!defined('DOKU_INC')) die();
         <div class="inner-wrap">
             <div id="spacious__head-text-nav-wrap" class="flex between stretch">
                 <div id="spacious__head-branding-wrap" class="flex column stretch">
-                    <div id="spacious__head-branding" class="flex row start narrow-spacer">
+                    <div id="spacious__head-branding" class="flex row start narrow-bottom-spacer">
                         <?php if (tpl_getConf('headerLogo')) : ?>
                             <div id="spacious__head-logo-wrap" style="<?php print 'height:'.$spacious['images']['logo']['size'][1].'px"'; ?>>
                                 <?php
@@ -126,10 +126,10 @@ if (!defined('DOKU_INC')) die();
                                         }
                                         tpl_link(
                                             $link['target'],
-                                            '<img src="'.$spacious['images']['banner']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['banner']['size'][3].' class="spacer" />'
+                                            '<img src="'.$spacious['images']['banner']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['banner']['size'][3].' class="bottom-spacer" />'
                                         );
                                     } else {
-                                        print '<img src="'.$spacious['images']['banner']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['banner']['size'][3].' class="spacer" />';
+                                        print '<img src="'.$spacious['images']['banner']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['banner']['size'][3].' class="bottom-spacer" />';
                                     }
                                 }
                             ?>
