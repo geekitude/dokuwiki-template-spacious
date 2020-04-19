@@ -153,22 +153,26 @@ function js_spacious_sidevision(toggle) {
 
 jQuery(document).ready(function() {
 
+    // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
+    screen_mode = jQuery('#spacious__helper').css('z-index') + '';
+    // turn sidebar title into a collapse toggle (like ToC)
+    dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
+
+    // Get sticky Pageheader height
+    if (JSINFO.StickyPageheader) {
+        var $pageheaderheight = jQuery('#spacious__pageheader').outerHeight();
+    } else {
+        var $pageheaderheight = 0;
+    }
+
     if (JSINFO.LoadGumshoe) {
         //var spy = new Gumshoe('#dw__toc a');
-        const spy = new Gumshoe('#dw__toc a',{
-	      offset: 150
+        var spy = new Gumshoe('#dw__toc a',{
+	      offset: (70 + $pageheaderheight)
         });
     }
 
-    // the z-index in mobile.css is (mis-)used purely for detecting the screen mode here
-    screen_mode = jQuery('#spacious__helper').css('z-index') + '';
-
-//    // Get current pagenav width
-//    jQuery('#mixture__pagenav li.tab').each(function() {
-//        pagenav_width += jQuery(this).outerWidth(true);
-//    });
-
-    // Prepare last changes ticker
+    // Last changes ticker
     if (JSINFO.LoadNewsTicker) {
         jQuery('.js-lastchanges').newsTicker({
             max_rows: 1,
@@ -181,22 +185,9 @@ jQuery(document).ready(function() {
         });
     }
 
-//    // Show last changes ticker
-//    if (screen_mode != '1000') {
-//        jQuery('#js_lastchanges_container').show();
-//    }
-
     // CLICK WATCHER
 //    jQuery('a[href*="#"]:not([href="#logoLinkImage"]):not([href="#sidebarLinkImage"]):not([href="#_fake_href"])').click(function() {
     jQuery('a[href*="#"]:not([href="#spacious__main"])').click(function() {
-        // adjust scroll height if sticky Pageheader
-        if (JSINFO.StickyPageheader) {
-            // add Pageheader height and a little something for more visual space
-            var $delta = jQuery('#spacious__pageheader').outerHeight();
-        } else {
-            // or nothing
-            var $delta = 0;
-        }
         var $target = jQuery(this.hash);
 //console.log($delta);
 //console.log($target);
@@ -205,20 +196,14 @@ jQuery(document).ready(function() {
         //if ($target.length == 0) target = jQuery('a[name="' + this.hash.substr(1) + '"]');
         if ($target.length == 0) $target = jQuery('html');
         // Move to intended target
-        //if ($delta == 0) {
-        //    jQuery('html, body').animate({ scrollTop: $target.offset().top }, 500);
-        //} else {
-        //    jQuery('html, body').animate({ scrollTop: $target.offset().top-calcTopOffset($delta) }, 500);
-        //}
-        jQuery('html, body').animate({ scrollTop: $target.offset().top-$delta }, JSINFO.Animate);
+        jQuery('html, body').animate({ scrollTop: $target.offset().top - $pageheaderheight }, JSINFO.Animate);
         return false;
     });
  
+    // RESIZE WATCHER
     // Prepare resize watcher and proceed a resize function first run to adjust layout
     jQuery(function(){
         var resizeTimer;
-        dw_page.makeToggle('#spacious__sidebar h6.toggle','#spacious__sidebar div.content');
-//        dw_page.makeToggle('#mixture__classic_nav h3.toggle','#mixture__classic_nav div.content');
 
         // Proceed first run of resize watcher functions
         js_spacious_resize();
