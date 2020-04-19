@@ -2507,7 +2507,13 @@ body.right-sidebar #spacious__sidebar {
     margin-bottom: 0;
 }
 
-body.no-sidebar #spacious__contools ul .sidevision,
+body.no-sidebar #spacious__sidebar-container,
+body.no-sidebar #spacious__main-subflex .vr,
+body.no-sidebar #spacious__sidebar .tools ul,
+body.no-sidebar #spacious__contools ul .sidevision {
+    display: none;
+}
+
 html.no-js #spacious__contools ul .sidevision,
 html.no-js #spacious__topbar-newsticker {
     display: none;
@@ -2658,25 +2664,6 @@ body.sticky-docinfo #spacious__content .docInfo:hover {
 
 #spacious__toc-placeholder {
     order:4;
-}
-
-/* =NO SIDEBAR CONTENT LAYOUT
--------------------------------------------------------------- */
-
-body.no-sidebar #spacious__contools {
-    order: 1;
-}
-body.no-sidebar #spacious__main-subflex {
-    order: 2;
-}
-body.no-sidebar #spacious__pagetools {
-    order: 3;
-}
-
-body.no-sidebar #spacious__sidebar-container,
-body.no-sidebar #spacious__main-subflex .vr,
-body.no-sidebar #spacious__sidebar .tools ul {
-    display: none;
 }
 
 /* =POST CONTENT
