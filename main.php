@@ -187,40 +187,41 @@ spacious_init();
                     <?php if($spacious['showSidebar']): ?>
                         <!-- ********** SIDEBAR ********** -->
 <?php //dbg(spacious_findnearest($conf['sidebar'])); ?>
-                        <aside id="spacious__sidebar" class="group smaller<?php print (strpos(tpl_getConf('neutralize'), 'sidebar') !== false) ? " neu" : "" ?>">
-                            <?php spacious_include("sidebarheader"); ?>
-                            <h6 class="toggle"><span class="label"><?php echo $lang['sidebar'] ?></span></h6>
-                            <div class="content">
-                                <?php tpl_flush() ?>
-                                <?php tpl_includeFile('sidebarheader.html') ?>
-                                <div id="spacious__sidecard" class="group">
-                                    <?php
-                                        if ($spacious['images']['sidecard']['target'] != null) {
-                                            $link = null;
-                                            $title = "SideCard";
-                                            if ($link != null) {
-                                                if ($link['accesskey'] != null) {
-                                                    $link['label'] .= " [".strtoupper($link['accesskey'])."]";
-                                                    $accesskey = 'accesskey="'.$link['accesskey'].'" ';
+                        <aside id="spacious__sidebar-container" class="group">
+                            <div id="spacious__sidebar" class="group smaller<?php print (strpos(tpl_getConf('neutralize'), 'sidebar') !== false) ? " neu" : "" ?>">
+                                <?php spacious_include("sidebarheader"); ?>
+                                <h6 class="toggle"><span class="label"><?php echo $lang['sidebar'] ?></span></h6>
+                                <div class="content">
+                                    <?php tpl_flush() ?>
+                                    <?php tpl_includeFile('sidebarheader.html') ?>
+                                    <div id="spacious__sidecard" class="group">
+                                        <?php
+                                            if ($spacious['images']['sidecard']['target'] != null) {
+                                                $link = null;
+                                                $title = "SideCard";
+                                                if ($link != null) {
+                                                    if ($link['accesskey'] != null) {
+                                                        $link['label'] .= " [".strtoupper($link['accesskey'])."]";
+                                                        $accesskey = 'accesskey="'.$link['accesskey'].'" ';
+                                                    }
+                                                    tpl_link(
+                                                        $link['target'],
+                                                        '<img src="'.$spacious['images']['sidecard']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['sidecard']['size'][3].' class="'.tpl_getConf('sidecardstyle').'" />'
+                                                    );
+                                                } else {
+                                                    print '<img src="'.$spacious['images']['sidecard']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['sidecard']['size'][3].' class="'.tpl_getConf('sidecardstyle').'" />';
                                                 }
-                                                tpl_link(
-                                                    $link['target'],
-                                                    '<img src="'.$spacious['images']['sidecard']['target'].'" '.$accesskey.'title="'.$link['label'].'" alt="*'.$title.'*" '.$spacious['images']['sidecard']['size'][3].' class="'.tpl_getConf('sidecardstyle').'" />'
-                                                );
-                                            } else {
-                                                print '<img src="'.$spacious['images']['sidecard']['target'].'" title="'.$title.'" alt="*'.$title.'*" '.$spacious['images']['sidecard']['size'][3].' class="'.tpl_getConf('sidecardstyle').'" />';
                                             }
-                                        }
-                                    ?>
-                                </div><!-- #spacious__sidecard -->
-                                <?php //tpl_include_page($conf['sidebar'], true, true) ?>
-                                <?php spacious_replace($spacious['sidebar']) ?>
-                                <?php tpl_includeFile('sidebarfooter.html') ?>
-                            </div>
-                            <?php spacious_include("sidebarfooter"); ?>
-                            <hr class="<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : "a11y" ?>" />
-<?php //dbg($spacious['parents']);dbg($ID);dbg(cleanID(getNS($ID))); ?>
-                        </aside><!-- /#spacious__sidebar -->
+                                        ?>
+                                    </div><!-- #spacious__sidecard -->
+                                    <?php //tpl_include_page($conf['sidebar'], true, true) ?>
+                                    <?php spacious_replace($spacious['sidebar']) ?>
+                                    <?php tpl_includeFile('sidebarfooter.html') ?>
+                                </div>
+                                <?php spacious_include("sidebarfooter"); ?>
+                            </div><!-- /#spacious__sidebar -->
+                            <hr class="top-spacer spacer<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? "" : " a11y" ?>" />
+                        </aside><!-- /#spacious__sidebar-container -->
                     <?php endif; ?>
                     <?php if($ACT=='show' && $spacious['showSidebar']): ?>
                         <div class="vr<?php print (($_GET['debug'] == 1) or ($_GET['debug'] == 'a11y')) ? " notvisibleifextracted" : " a11y" ?>"></div>

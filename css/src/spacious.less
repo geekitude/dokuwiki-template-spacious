@@ -273,9 +273,11 @@ hr {
     margin: 0 1rem 1.5rem;
 }
 
+/*
 #spacious__sidebar hr {
     margin-top: 1rem !important;
 }
+*/
 
 .vr {
     /*background-color: @ini_border;*/
@@ -2472,7 +2474,11 @@ body.right-sidebar #dw__toc {
     min-width: @ini_sidebar_width;
     align-self: flex-start;
 }
-
+/*
+#spacious__sidebar-container {
+    align-self: flex-start;
+}
+*/
 /*
 #spacious__sidebar h6 {
     font-size: 1.9rem;
@@ -2522,12 +2528,13 @@ body.extractible-toc #spacious__main.neutoc #dw__toc {
     padding: 0 .5rem .5rem .5rem;
 }
 
-body.sticky-sidebar #spacious__sidebar {
+body.sticky-sidebar #spacious__sidebar-container {
     position: sticky;
     top: 0;
+    height: max-content;
 }
 
-body.sticky-sidebar.extractible-sidebar #spacious__sidebar {
+body.sticky-sidebar.extractible-sidebar #spacious__sidebar-container {
     top: 9rem;
 }
 
@@ -2551,7 +2558,7 @@ body.sticky-sidebar.extractible-sidebar #spacious__sidebar {
 #spacious__pagetools {
     order: 3;
 }
-body.left-sidebar #spacious__sidebar {
+body.left-sidebar #spacious__sidebar-container {
     order: 1;
 }
 body.left-sidebar #spacious__article {
@@ -2567,7 +2574,7 @@ body.fliptools #spacious__contools {
 body.right-sidebar #spacious__article {
     order: 1;
 }
-body.right-sidebar #spacious__sidebar {
+body.right-sidebar #spacious__sidebar-container {
     order: 3;
 }
 
@@ -2661,53 +2668,21 @@ body.sticky-docinfo #spacious__content .docInfo:hover {
     order:4;
 }
 
-/* =LEFT SIDEBAR CONTENT LAYOUT
--------------------------------------------------------------- */
-/*.left-sidebar #spacious__article {
-    float: right;
-}*/
-
-/*.left-sidebar #spacious__sidebar {
-    float: left;
-}*/
-
 /* =NO SIDEBAR CONTENT LAYOUT
 -------------------------------------------------------------- */
-/*
-.no-sidebar #spacious__article {
-    float: none;
-    margin: 0 auto;
-}
 
-.no-sidebar-full-width #spacious__article {
-    width: 100%;
-}
-
-.no-sidebar #spacious__sidebar,
-.no-sidebar-full-width #spacious__sidebar {
-    display: none;
-}
-*/
-
-#spacious__contools {
+body.no-sidebar #spacious__contools {
     order: 1;
 }
-#spacious__pagetools {
-    order: 3;
+body.no-sidebar #spacious__main-subflex {
+    order: 2;
 }
-/*
-body.no-sidebar #spacious__sidebar {
-    order: 3;
-}
-*/
-#spacious__sidebar {
+body.no-sidebar #spacious__pagetools {
     order: 3;
 }
 
-/*body.no-sidebar #spacious__sidebar .vr,
-body.no-sidebar #spacious__sidebar,
-*/
-body.no-sidebar #spacious__sidebar,
+body.no-sidebar #spacious__sidebar-container,
+body.no-sidebar #spacious__main-subflex .vr,
 body.no-sidebar #spacious__sidebar .tools ul {
     display: none;
 }
@@ -4807,10 +4782,10 @@ div.notify {
         flex-direction: column;
         /*padding-top: 1rem;*/
     }
-    #spacious__sidebar {
+    #spacious__sidebar-container {
         order: 1 !important;
     }
-    #spacious__sidebar,
+    #spacious__sidebar-container,
     #dw__toc {
         position: initial !important;
     }
@@ -4845,7 +4820,7 @@ div.notify {
         opacity: 0;
     }
     */
-    body.sticky-sidebar #spacious__sidebar {
+    body.sticky-sidebar #spacious__sidebar-container {
         position: initial;
     }
     #spacious__helper {
@@ -5452,14 +5427,14 @@ div.notify {
     body.extractible-sidebar #spacious__helper span::after {
         content: "(Sidebar extracted)";
     }
-    body.extractible-sidebar #spacious__sidebar {
+    body.extractible-sidebar #spacious__sidebar-container {
         /* translate (search "transition" to find the rules for this translation animation) */
         transform: translate((-1 * (@ini_sidebar_width + @ico-width + @ico-margin + @ico-margin + 15px)), 0);
         /*background-color: fade(@ini_background, 60%) !important;*/
         padding-top: .5rem;
         padding-bottom: .5rem;
     }
-    [dir=rtl] body.extractible-sidebar #spacious__sidebar {
+    [dir=rtl] body.extractible-sidebar #spacious__sidebar-container {
         transform: translate((@ini_sidebar_width + @ico-width + @ico-margin + @ico-margin + 20px), 0);
         /*background-color: fade(@ini_background, 60%) !important;*/
         box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
@@ -5467,10 +5442,10 @@ div.notify {
     html.extracted-toc.extracted-sidebar body.mix-layout.extractible-toc #spacious__article {
         width: calc(@ini_site_width - (2 * @ico-width) - (4 * @ico-margin));
     }
-    body.extractible-sidebar:not(.sticky-sidebar) #spacious__sidebar {
+    body.extractible-sidebar:not(.sticky-sidebar) #spacious__sidebar-container {
         position: absolute;
     }
-    body.extractible-sidebar.sticky-sidebar #spacious__sidebar {
+    body.extractible-sidebar.sticky-sidebar #spacious__sidebar-container {
     }
     body.extractible-sidebar:not(.sticky-sidebar) #spacious__article {
         margin: 0;
@@ -5487,16 +5462,16 @@ div.notify {
         display: none;
     }
     /*
-    body.extractible-sidebar.fadeextracted #spacious__sidebar,
-    body.extractible-sidebar.fadeextracteduntil #spacious__sidebar {
+    body.extractible-sidebar.fadeextracted #spacious__sidebar-container,
+    body.extractible-sidebar.fadeextracteduntil #spacious__sidebar-container {
         opacity: .5;
     }
-    body.extractible-sidebar #spacious__sidebar:hover {
+    body.extractible-sidebar #spacious__sidebar-container:hover {
         opacity: 1;
     }
     */
     body.extractible-sidebar div.notvisibleifextracted,
-    body.extractible-sidebar #spacious__sidebar hr {
+    body.extractible-sidebar #spacious__sidebar-container hr {
         visibility: hidden;
     }
     body.extractible-sidebar.boxed-layout #spacious__sidebar,

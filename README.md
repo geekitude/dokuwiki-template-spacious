@@ -277,10 +277,10 @@ Here's the list of features that will not work on browsers without Javascript ab
 * Context logo Lightbox effect
 * Sidebar visibility context tool
 * Sidebar and TOC auto-collapsing when reaching tablet resolution
-* Inner links will scroll a bit too far if Page header is set to stick on top of page
-* Animated scrolling
 * ToC extraction in "mix" layout
 * Scrollspy ToC
+* Internal links will scroll a bit too far if Page header is set to stick on top of page
+* Animated scrolling
 
 ## Expanded debug mode
 
