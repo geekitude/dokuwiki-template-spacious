@@ -292,19 +292,23 @@ hr {
     height: 0;
     /*margin: 1rem;*/
     /*margin: 0 1rem;*/
+    /*margin: 0 1rem 1.5rem;*/
 }
 
 [dir] hr {
     border-style: solid none none;
     border-width: 1px 0 0;
-    margin: 0 1rem 1.5rem;
 }
 
-/*
-#spacious__sidebar hr {
-    margin-top: 1rem !important;
+[dir=ltr] hr {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
-*/
+
+[dir=rtl] hr {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
 
 .vr {
     /*background-color: @ini_border;*/
@@ -313,7 +317,7 @@ hr {
 }
 
 [dir] .vr {
-    margin: 1rem 0;
+    margin: 2rem 1rem;
 }
 
 [dir=ltr] .vr {
@@ -369,12 +373,12 @@ div.vr.notvisibleifextracted {
 }
 */
 
-[dir] .bottom-spacer {
-    margin-bottom: 2rem !important;
-}
-
 [dir] .top-spacer {
     margin-top: 2rem !important;
+}
+
+[dir] .bottom-spacer {
+    margin-bottom: 2rem !important;
 }
 
 [dir] .neu, [dir] #spacious__main.neutoc #dw__toc {
@@ -5970,11 +5974,22 @@ div.notify a {
     #spacious__foot-widgets-wrap aside {
         min-width: 50%;
     }
+    [dir] .top-spacer {
+        margin-top: 1.5rem !important;
+    }
     [dir] .bottom-spacer, [dir] .narrow-bottom-spacer {
         margin-bottom: 1.5rem !important;
     }
-    [dir] .top-spacer {
-        margin-top: 1.5rem !important;
+    [dir=ltr] hr {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    [dir=rtl] hr {
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+    }
+    [dir] .vr {
+        margin: 1.5rem .75rem;
     }
     [dir] .inner-wrap {
         margin: 0 2rem;
@@ -6529,11 +6544,22 @@ div.notify a {
     [dir] #spacious__foot-widgets-wrap .widget {
         padding-bottom: .5rem;
     }
+    [dir] .top-spacer {
+        margin-top: 1rem !important;
+    }
     [dir] .bottom-spacer, [dir] .narrow-bottom-spacer {
         margin-bottom: 1rem !important;
     }
-    [dir] .top-spacer {
-        margin-top: 1rem !important;
+    [dir=ltr] hr {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    [dir=rtl] hr {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+    [dir] .vr {
+        margin: 1rem .5rem;
     }
     [dir] .inner-wrap {
         margin: 0 1rem;
