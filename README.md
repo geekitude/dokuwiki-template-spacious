@@ -263,7 +263,7 @@ Simply used as it should to build user page(s) links
 
 ### Other tested plugins
 
-Imagebox, 
+Imagebox, Folded
 
 ## About UI Images
 
